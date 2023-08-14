@@ -8,6 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class Inventory : ScriptableObject
 {
+    public int maxItems;
     public List<InventorySlot> Container = new List<InventorySlot>();
     
     // add to player inventory
@@ -28,20 +29,21 @@ public class Inventory : ScriptableObject
                 // break the loop
                 break;
             }
+
         }
-        if (!hasItem)
+        if (!hasItem && Container.Count < maxItems)
         {
             Container.Add(new InventorySlot(_item, _amount));
         }
-    }
+    } 
 }
 
-
+[System.Serializable]
 public class InventorySlot
 {
     // type of item
     public InventoryItem item;
-    // amouont of items in the inventory
+    // amount of items in the inventory
     public int amount;
     // probably won't use maxAmount since this is a small game
     // Inventory slot of the item and its amount
