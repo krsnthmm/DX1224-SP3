@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   type: 0
-  description: 'Restores HP '
-  restoreHealthValue: 0
+  description: Restores HP to Player.
+  restoreHealthValue: 10

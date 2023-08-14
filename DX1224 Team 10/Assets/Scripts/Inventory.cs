@@ -9,6 +9,8 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public List<InventorySlot> Container = new List<InventorySlot>();
+    
+    // add to player inventory
     public void AddItem(InventoryItem _item, int _amount)
     {
         // check if we have that item in that inventory
