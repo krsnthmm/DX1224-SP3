@@ -34,6 +34,9 @@ public class Inventory : ScriptableObject
         if (!hasItem && Container.Count < maxItems)
         {
             Container.Add(new InventorySlot(_item, _amount));
+        } else
+        {
+            Debug.Log("No more space");
         }
     } 
 }
