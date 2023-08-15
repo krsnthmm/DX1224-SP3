@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private Animator m_animator;
@@ -10,10 +10,21 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private bool isIdle;
+    private bool isWalking;
 
     private bool isDashing;
     [SerializeField] private float DashSpeed;
     [SerializeField] private float DashDuration;
+
+    //stamina bar
+    public Image StaminaBar;
+    public float Stamina, MaxStamina;
+    public float Dashing;
+
+    // Refill rate and interval
+    [SerializeField] private float staminaRefillRate = 0.5f; // Amount of stamina to refill per second
+    [SerializeField] private float idleStaminaRefillInterval = 1f; // Interval to refill stamina while idle
+    private float timeSinceLastIdleRefill;
 
     void Start()
     {
@@ -42,17 +53,41 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovementAnimations();
 
+
         // Dashing logic
-        if (Input.GetKeyDown(KeyCode.X) && !isDashing)
+        if (Input.GetKeyDown(KeyCode.Space) && !isDashing && Stamina > 0) // Added Stamina > 0 condition
         {
             isDashing = true;
+            isWalking = true;
             StartCoroutine(Dash());
+            Debug.Log("dashing");
+            Stamina -= Dashing;
+            if (Stamina <= 0)
+            {
+                Stamina = 0;
+                isDashing = false;
+            }
+            Stamina -= Dashing * Time.deltaTime;
+            StaminaBar.fillAmount = Stamina / MaxStamina;
+
+            // Idle animation logic
+            if (!isDashing && (isIdle || isWalking))
+            {
+                m_animator.Play("Player_Idle_Front");
+              
+            }
         }
 
-        // Idle animation logic
-        if (!isDashing && isIdle)
+        else if (!isDashing && (isIdle || isWalking))
         {
-            m_animator.Play("Player_Idle_Front");
+            // Refill stamina gradually when idle
+            timeSinceLastIdleRefill += Time.deltaTime;
+            if (timeSinceLastIdleRefill >= idleStaminaRefillInterval)
+            {
+                timeSinceLastIdleRefill = 1f;
+                Stamina = Mathf.Clamp(Stamina + staminaRefillRate * idleStaminaRefillInterval, 0f, MaxStamina);
+                StaminaBar.fillAmount = Stamina / MaxStamina;
+            }
         }
     }
 
@@ -65,25 +100,30 @@ public class PlayerController : MonoBehaviour
         {
             m_animator.Play("Player_Walk_Right");
             isIdle = false;
+            isWalking = true;
         }
         else if (horizontalInput < 0)
         {
             m_animator.Play("Player_Walk_Left");
             isIdle = false;
+            isWalking = true;
         }
         else if (verticalInput > 0)
         {
             m_animator.Play("Player_Walk_Back");
             isIdle = false;
+            isWalking = true;
         }
         else if (verticalInput < 0)
         {
             m_animator.Play("Player_Walk_Front");
             isIdle = false;
+            isWalking = true;
         }
         else
         {
             isIdle = true;
+            isWalking = false;
         }
     }
 
