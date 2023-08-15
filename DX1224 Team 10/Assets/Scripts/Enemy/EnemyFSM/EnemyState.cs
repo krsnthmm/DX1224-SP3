@@ -28,6 +28,15 @@ public class EnemyState : MonoBehaviour
         isAnimationFinished = false;
     }
 
+    private void Start()
+    {
+        PatrolBaseInstance.Init(gameObject, this);
+        ChaseBaseInstance.Init(gameObject, this);
+        AttackBaseInstance.Init(gameObject, this);
+
+        StateMachine.Init(IdleState);
+    }
+
     public virtual void Exit()
     {
         // exit the current state
