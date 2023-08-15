@@ -144,12 +144,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7676121020413916098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a500549159211034ba0ad860daf7dd9b, type: 3}
+  m_Script: {fileID: 11500000, guid: b61456b0c5dbb9545b2baf482956aca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  DashSpeed: 10
-  DashDuration: 0.3
+  movementSpeed: 1
+  DashSpeed: 0
+  DashDuration: 0
+  StaminaBar: {fileID: 0}
+  Stamina: 0
+  MaxStamina: 0
+  Dashing: 0
+  staminaRefillRate: 0.5
+  idleStaminaRefillInterval: 1
+  playerInventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}
+  playerData: {fileID: 11400000, guid: a9032db4fdb62e44bba235c027a1585f, type: 2}
 --- !u!50 &7676121020413916100
 Rigidbody2D:
   serializedVersion: 4
