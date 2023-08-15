@@ -11,35 +11,27 @@ public class EnemyAttackState : EnemyState
     public override void DoChecks()
     {
         base.DoChecks();
-
-        //if (enemy.isNearWall)
-        //{
-        //    enemy.Flip();
-        //    enemy.isNearWall = false;
-        //}
     }
 
     public override void Enter()
     {
         base.Enter();
 
-        //enemy.AttackBaseInstance.Enter();
-
-        enemy.rb.velocity = Vector2.zero;
+        enemy.AttackBaseInstance.Enter();
     }
 
     public override void Exit()
     {
         base.Exit();
 
-        //enemy.AttackBaseInstance.Exit();
+        enemy.AttackBaseInstance.Exit();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        //enemy.AttackBaseInstance.LogicUpdate();
+        enemy.AttackBaseInstance.LogicUpdate();
 
         //if (!enemy.sfxAudioSrc.isPlaying)
         //{
@@ -57,6 +49,6 @@ public class EnemyAttackState : EnemyState
     {
         base.PhysicsUpdate();
 
-        //enemy.AttackBaseInstance.PhysicsUpdate();
+        enemy.AttackBaseInstance.PhysicsUpdate();
     }
 }

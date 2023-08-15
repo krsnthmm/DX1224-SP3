@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyState
 {
-    //[SerializeField] private float idleTime;
     public EnemyIdleState(Enemy enemy, EnemyStateMachine sm, string animBoolName) : base(enemy, sm, animBoolName)
     {
     }
@@ -18,26 +17,22 @@ public class EnemyIdleState : EnemyState
     {
         base.Enter();
 
-        //idleTime = 0.0f;
-        enemy.rb.velocity = Vector2.zero;
+        enemy.IdleBaseInstance.Enter();
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        enemy.IdleBaseInstance.Exit();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        //idleTime += Time.deltaTime;
+        enemy.IdleBaseInstance.LogicUpdate();
 
-        //if (idleTime >= 1.0f)
-        //{
-            
-        //}
-        
         if (enemy.isAggroed)
         {
             sm.ChangeState(enemy.ChaseState);
@@ -51,5 +46,7 @@ public class EnemyIdleState : EnemyState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        enemy.IdleBaseInstance.PhysicsUpdate();
     }
 }

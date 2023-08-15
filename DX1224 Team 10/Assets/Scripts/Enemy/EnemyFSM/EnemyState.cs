@@ -7,6 +7,7 @@ public class EnemyState
     protected Enemy enemy;
     protected EnemyStateMachine sm;
 
+    protected bool isAnimEventTriggered;
     protected bool isAnimationFinished;
 
     protected float startTime; // set every time we enter a state
@@ -25,6 +26,7 @@ public class EnemyState
         // enter a specific state
         DoChecks();
         startTime = Time.time;
+        isAnimEventTriggered = false;
         isAnimationFinished = false;
 
         enemy.enemyAnim.SetBool(animBoolName, true);
@@ -52,7 +54,10 @@ public class EnemyState
         // look for ground, look for walls, etc.
     }
 
-    public virtual void AnimationTrigger() { }
+    public virtual void AnimationTrigger() 
+    {
+        isAnimEventTriggered = true;
+    }
 
     public virtual void AnimationFinishTrigger()
     {

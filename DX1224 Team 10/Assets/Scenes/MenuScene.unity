@@ -273,7 +273,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713431104 stripped
 GameObject:
@@ -548,7 +548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3629354616348402409, guid: 468ab8cd042a11d47a461d9f1886e4cd, type: 3}
       propertyPath: DashSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3629354616348402409, guid: 468ab8cd042a11d47a461d9f1886e4cd, type: 3}
       propertyPath: DashDuration
@@ -556,11 +556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3629354616348402409, guid: 468ab8cd042a11d47a461d9f1886e4cd, type: 3}
       propertyPath: movementSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7844206980242969312, guid: 468ab8cd042a11d47a461d9f1886e4cd, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7844206980242969312, guid: 468ab8cd042a11d47a461d9f1886e4cd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -804,13 +804,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1627878663, guid: cd21c8e6350fb924a96dd3a22448e564, type: 3}
+      propertyPath: IdleBase
+      value: 
+      objectReference: {fileID: 11400000, guid: 38c4ca798e1b6c941bb3c49b91937997, type: 2}
+    - target: {fileID: 1627878663, guid: cd21c8e6350fb924a96dd3a22448e564, type: 3}
+      propertyPath: ChaseBase
+      value: 
+      objectReference: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
+    - target: {fileID: 1627878663, guid: cd21c8e6350fb924a96dd3a22448e564, type: 3}
+      propertyPath: AttackBase
+      value: 
+      objectReference: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
     - target: {fileID: 2360211340419271013, guid: cd21c8e6350fb924a96dd3a22448e564, type: 3}
       propertyPath: m_Name
       value: ZombiePrefab
       objectReference: {fileID: 0}
     - target: {fileID: 4737146212539116246, guid: cd21c8e6350fb924a96dd3a22448e564, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4737146212539116246, guid: cd21c8e6350fb924a96dd3a22448e564, type: 3}
       propertyPath: m_LocalPosition.x
