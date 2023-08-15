@@ -15,9 +15,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float DashSpeed;
     [SerializeField] private float DashDuration;
 
+    public Inventory playerInventory;
+    public PlayerData playerData;
+
     void Start()
     {
-        m_animator = GetComponent<Animator>();
+        // Note: uncomment below after adding animations
+        //m_animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -40,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HandleMovementAnimations();
+        //HandleMovementAnimations();
 
         // Dashing logic
         if (Input.GetKeyDown(KeyCode.X) && !isDashing)
@@ -52,7 +56,8 @@ public class PlayerController : MonoBehaviour
         // Idle animation logic
         if (!isDashing && isIdle)
         {
-            m_animator.Play("Player_Idle_Front");
+            // Note: uncomment below after adding animations
+            //m_animator.Play("Player_Idle_Front");
         }
     }
 
@@ -96,7 +101,8 @@ public class PlayerController : MonoBehaviour
         movementSpeed = DashSpeed;
 
         // Play dash animation
-        m_animator.Play("Player_Dash_Front");
+        // pls uncomment after adding animations!
+        //m_animator.Play("Player_Dash_Front");
 
         // Continue dashing for the specified duration
         yield return new WaitForSeconds(DashDuration);
@@ -106,5 +112,19 @@ public class PlayerController : MonoBehaviour
 
         // Set dashing to false
         isDashing = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        var item = col.GetComponent<Item>();
+        // check if player that collides with the object has an item script
+        if (item)
+        {
+            Debug.Log("!");
+            // add the item to the player's inventory
+            playerInventory.AddItem(item.item, 1);
+            // Destroy the item after adding it to inventory
+            Destroy(col.gameObject);
+        }
     }
 }
