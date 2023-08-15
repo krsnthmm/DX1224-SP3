@@ -10,7 +10,8 @@ public class Inventory : ScriptableObject
 {
     public int maxItems;
     public List<InventorySlot> Container = new List<InventorySlot>();
-    
+    //public InventoryList Container;
+
     // add to player inventory
     public void AddItem(InventoryItem _item, int _amount)
     {
@@ -41,11 +42,18 @@ public class Inventory : ScriptableObject
     } 
 }
 
+//[System.Serializable]
+//public class InventoryList
+//{
+//    public List<InventorySlot> Items = new List<InventorySlot>();
+//}
+
 [System.Serializable]
 public class InventorySlot
 {
     // type of item
     public InventoryItem item;
+    //public Item item;
     // amount of items in the inventory
     public int amount;
     // probably won't use maxAmount since this is a small game

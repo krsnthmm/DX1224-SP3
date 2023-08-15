@@ -5,6 +5,7 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
+    public GameObject inventoryPrefab;
     // Inventory Obj that we want to display
     public Inventory inventory;
     public int X_START;
@@ -57,6 +58,7 @@ public class InventoryUI : MonoBehaviour
                 // if not, create the item icon on display on the UI
                 // Instantiate item icons in the inventory bar
                 var obj = Instantiate(inventory.Container[i].item.itemIcon, Vector3.zero, Quaternion.identity, transform);
+                //obj.transform.GetChild(0).GetComponentInChildren<Image>().sprite = ;
                 // set item icon positions 
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
                 // get the amount of items and display it
