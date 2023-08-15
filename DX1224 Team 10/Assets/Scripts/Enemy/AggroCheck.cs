@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class AggroCheck : MonoBehaviour
 {
-    public GameObject PlayerTarget { get; set; }
     private Enemy enemy;
 
     private void Awake()
     {
-        PlayerTarget = GameObject.FindGameObjectWithTag("Player");
         enemy = GetComponentInParent<Enemy>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == PlayerTarget)
+        if (collision.gameObject.CompareTag("Player"))
         {
+            enemy.isAggroed = true;
             Debug.Log("!");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            enemy.isAggroed = false;
+            Debug.Log("...");
         }
     }
 }

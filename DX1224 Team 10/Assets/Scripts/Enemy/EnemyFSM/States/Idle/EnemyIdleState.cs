@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyState
 {
-    [SerializeField] private float idleTime;
+    //[SerializeField] private float idleTime;
     public EnemyIdleState(Enemy enemy, EnemyStateMachine sm, string animBoolName) : base(enemy, sm, animBoolName)
     {
     }
@@ -18,7 +18,7 @@ public class EnemyIdleState : EnemyState
     {
         base.Enter();
 
-        idleTime = 0.0f;
+        //idleTime = 0.0f;
         enemy.rb.velocity = Vector2.zero;
     }
 
@@ -31,23 +31,21 @@ public class EnemyIdleState : EnemyState
     {
         base.LogicUpdate();
 
-        idleTime += Time.deltaTime;
+        //idleTime += Time.deltaTime;
 
         //if (idleTime >= 1.0f)
         //{
-        //    if (enemy.isAggro && !enemy.isNearWall)
-        //    {
-        //        sm.ChangeState(enemy.ChaseState);
-        //    }
-        //    else if (enemy.isAttackDist)
-        //    {
-        //        sm.ChangeState(enemy.AttackState);
-        //    }
-        //    else
-        //    {
-        //        sm.ChangeState(enemy.PatrolState);
-        //    }
+            
         //}
+        
+        if (enemy.isAggroed)
+        {
+            sm.ChangeState(enemy.ChaseState);
+        }
+        else if (enemy.isInAttackRange)
+        {
+            sm.ChangeState(enemy.AttackState);
+        }
     }
 
     public override void PhysicsUpdate()

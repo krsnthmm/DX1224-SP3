@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState : MonoBehaviour
+public class EnemyState
 {
     protected Enemy enemy;
     protected EnemyStateMachine sm;
@@ -26,20 +26,14 @@ public class EnemyState : MonoBehaviour
         DoChecks();
         startTime = Time.time;
         isAnimationFinished = false;
-    }
 
-    private void Start()
-    {
-        PatrolBaseInstance.Init(gameObject, this);
-        ChaseBaseInstance.Init(gameObject, this);
-        AttackBaseInstance.Init(gameObject, this);
-
-        StateMachine.Init(IdleState);
+        enemy.enemyAnim.SetBool(animBoolName, true);
     }
 
     public virtual void Exit()
     {
         // exit the current state
+        enemy.enemyAnim.SetBool(animBoolName, false);
     }
 
     public virtual void LogicUpdate()

@@ -46,13 +46,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X) && !isDashing)
         {
             isDashing = true;
-            StartCoroutine(Dash());
+            //StartCoroutine(Dash());
         }
 
         // Idle animation logic
         if (!isDashing && isIdle)
         {
-            m_animator.Play("Player_Idle_Front");
+            //m_animator.Play("Player_Idle_Front");
         }
     }
 
@@ -63,22 +63,22 @@ public class PlayerController : MonoBehaviour
 
         if (horizontalInput > 0)
         {
-            m_animator.Play("Player_Walk_Right");
+            //m_animator.Play("Player_Walk_Right");
             isIdle = false;
         }
         else if (horizontalInput < 0)
         {
-            m_animator.Play("Player_Walk_Left");
+            //m_animator.Play("Player_Walk_Left");
             isIdle = false;
         }
         else if (verticalInput > 0)
         {
-            m_animator.Play("Player_Walk_Back");
+            //m_animator.Play("Player_Walk_Back");
             isIdle = false;
         }
         else if (verticalInput < 0)
         {
-            m_animator.Play("Player_Walk_Front");
+            //m_animator.Play("Player_Walk_Front");
             isIdle = false;
         }
         else
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         movementSpeed = DashSpeed;
 
         // Play dash animation
-        m_animator.Play("Player_Dash_Front");
+        //m_animator.Play("Player_Dash_Front");
 
         // Continue dashing for the specified duration
         yield return new WaitForSeconds(DashDuration);
