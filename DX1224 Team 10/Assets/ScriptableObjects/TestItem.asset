@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9495e7fac10b74ba71751abef7206b, type: 3}
   m_Name: TestItem
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  type: 2
+  prefab: {fileID: 7659922447200816910, guid: f6e68b68d32c73e43af0a606a4183f99, type: 3}
+  type: 5
   description: This is a Test Item.
