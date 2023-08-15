@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}
-  playerData: {fileID: 0}
+  playerData: {fileID: 11400000, guid: a9032db4fdb62e44bba235c027a1585f, type: 2}
 --- !u!50 &360472607
 Rigidbody2D:
   serializedVersion: 4

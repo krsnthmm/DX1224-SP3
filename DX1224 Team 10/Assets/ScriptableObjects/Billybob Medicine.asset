@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117f522a4bff28e4d8a1d59b22119426, type: 3}
   m_Name: Billybob Medicine
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5191645890645264273, guid: bf1949502b828484db077387e956e067, type: 3}
+  itemIcon: {fileID: 322224502540907432, guid: 8c31e3a8ad14aa044a64be6fce4a27af, type: 3}
   type: 0
   description: Restores HP to Player.
   restoreHealthValue: 10
