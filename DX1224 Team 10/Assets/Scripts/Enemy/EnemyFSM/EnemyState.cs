@@ -24,7 +24,6 @@ public class EnemyState
     public virtual void Enter()
     {
         // enter a specific state
-        DoChecks();
         startTime = Time.time;
         isAnimEventTriggered = false;
         isAnimationFinished = false;
@@ -46,12 +45,6 @@ public class EnemyState
     public virtual void PhysicsUpdate()
     {
         // update physics
-        DoChecks();
-    }
-
-    public virtual void DoChecks()
-    {
-        // look for ground, look for walls, etc.
     }
 
     public virtual void AnimationTrigger() 

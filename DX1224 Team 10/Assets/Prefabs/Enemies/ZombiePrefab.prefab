@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 1627878663}
   m_Layer: 0
   m_Name: ZombiePrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,6 +292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df788e08dcaa173418e182cb3b92bfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IdleBase: {fileID: 11400000, guid: 38c4ca798e1b6c941bb3c49b91937997, type: 2}
+  ChaseBase: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
+  AttackBase: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
   attack: 5
   moveSpeed: 7
   runsAway: 0
@@ -299,3 +302,7 @@ MonoBehaviour:
   isInAttackRange: 0
   rb: {fileID: 575545937297297712}
   enemyAnim: {fileID: 816818214761739106}
+  projLauncher: {fileID: 0}
+  projPrefab: {fileID: 0}
+  projSpawnPoint: {fileID: 0}
+  weaponOffset: 0

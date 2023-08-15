@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,9 +19,10 @@ public class Enemy : MonoBehaviour
     public EnemyAttackBaseInstance AttackBaseInstance { get; set; }
 
     [Header("Enemy Base Stats")]
-    [SerializeField] private float attack;
+    [SerializeField] private int attack;
     public float moveSpeed;
     public bool runsAway; // does the enemy run from the player?
+    public bool canAttack; // based on animation trigger; can the player launch an attack?
 
     [Header("State Change Triggers")]
     [HideInInspector] public bool isAggroed; // idle/patrol => chase
@@ -29,6 +31,7 @@ public class Enemy : MonoBehaviour
     [Header("Components")]
     public Rigidbody2D rb;
     public Animator enemyAnim;
+    public Seeker seeker;
 
     [Header("Ranged Variables")]
     public GameObject projLauncher;

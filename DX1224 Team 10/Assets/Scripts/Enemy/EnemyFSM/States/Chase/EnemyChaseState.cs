@@ -8,11 +8,6 @@ public class EnemyChaseState : EnemyState
     {
     }
 
-    public override void DoChecks()
-    {
-        base.DoChecks();
-    }
-
     public override void Enter()
     {
         base.Enter();
@@ -46,13 +41,9 @@ public class EnemyChaseState : EnemyState
         }
         else
         {
-            if (enemy.isAggroed)
+            if (!enemy.isAggroed)
             {
                 sm.ChangeState(enemy.AttackState);
-            }
-            else
-            {
-                sm.ChangeState(enemy.IdleState);
             }
         }
     }

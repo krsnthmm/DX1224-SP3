@@ -56,32 +56,22 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovementAnimations();
 
-
         // Dashing logic
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing && Stamina > 0) // Added Stamina > 0 condition
         {
             isDashing = true;
-            isWalking = true;
             StartCoroutine(Dash());
             Debug.Log("dashing");
-            Stamina -= Dashing;
+            //Stamina -= Dashing;
             if (Stamina <= 0)
             {
                 Stamina = 0;
                 isDashing = false;
             }
-            Stamina -= Dashing * Time.deltaTime;
-            StaminaBar.fillAmount = Stamina / MaxStamina;
-
-            // Idle animation logic
-            if (!isDashing && (isIdle || isWalking))
-            {
-                m_animator.Play("Player_Idle_Front");
-              
-            }
+            //StaminaBar.fillAmount = Stamina / MaxStamina;
         }
 
-        else if (!isDashing && (isIdle || isWalking))
+        else if (!isDashing)
         {
             // Refill stamina gradually when idle
             timeSinceLastIdleRefill += Time.deltaTime;
@@ -89,7 +79,7 @@ public class PlayerController : MonoBehaviour
             {
                 timeSinceLastIdleRefill = 1f;
                 Stamina = Mathf.Clamp(Stamina + staminaRefillRate * idleStaminaRefillInterval, 0f, MaxStamina);
-                StaminaBar.fillAmount = Stamina / MaxStamina;
+                //StaminaBar.fillAmount = Stamina / MaxStamina;
             }
         }
     }
@@ -99,34 +89,18 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        if (horizontalInput > 0)
+        if (horizontalInput != 0 || verticalInput != 0)
         {
-            m_animator.Play("Player_Walk_Right");
-            isIdle = false;
-            isWalking = true;
-        }
-        else if (horizontalInput < 0)
-        {
-            m_animator.Play("Player_Walk_Left");
-            isIdle = false;
-            isWalking = true;
-        }
-        else if (verticalInput > 0)
-        {
-            m_animator.Play("Player_Walk_Back");
-            isIdle = false;
-            isWalking = true;
-        }
-        else if (verticalInput < 0)
-        {
-            m_animator.Play("Player_Walk_Front");
-            isIdle = false;
-            isWalking = true;
+            m_animator.SetBool("idle", false);
+            m_animator.SetBool("walk", true);
+
+            m_animator.SetFloat("x", horizontalInput);
+            m_animator.SetFloat("y", verticalInput);
         }
         else
         {
-            isIdle = true;
-            isWalking = false;
+            m_animator.SetBool("idle", true);
+            m_animator.SetBool("walk", false);
         }
     }
 
@@ -139,7 +113,7 @@ public class PlayerController : MonoBehaviour
         movementSpeed = DashSpeed;
 
         // Play dash animation
-        m_animator.Play("Player_Dash_Front");
+        m_animator.SetBool("dash", true);
 
         // Continue dashing for the specified duration
         yield return new WaitForSeconds(DashDuration);
@@ -147,7 +121,10 @@ public class PlayerController : MonoBehaviour
         // Reset movement speed
         movementSpeed = originalSpeed;
 
+        Stamina -= Dashing * Time.deltaTime;
+
         // Set dashing to false
+        m_animator.SetBool("dash", false);
         isDashing = false;
     }
 

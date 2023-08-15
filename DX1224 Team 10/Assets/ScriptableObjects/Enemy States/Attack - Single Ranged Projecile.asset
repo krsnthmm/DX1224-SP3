@@ -9,16 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31466e17871ac4d44b7cf3182e1ed68f, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: ed08f19b43149e04793a0c439d4f85da, type: 3}
+  m_Name: Attack - Single Ranged Projecile
   m_EditorClassIdentifier: 
-  defaultSpeed: 0
-  defaultHP: 0
-  defaultStamina: 0
-  defaultLives: 0
-  maxLives: 0
-  CurrentLives: 0
-  maxHP: 0
-  CurrentHP: 0
-  maxStamina: 0
-  CurrentStamina: 0
