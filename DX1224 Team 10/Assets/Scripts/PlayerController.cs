@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float idleStaminaRefillInterval = 1f; // Interval to refill stamina while idle
     private float timeSinceLastIdleRefill;
 
+    public Inventory playerInventory;
+    public PlayerData playerData;
+
     void Start()
     {
         m_animator = GetComponent<Animator>();
@@ -146,5 +149,19 @@ public class PlayerController : MonoBehaviour
 
         // Set dashing to false
         isDashing = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        var item = col.GetComponent<Item>();
+        // check if player that collides with the object has an item script
+        if (item)
+        {
+            Debug.Log("!");
+            // add the item to the player's inventory
+            playerInventory.AddItem(item.item, 1);
+            // Destroy the item after adding it to inventory
+            Destroy(col.gameObject);
+        }
     }
 }
