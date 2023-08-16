@@ -183,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 2719936011356157896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 395754717963988473}
@@ -282,7 +282,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -330,7 +330,6 @@ MonoBehaviour:
   attack: 7
   moveSpeed: 1
   runsAway: 1
-  canKnockback: 0
   thrust: 0
   knockbackTime: 0
   isAggroed: 0
@@ -342,7 +341,6 @@ MonoBehaviour:
   attackRangeCheck: {fileID: 0}
   projLauncher: {fileID: 395754717795904982}
   projPrefab: {fileID: 1943793143760951685, guid: 333bbad515dee4a4ca59fdb76fe115a8, type: 3}
-  projSpawnPoint: {fileID: 395754717795904981}
   weaponOffset: 90
   whatIsPlayer:
     serializedVersion: 2
