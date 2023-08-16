@@ -5,6 +5,8 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     private GameObject target;
+    private Enemy enemy;
+    private PlayerController player;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -68,9 +70,12 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.layer == 1 << 3)
+        if (collision.gameObject.CompareTag("Player"))
         {
             hitSolid = true;
+
+            player = collision.gameObject.GetComponent<PlayerController>();
+            player.TakeDamage(15);
         }
     }
 

@@ -12,12 +12,12 @@ public class PlayerData : ScriptableObject
     [SerializeField] private int defaultLives;
 
     [Header("Current Player Data")]
-    [SerializeField] private int maxLives;
-    public int CurrentLives;
+    public int maxLives;
+    public int currentLives;
 
-    [SerializeField] private float maxHP;
-    public float CurrentHP;
+    public float maxHP;
+    public float currentHP;
 
-    [SerializeField] private float maxStamina;
-    public float CurrentStamina;
+    public float maxStamina;
+    public float currentStamina;
 }

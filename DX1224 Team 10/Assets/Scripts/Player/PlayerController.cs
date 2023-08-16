@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool isAnimFinished;
 
     private bool isDashing;
+    private bool isDead;
     public bool knockedBack;
     [SerializeField] private float DashSpeed;
     [SerializeField] private float DashDuration;
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
         Vector2 moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         moveDirection = Vector2.ClampMagnitude(moveDirection, 1);
 
-        if (!knockedBack)
+        if (!knockedBack && !isDead)
         {
             if (!isDashing)
             {
@@ -56,24 +57,28 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = moveDirection * DashSpeed;
             }
         }
+        else if (isDead)
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     void Update()
     {
-        HandleMovementAnimations();
-
-        if (playerData.CurrentHP > 0)
+        if (playerData.currentHP > 0)
         {
+            HandleMovementAnimations();
+
             // Dashing logic
-            if (Input.GetKeyDown(KeyCode.Space) && !isDashing && Stamina > 0) // Added Stamina > 0 condition
+            if (Input.GetKeyDown(KeyCode.Space) && !isDashing && playerData.currentStamina > 0) // Added Stamina > 0 condition
             {
                 isDashing = true;
                 StartCoroutine(Dash());
                 Debug.Log("dashing");
                 //Stamina -= Dashing;
-                if (Stamina <= 0)
+                if (playerData.currentStamina <= 0)
                 {
-                    Stamina = 0;
+                    playerData.currentStamina = 0;
                     isDashing = false;
                 }
                 //StaminaBar.fillAmount = Stamina / MaxStamina;
@@ -86,20 +91,22 @@ public class PlayerController : MonoBehaviour
                 if (timeSinceLastIdleRefill >= idleStaminaRefillInterval)
                 {
                     timeSinceLastIdleRefill = 1f;
-                    Stamina = Mathf.Clamp(Stamina + staminaRefillRate * idleStaminaRefillInterval, 0f, MaxStamina);
+                    playerData.currentStamina = Mathf.Clamp(playerData.currentStamina + staminaRefillRate * idleStaminaRefillInterval, 0f, playerData.maxStamina);
                     //StaminaBar.fillAmount = Stamina / MaxStamina;
                 }
             }
         }
         else
         {
-            // set player's current HP to 0 (HP cannot be negative)
-            playerData.CurrentHP = 0;
+            isDead = true;
 
-            if (playerData.CurrentLives > 0)
+            // set player's current HP to 0 (HP cannot be negative)
+            playerData.currentHP = 0;
+
+            if (playerData.currentLives > 0)
             {
                 // take away a life from the player
-                playerData.CurrentLives -= 1;
+                playerData.currentLives -= 1;
             }
 
             // set other animation bools to false since player is dead
@@ -174,10 +181,9 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // TODO: deplete player's current HP from player data
-        playerData.CurrentHP -= damage;
+        playerData.currentHP -= damage;
 
-        Debug.Log(playerData.CurrentHP);
+        Debug.Log(playerData.currentHP);
     }
 
     void AnimationFinishTrigger()

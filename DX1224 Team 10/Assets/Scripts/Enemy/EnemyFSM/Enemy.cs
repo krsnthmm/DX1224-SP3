@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     public EnemyAttackBaseInstance AttackBaseInstance { get; set; }
 
     [Header("Enemy Base Stats")]
-    [SerializeField] private int attack;
+    public int attack;
     public float moveSpeed;
     public float idleTime; // cooldown between attacks
     public bool runsAway; // does the enemy run from the player?
@@ -119,7 +119,6 @@ public class Enemy : MonoBehaviour
 
         if (target != null) 
         {
-
             yield return new WaitForSeconds(knockbackTime);
             target.velocity = Vector2.zero;
             player.knockedBack = false;

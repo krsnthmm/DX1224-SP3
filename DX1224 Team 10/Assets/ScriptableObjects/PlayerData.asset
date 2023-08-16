@@ -17,8 +17,8 @@ MonoBehaviour:
   defaultStamina: 75
   defaultLives: 3
   maxLives: 3
-  CurrentLives: 3
+  currentLives: 0
   maxHP: 150
-  CurrentHP: 150
+  currentHP: 150
   maxStamina: 75
-  CurrentStamina: 75
+  currentStamina: 75
