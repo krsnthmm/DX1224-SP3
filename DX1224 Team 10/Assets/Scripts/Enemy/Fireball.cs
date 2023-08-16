@@ -8,6 +8,7 @@ public class Fireball : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D rb;
+    private ParticleSystem ps;
 
     public float speed;
     public float rotateSpeed;
@@ -15,7 +16,7 @@ public class Fireball : MonoBehaviour
     public float followTime;
     public float lifetime;
 
-    private bool hitSolid;
+    private bool hitSolid; // has it hit the player / a wall ?
     private bool isAnimFinished;
 
     private void Start()
@@ -25,6 +26,7 @@ public class Fireball : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        ps = GetComponentInChildren<ParticleSystem>();
 
         animator.SetBool("active", true);
     }
@@ -49,6 +51,8 @@ public class Fireball : MonoBehaviour
 
         if (hitSolid || timer > lifetime)
         {
+            ps.Stop();
+
             rb.angularVelocity = 0f;
             rb.velocity = Vector2.zero;
 
@@ -64,7 +68,7 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.layer == 1 << 3)
         {
             hitSolid = true;
         }
