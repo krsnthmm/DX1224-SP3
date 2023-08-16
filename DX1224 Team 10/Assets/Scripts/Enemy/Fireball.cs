@@ -13,8 +13,8 @@ public class Fireball : MonoBehaviour
     public float speed;
     public float rotateSpeed;
     private float timer;
-    public float followTime;
-    public float lifetime;
+    public float followTime; // amount of time projectile follows the player for in seconds
+    public float lifetime; // projectile lifetime in seconds
 
     private bool hitSolid; // has it hit the player / a wall ?
     private bool isAnimFinished;
@@ -47,7 +47,7 @@ public class Fireball : MonoBehaviour
             rb.angularVelocity = 0f;
         }
             
-        rb.velocity = transform.up * speed;
+        rb.velocity = speed * Time.deltaTime * transform.up;
 
         if (hitSolid || timer > lifetime)
         {

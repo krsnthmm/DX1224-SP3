@@ -108,6 +108,9 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        m_animator.SetBool("idle", false);
+        m_animator.SetBool("walk", false);
+
         // Store the player's original movement speed
         float originalSpeed = movementSpeed;
 
