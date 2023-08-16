@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2585086913906502090
 Transform:
   m_ObjectHideFlags: 0
@@ -176,9 +176,9 @@ MonoBehaviour:
   attack: 10
   moveSpeed: 1
   runsAway: 0
-  canKnockback: 1
+  canKnockback: 0
   thrust: 5
-  knockbackTime: 1
+  knockbackTime: 0.2
   isAggroed: 0
   isInAttackRange: 0
   rb: {fileID: 7323156736994775596}
@@ -188,7 +188,6 @@ MonoBehaviour:
   attackRangeCheck: {fileID: 7088010210762553469}
   projLauncher: {fileID: 0}
   projPrefab: {fileID: 0}
-  projSpawnPoint: {fileID: 0}
   weaponOffset: 0
   whatIsPlayer:
     serializedVersion: 2
@@ -219,7 +218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7088010210762553468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -239,9 +238,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75
 --- !u!114 &812921592288889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

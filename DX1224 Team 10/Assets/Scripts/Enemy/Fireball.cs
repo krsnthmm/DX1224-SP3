@@ -4,43 +4,74 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
+    private GameObject target;
+
     private Animator animator;
+    private Rigidbody2D rb;
+
     public float speed;
+    public float rotateSpeed;
     private float timer;
+    public float followTime;
     public float lifetime;
-    public float distance;
-    public LayerMask whatIsSolid;
+
+    private bool hitSolid;
+    private bool isAnimFinished;
 
     private void Start()
     {
         timer = 0f;
+
+        target = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
 
         animator.SetBool("active", true);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        //RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
+        timer += Time.deltaTime;
 
-        //timer += Time.deltaTime;
+        if (timer < followTime)
+        {
+            Vector2 direction = ((Vector2)target.transform.position - rb.position).normalized;
+            float rotateAmount = Vector3.Cross(direction, transform.up).z;
 
-        //if (timer < lifetime)
-        //{
-        //    if (hitInfo.collider != null)
-        //    {
-        //        if (hitInfo.collider.CompareTag("Player"))
-        //        {
-        //            Debug.Log("Player takes damage!");
-        //        }
-        //        Destroy(gameObject);
-        //    }
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
+            rb.angularVelocity = -rotateAmount * rotateSpeed;
+        }
+        else
+        {
+            rb.angularVelocity = 0f;
+        }
+            
+        rb.velocity = transform.up * speed;
 
-        //transform.Translate(Vector2.up * speed * Time.deltaTime);
+        if (hitSolid || timer > lifetime)
+        {
+            rb.angularVelocity = 0f;
+            rb.velocity = Vector2.zero;
+
+            animator.SetBool("active", false);
+            animator.SetBool("hit", true);
+
+            if (isAnimFinished)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            hitSolid = true;
+        }
+    }
+
+    private void AnimationFinishTrigger()
+    {
+        isAnimFinished = true;
     }
 }

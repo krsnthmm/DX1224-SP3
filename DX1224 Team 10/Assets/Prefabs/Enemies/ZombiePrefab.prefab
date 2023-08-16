@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4737146212539116246
 Transform:
   m_ObjectHideFlags: 0
@@ -310,7 +310,6 @@ MonoBehaviour:
   attackRangeCheck: {fileID: 0}
   projLauncher: {fileID: 0}
   projPrefab: {fileID: 0}
-  projSpawnPoint: {fileID: 0}
   weaponOffset: 0
   whatIsPlayer:
     serializedVersion: 2

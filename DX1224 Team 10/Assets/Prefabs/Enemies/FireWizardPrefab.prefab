@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5463718702519382415
 Transform:
   m_ObjectHideFlags: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IdleBase: {fileID: 11400000, guid: 38c4ca798e1b6c941bb3c49b91937997, type: 2}
   ChaseBase: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
-  AttackBase: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
+  AttackBase: {fileID: 11400000, guid: 09e4ed60868d8614ca2480c572a613d3, type: 2}
   attack: 15
   moveSpeed: 1
   runsAway: 0
@@ -310,9 +310,8 @@ MonoBehaviour:
   aggroCheck: {fileID: 751747472939993101}
   attackRangeCheck: {fileID: 751747472051462200}
   projLauncher: {fileID: 8943305361718057658}
-  projPrefab: {fileID: 0}
-  projSpawnPoint: {fileID: 3343775946032044841}
-  weaponOffset: 90
+  projPrefab: {fileID: 5025881423022638479, guid: a6e6248b6a2c6db4cbad6e58b510f2cd, type: 3}
+  weaponOffset: 180
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     private bool isDashing;
+    public bool knockedBack;
     [SerializeField] private float DashSpeed;
     [SerializeField] private float DashDuration;
 
@@ -40,13 +41,16 @@ public class PlayerController : MonoBehaviour
         Vector2 moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         moveDirection = Vector2.ClampMagnitude(moveDirection, 1);
 
-        if (!isDashing)
+        if (!knockedBack)
         {
-            rb.velocity = moveDirection * movementSpeed;
-        }
-        else
-        {
-            rb.velocity = moveDirection * DashSpeed;
+            if (!isDashing)
+            {
+                rb.velocity = moveDirection * movementSpeed;
+            }
+            else
+            {
+                rb.velocity = moveDirection * DashSpeed;
+            }
         }
     }
 

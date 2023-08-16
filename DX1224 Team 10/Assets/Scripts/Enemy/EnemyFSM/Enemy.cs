@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int attack;
     public float moveSpeed;
     public bool runsAway; // does the enemy run from the player?
-    public bool canKnockback; // can the enemy's attack(s) knock our player back?
     public float thrust;
     public float knockbackTime;
 
@@ -96,24 +95,29 @@ public class Enemy : MonoBehaviour
         Collider2D target = Physics2D.OverlapCircle(attackRangeCheck.position, attackRangeCheck.GetComponent<CircleCollider2D>().radius, whatIsPlayer);
         if (target != null)
         {
+            PlayerController player = target.GetComponent<PlayerController>();
+            player.knockedBack = true;
+
             Rigidbody2D playerRb = target.GetComponent<Rigidbody2D>();
             if (playerRb != null) 
             {
                 Vector2 direction = (target.transform.position - transform.position).normalized * thrust;
                 playerRb.AddForce(direction, ForceMode2D.Impulse);
                 StartCoroutine(KnockbackCo(playerRb));
-
-                Debug.Log(direction);
             }
         }
     }
 
     private IEnumerator KnockbackCo(Rigidbody2D target) 
     {
+        PlayerController player = target.GetComponent<PlayerController>();
+
         if (target != null) 
         {
+
             yield return new WaitForSeconds(knockbackTime);
             target.velocity = Vector2.zero;
+            player.knockedBack = false;
         }
     }
 }
