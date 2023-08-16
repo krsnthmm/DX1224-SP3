@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -11,6 +12,8 @@ public class SceneLoader : MonoBehaviour
     private TMP_Text percentText;
 
     public string sceneToLoad;
+    public GameObject loadingScreen;
+    public Slider slider;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +33,15 @@ public class SceneLoader : MonoBehaviour
     IEnumerator LoadSceneRoutine(string sceneName)
     {
         AsyncOperationHandle op = Addressables.LoadSceneAsync(sceneName);
-        while (op.PercentComplete < 1)
+
+        loadingScreen.SetActive(true);
+
+        while (!op.IsDone)
         {
-            percentText.text =
-            string.Format("Loading: {0}%",
-            (int)(op.PercentComplete * 100));
+            float PercentComplete = Mathf.Clamp01(op.PercentComplete / .9f);
+            slider.value = op.PercentComplete;
+            percentText.text = PercentComplete * 100f + "%";
+
             yield return null;
         }
     }
