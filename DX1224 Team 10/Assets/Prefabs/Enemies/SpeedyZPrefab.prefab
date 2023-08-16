@@ -170,13 +170,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df788e08dcaa173418e182cb3b92bfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IdleBase: {fileID: 11400000, guid: 34488d4fc62d0a444aac126694ef1500, type: 2}
+  ChaseBase: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
+  AttackBase: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
   attack: 5
   moveSpeed: 12
+  idleTime: 0
   runsAway: 0
+  doesMultiShot: 0
+  thrust: 0
+  knockbackTime: 0
   isAggroed: 0
   isInAttackRange: 0
   rb: {fileID: 3724963613111975005}
   enemyAnim: {fileID: 4546646083538525711}
+  seeker: {fileID: 0}
+  aggroCheck: {fileID: 0}
+  attackRangeCheck: {fileID: 0}
+  waypoints: []
+  projLauncher: {fileID: 0}
+  projPrefab: {fileID: 0}
+  numOfProjectiles: 0
+  projectileSpread: 0
+  weaponOffset: 0
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3768674307002701325
 GameObject:
   m_ObjectHideFlags: 0

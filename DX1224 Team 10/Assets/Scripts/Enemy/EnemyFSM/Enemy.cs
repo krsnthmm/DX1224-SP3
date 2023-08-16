@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
     public Seeker seeker;
     public Transform aggroCheck;
     public Transform attackRangeCheck;
+    public List<GameObject> waypoints = new();
 
     [Header("Ranged Variables")]
     public GameObject projLauncher;

@@ -28,12 +28,6 @@ public class EnemyAttackState : EnemyState
 
         enemy.AttackBaseInstance.LogicUpdate();
 
-        //if (!enemy.sfxAudioSrc.isPlaying)
-        //{
-        //    enemy.sfxAudioSrc.clip = enemy.attackAudioClip;
-        //    enemy.sfxAudioSrc.Play();
-        //}
-
         if (isAnimationFinished)
         {
             enemy.StateMachine.ChangeState(enemy.IdleState);

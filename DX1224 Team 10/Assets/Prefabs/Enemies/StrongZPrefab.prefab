@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2585086913906502090
 Transform:
   m_ObjectHideFlags: 0
@@ -175,8 +175,9 @@ MonoBehaviour:
   AttackBase: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
   attack: 10
   moveSpeed: 1
+  idleTime: 0
   runsAway: 0
-  canKnockback: 0
+  doesMultiShot: 0
   thrust: 5
   knockbackTime: 0.2
   isAggroed: 0
@@ -186,8 +187,11 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aggroCheck: {fileID: 7088010211114995784}
   attackRangeCheck: {fileID: 7088010210762553469}
+  waypoints: []
   projLauncher: {fileID: 0}
   projPrefab: {fileID: 0}
+  numOfProjectiles: 0
+  projectileSpread: 0
   weaponOffset: 0
   whatIsPlayer:
     serializedVersion: 2

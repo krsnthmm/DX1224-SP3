@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
 
+    private bool isAnimFinished;
+
     private bool isDashing;
     public bool knockedBack;
     [SerializeField] private float DashSpeed;
@@ -33,6 +35,8 @@ public class PlayerController : MonoBehaviour
         m_animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+
+        isAnimFinished = false;
     }
 
     void FixedUpdate()
@@ -58,31 +62,52 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovementAnimations();
 
-        // Dashing logic
-        if (Input.GetKeyDown(KeyCode.Space) && !isDashing && Stamina > 0) // Added Stamina > 0 condition
+        if (playerData.CurrentHP > 0)
         {
-            isDashing = true;
-            StartCoroutine(Dash());
-            Debug.Log("dashing");
-            //Stamina -= Dashing;
-            if (Stamina <= 0)
+            // Dashing logic
+            if (Input.GetKeyDown(KeyCode.Space) && !isDashing && Stamina > 0) // Added Stamina > 0 condition
             {
-                Stamina = 0;
-                isDashing = false;
-            }
-            //StaminaBar.fillAmount = Stamina / MaxStamina;
-        }
-
-        else if (!isDashing)
-        {
-            // Refill stamina gradually when idle
-            timeSinceLastIdleRefill += Time.deltaTime;
-            if (timeSinceLastIdleRefill >= idleStaminaRefillInterval)
-            {
-                timeSinceLastIdleRefill = 1f;
-                Stamina = Mathf.Clamp(Stamina + staminaRefillRate * idleStaminaRefillInterval, 0f, MaxStamina);
+                isDashing = true;
+                StartCoroutine(Dash());
+                Debug.Log("dashing");
+                //Stamina -= Dashing;
+                if (Stamina <= 0)
+                {
+                    Stamina = 0;
+                    isDashing = false;
+                }
                 //StaminaBar.fillAmount = Stamina / MaxStamina;
             }
+
+            else if (!isDashing)
+            {
+                // Refill stamina gradually when idle
+                timeSinceLastIdleRefill += Time.deltaTime;
+                if (timeSinceLastIdleRefill >= idleStaminaRefillInterval)
+                {
+                    timeSinceLastIdleRefill = 1f;
+                    Stamina = Mathf.Clamp(Stamina + staminaRefillRate * idleStaminaRefillInterval, 0f, MaxStamina);
+                    //StaminaBar.fillAmount = Stamina / MaxStamina;
+                }
+            }
+        }
+        else
+        {
+            // set player's current HP to 0 (HP cannot be negative)
+            playerData.CurrentHP = 0;
+
+            if (playerData.CurrentLives > 0)
+            {
+                // take away a life from the player
+                playerData.CurrentLives -= 1;
+            }
+
+            // set other animation bools to false since player is dead
+            m_animator.SetBool("idle", false);
+            m_animator.SetBool("walk", false);
+            m_animator.SetBool("dash", false);
+
+            m_animator.SetBool("death", true);
         }
     }
 
@@ -147,8 +172,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         // TODO: deplete player's current HP from player data
+        playerData.CurrentHP -= damage;
+
+        Debug.Log(playerData.CurrentHP);
+    }
+
+    void AnimationFinishTrigger()
+    {
+        isAnimFinished = true;
     }
 }
