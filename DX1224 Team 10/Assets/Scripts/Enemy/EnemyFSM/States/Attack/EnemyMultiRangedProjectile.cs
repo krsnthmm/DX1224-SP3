@@ -2,17 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMultiRangedProjectile : MonoBehaviour
+[CreateAssetMenu(fileName = "Attack - Multi Ranged Projectile", menuName = "Enemy States/Attack/Multi Ranged Projectile")]
+public class EnemyMultiRangedProjectile : EnemyAttackBaseInstance
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Enter()
     {
-        
+        base.Enter();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Exit()
     {
-        
+        base.Exit();
+    }
+
+    public override void Init(GameObject gameObject, Enemy enemy)
+    {
+        base.Init(gameObject, enemy);
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+    }
+
+    public override void ResetValues()
+    {
+        base.ResetValues();
     }
 }

@@ -2,17 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyIdleWaypointPatrol : MonoBehaviour
+[CreateAssetMenu(fileName = "Idle - Waypoint Patrol", menuName = "Enemy States/Idle/Waypoint Patrol")]
+public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Enter()
     {
-        
+        base.Enter();
+
+        enemy.rb.velocity = Vector2.zero;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Exit()
     {
-        
+        base.Exit();
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+    }
+
+    public override void ResetValues()
+    {
+        base.ResetValues();
     }
 }

@@ -9,8 +9,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 1f;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
-    private bool isIdle;
-    private bool isWalking;
 
     private bool isDashing;
     [SerializeField] private float DashSpeed;
@@ -140,5 +138,10 @@ public class PlayerController : MonoBehaviour
             // Destroy the item after adding it to inventory
             Destroy(col.gameObject);
         }
+    }
+
+    void TakeDamage(int damage)
+    {
+        // TODO: deplete player's current HP from player data
     }
 }

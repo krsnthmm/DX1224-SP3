@@ -326,15 +326,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IdleBase: {fileID: 11400000, guid: 38c4ca798e1b6c941bb3c49b91937997, type: 2}
   ChaseBase: {fileID: 11400000, guid: 60cac986642be7b45b8db46b73a81c42, type: 2}
-  AttackBase: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
+  AttackBase: {fileID: 11400000, guid: 09e4ed60868d8614ca2480c572a613d3, type: 2}
   attack: 7
-  moveSpeed: 7
+  moveSpeed: 1
   runsAway: 1
+  canKnockback: 0
+  thrust: 0
+  knockbackTime: 0
   isAggroed: 0
   isInAttackRange: 0
   rb: {fileID: 180917125322469277}
   enemyAnim: {fileID: 1021168155907984847}
+  seeker: {fileID: 0}
+  aggroCheck: {fileID: 0}
+  attackRangeCheck: {fileID: 0}
   projLauncher: {fileID: 395754717795904982}
-  projPrefab: {fileID: 0}
+  projPrefab: {fileID: 1943793143760951685, guid: 333bbad515dee4a4ca59fdb76fe115a8, type: 3}
   projSpawnPoint: {fileID: 395754717795904981}
-  weaponOffset: -90
+  weaponOffset: 90
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0

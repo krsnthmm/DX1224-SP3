@@ -296,13 +296,22 @@ MonoBehaviour:
   ChaseBase: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
   AttackBase: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
   attack: 5
-  moveSpeed: 7
+  moveSpeed: 1
   runsAway: 0
+  canKnockback: 0
+  thrust: 0
+  knockbackTime: 0
   isAggroed: 0
   isInAttackRange: 0
   rb: {fileID: 575545937297297712}
   enemyAnim: {fileID: 816818214761739106}
+  seeker: {fileID: 0}
+  aggroCheck: {fileID: 0}
+  attackRangeCheck: {fileID: 0}
   projLauncher: {fileID: 0}
   projPrefab: {fileID: 0}
   projSpawnPoint: {fileID: 0}
   weaponOffset: 0
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0

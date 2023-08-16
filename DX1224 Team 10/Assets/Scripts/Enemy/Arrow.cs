@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
     public float speed;
-    public float timer;
+    private float timer;
     public float lifetime;
     public float distance;
     public LayerMask whatIsSolid;
@@ -25,10 +25,10 @@ public class Projectile : MonoBehaviour
         {
             if (hitInfo.collider != null)
             {
-                //if (hitInfo.collider.CompareTag("Player"))
-                //{
-
-                //}
+                if (hitInfo.collider.CompareTag("Player"))
+                {
+                    Debug.Log("Player takes damage!");
+                }
                 Destroy(gameObject);
             }
         }

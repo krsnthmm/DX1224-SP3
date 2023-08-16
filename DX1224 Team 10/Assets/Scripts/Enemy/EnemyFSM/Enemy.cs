@@ -22,7 +22,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int attack;
     public float moveSpeed;
     public bool runsAway; // does the enemy run from the player?
-    public bool canAttack; // based on animation trigger; can the player launch an attack?
+    public bool canKnockback; // can the enemy's attack(s) knock our player back?
+    public float thrust;
+    public float knockbackTime;
 
     [Header("State Change Triggers")]
     [HideInInspector] public bool isAggroed; // idle/patrol => chase
@@ -32,12 +34,15 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public Animator enemyAnim;
     public Seeker seeker;
+    public Transform aggroCheck;
+    public Transform attackRangeCheck;
 
     [Header("Ranged Variables")]
     public GameObject projLauncher;
     public GameObject projPrefab;
-    public Transform projSpawnPoint;
     public float weaponOffset;
+
+    public LayerMask whatIsPlayer;
 
     private void Awake()
     {
@@ -83,6 +88,32 @@ public class Enemy : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        Instantiate(projPrefab, projSpawnPoint.position, projLauncher.transform.rotation);
+        Instantiate(projPrefab, projLauncher.transform.position, projLauncher.transform.rotation);
+    }
+
+    public void Knockback() 
+    {
+        Collider2D target = Physics2D.OverlapCircle(attackRangeCheck.position, attackRangeCheck.GetComponent<CircleCollider2D>().radius, whatIsPlayer);
+        if (target != null)
+        {
+            Rigidbody2D playerRb = target.GetComponent<Rigidbody2D>();
+            if (playerRb != null) 
+            {
+                Vector2 direction = (target.transform.position - transform.position).normalized * thrust;
+                playerRb.AddForce(direction, ForceMode2D.Impulse);
+                StartCoroutine(KnockbackCo(playerRb));
+
+                Debug.Log(direction);
+            }
+        }
+    }
+
+    private IEnumerator KnockbackCo(Rigidbody2D target) 
+    {
+        if (target != null) 
+        {
+            yield return new WaitForSeconds(knockbackTime);
+            target.velocity = Vector2.zero;
+        }
     }
 }
