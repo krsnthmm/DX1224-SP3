@@ -9,18 +9,19 @@ public class EnemyMultiRangedProjectile : EnemyAttackBaseInstance
     {
         base.Enter();
 
-        // direction = destination - origin;
-        Vector3 direction = GameObject.FindGameObjectWithTag("Player").transform.position - enemy.projLauncher.transform.position;
+        float startDirection = enemy.projectileSpread / 2;
+        float angleIncrease = enemy.projectileSpread / enemy.numOfProjectiles;
 
-        // how many degrees the weapon must be rotated to reach that direction
-        float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        for (int i = 0; i < enemy.numOfProjectiles; i++)
+        {
+            float tempDirection = startDirection + angleIncrease * i;
 
-        // set weapon rotation
-        enemy.projLauncher.transform.rotation = Quaternion.Euler(0f, 0f, rotZ - enemy.weaponOffset);
+            // set weapon rotation
+            enemy.projLauncher.transform.rotation = Quaternion.Euler(0f, 0f, tempDirection - enemy.weaponOffset);
+            enemy.SpawnProjectile();
+        }
 
         enemy.rb.velocity = Vector2.zero;
-
-        enemy.enemyAnim.SetFloat("x", direction.x);
     }
 
     public override void Exit()

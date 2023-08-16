@@ -8,10 +8,13 @@ public class Arrow : MonoBehaviour
     private float timer;
     public float lifetime;
     public float distance;
+
+    private Rigidbody2D rb;
     public LayerMask whatIsSolid;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         timer = 0f;
     }
 
@@ -37,6 +40,6 @@ public class Arrow : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        rb.velocity = speed * Time.deltaTime * transform.up;
     }
 }

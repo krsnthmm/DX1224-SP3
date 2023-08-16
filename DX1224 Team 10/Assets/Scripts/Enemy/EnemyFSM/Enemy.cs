@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Base Stats")]
     [SerializeField] private int attack;
     public float moveSpeed;
+    public float idleTime; // cooldown between attacks
     public bool runsAway; // does the enemy run from the player?
     public bool doesMultiShot; // does the enemy shoot multiple projectiles at on
     public float thrust;

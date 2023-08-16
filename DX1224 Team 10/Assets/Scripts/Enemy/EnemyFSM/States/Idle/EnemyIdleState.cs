@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyState
 {
+    private float timer;
+
     public EnemyIdleState(Enemy enemy, EnemyStateMachine sm, string animBoolName) : base(enemy, sm, animBoolName)
     {
     }
@@ -13,6 +15,8 @@ public class EnemyIdleState : EnemyState
         base.Enter();
 
         enemy.IdleBaseInstance.Enter();
+
+        timer = 0f;
     }
 
     public override void Exit()
@@ -28,13 +32,18 @@ public class EnemyIdleState : EnemyState
 
         enemy.IdleBaseInstance.LogicUpdate();
 
-        if (enemy.isAggroed)
+        timer += Time.deltaTime;
+
+        if (timer > enemy.idleTime)
         {
-            sm.ChangeState(enemy.ChaseState);
-        }
-        else if (enemy.isInAttackRange)
-        {
-            sm.ChangeState(enemy.AttackState);
+            if (enemy.isAggroed)
+            {
+                sm.ChangeState(enemy.ChaseState);
+            }
+            else if (enemy.isInAttackRange)
+            {
+                sm.ChangeState(enemy.AttackState);
+            }
         }
     }
 
