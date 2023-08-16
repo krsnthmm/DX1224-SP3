@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int attack;
     public float moveSpeed;
     public bool runsAway; // does the enemy run from the player?
+    public bool doesMultiShot; // does the enemy shoot multiple projectiles at on
     public float thrust;
     public float knockbackTime;
 
@@ -39,6 +40,8 @@ public class Enemy : MonoBehaviour
     [Header("Ranged Variables")]
     public GameObject projLauncher;
     public GameObject projPrefab;
+    public int numOfProjectiles; // for multi-shot projectiles
+    public float projectileSpread; // for multi-shot projectiles;
     public float weaponOffset;
 
     public LayerMask whatIsPlayer;

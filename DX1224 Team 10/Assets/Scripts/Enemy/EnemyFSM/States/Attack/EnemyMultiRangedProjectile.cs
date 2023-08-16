@@ -8,6 +8,19 @@ public class EnemyMultiRangedProjectile : EnemyAttackBaseInstance
     public override void Enter()
     {
         base.Enter();
+
+        // direction = destination - origin;
+        Vector3 direction = GameObject.FindGameObjectWithTag("Player").transform.position - enemy.projLauncher.transform.position;
+
+        // how many degrees the weapon must be rotated to reach that direction
+        float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // set weapon rotation
+        enemy.projLauncher.transform.rotation = Quaternion.Euler(0f, 0f, rotZ - enemy.weaponOffset);
+
+        enemy.rb.velocity = Vector2.zero;
+
+        enemy.enemyAnim.SetFloat("x", direction.x);
     }
 
     public override void Exit()
