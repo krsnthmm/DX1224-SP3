@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - TP5
+  - NextScene
   layers:
   - Default
   - TransparentFX
