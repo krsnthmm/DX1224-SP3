@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 3587653995837000268}
   - component: {fileID: 6795144299109810210}
   m_Layer: 0
-  m_Name: Cityhall WF Palette
+  m_Name: Cityhall Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

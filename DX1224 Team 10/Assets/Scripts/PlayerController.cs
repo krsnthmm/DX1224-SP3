@@ -16,15 +16,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float DashSpeed;
     [SerializeField] private float DashDuration;
 
-    //stamina bar
-    public Image StaminaBar;
-    public float Stamina, MaxStamina;
-    public float Dashing;
+    ////stamina bar
+    //public Image StaminaBar;
+    //public float Stamina, MaxStamina;
+    //public float Dashing;
 
-    // Refill rate and interval
-    [SerializeField] private float staminaRefillRate = 0.5f; // Amount of stamina to refill per second
-    [SerializeField] private float idleStaminaRefillInterval = 1f; // Interval to refill stamina while idle
-    private float timeSinceLastIdleRefill;
+    //// Refill rate and interval
+    //[SerializeField] private float staminaRefillRate = 0.5f; // Amount of stamina to refill per second
+    //[SerializeField] private float idleStaminaRefillInterval = 1f; // Interval to refill stamina while idle
+    //private float timeSinceLastIdleRefill;
 
     public Inventory playerInventory;
     public PlayerData playerData;
@@ -57,41 +57,41 @@ public class PlayerController : MonoBehaviour
         HandleMovementAnimations();
 
 
-        // Dashing logic
-        if (Input.GetKeyDown(KeyCode.Space) && !isDashing && Stamina > 0) // Added Stamina > 0 condition
-        {
-            isDashing = true;
-            isWalking = true;
-            StartCoroutine(Dash());
-            Debug.Log("dashing");
-            Stamina -= Dashing;
-            if (Stamina <= 0)
-            {
-                Stamina = 0;
-                isDashing = false;
-            }
-            Stamina -= Dashing * Time.deltaTime;
-            StaminaBar.fillAmount = Stamina / MaxStamina;
+        //// Dashing logic
+        //if (Input.GetKeyDown(KeyCode.Space) && !isDashing && Stamina > 0) // Added Stamina > 0 condition
+        //{
+        //    isDashing = true;
+        //    isWalking = true;
+        //    StartCoroutine(Dash());
+        //    Debug.Log("dashing");
+        //    Stamina -= Dashing;
+        //    if (Stamina <= 0)
+        //    {
+        //        Stamina = 0;
+        //        isDashing = false;
+        //    }
+        //    Stamina -= Dashing * Time.deltaTime;
+        //    StaminaBar.fillAmount = Stamina / MaxStamina;
 
-            // Idle animation logic
-            if (!isDashing && (isIdle || isWalking))
-            {
-                m_animator.Play("Player_Idle_Front");
+        //    // Idle animation logic
+        //    if (!isDashing && (isIdle || isWalking))
+        //    {
+        //        m_animator.Play("Player_Idle_Front");
               
-            }
-        }
+        //    }
+        //}
 
-        else if (!isDashing && (isIdle || isWalking))
-        {
-            // Refill stamina gradually when idle
-            timeSinceLastIdleRefill += Time.deltaTime;
-            if (timeSinceLastIdleRefill >= idleStaminaRefillInterval)
-            {
-                timeSinceLastIdleRefill = 1f;
-                Stamina = Mathf.Clamp(Stamina + staminaRefillRate * idleStaminaRefillInterval, 0f, MaxStamina);
-                StaminaBar.fillAmount = Stamina / MaxStamina;
-            }
-        }
+        //else if (!isDashing && (isIdle || isWalking))
+        //{
+        //    // Refill stamina gradually when idle
+        //    timeSinceLastIdleRefill += Time.deltaTime;
+        //    if (timeSinceLastIdleRefill >= idleStaminaRefillInterval)
+        //    {
+        //        timeSinceLastIdleRefill = 1f;
+        //        Stamina = Mathf.Clamp(Stamina + staminaRefillRate * idleStaminaRefillInterval, 0f, MaxStamina);
+        //        StaminaBar.fillAmount = Stamina / MaxStamina;
+        //    }
+        //}
     }
 
     private void HandleMovementAnimations()
