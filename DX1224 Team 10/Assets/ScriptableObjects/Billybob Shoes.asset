@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004f3dec5620a5a4487ed68fec49005e, type: 3}
+  m_Name: Billybob Shoes
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 322224502540907432, guid: 8c31e3a8ad14aa044a64be6fce4a27af, type: 3}
+  type: 1
+  description: Increases movement speed by 15.
+  speedValue: 15
+  isTempBoost: 0
+  buffDuration: 0
