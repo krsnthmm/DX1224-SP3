@@ -203,7 +203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2060920001, guid: 18d119cd85e3cd34699a426cc6da3102, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -309,9 +309,9 @@ MonoBehaviour:
   isInAttackRange: 0
   rb: {fileID: 575545937297297712}
   enemyAnim: {fileID: 816818214761739106}
-  seeker: {fileID: 0}
-  aggroCheck: {fileID: 0}
-  attackRangeCheck: {fileID: 0}
+  seeker: {fileID: 1330125140}
+  aggroCheck: {fileID: 38441812}
+  attackRangeCheck: {fileID: 927251297}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
