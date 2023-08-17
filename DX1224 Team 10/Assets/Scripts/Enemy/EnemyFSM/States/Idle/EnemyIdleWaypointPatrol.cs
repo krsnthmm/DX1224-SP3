@@ -19,11 +19,19 @@ public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
 
         destination = enemy.waypoints[targetIndex].transform.position;
         dir = (destination - enemy.transform.position).normalized;
+
+        enemy.enemyAnim.SetBool("idle", false);
+        enemy.enemyAnim.SetBool("walk", true);
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        enemy.enemyAnim.SetBool("idle", false);
+        enemy.enemyAnim.SetBool("walk", false);
+
+        enemy.rb.velocity = Vector2.zero;
     }
 
     public override void LogicUpdate()

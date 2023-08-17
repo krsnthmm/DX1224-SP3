@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: Player Data
   m_EditorClassIdentifier: 
   defaultSpeed: 1
-  defaultHP: 0
+  defaultHP: 150
+  defaultStamina: 75
+  defaultLives: 3
+  maxLives: 3
+  currentLives: 3
   maxStamina: 100
-  defaultStamina: 0
-  defaultLives: 0
-  maxLives: 0
-  currentLives: 0
-  maxHP: 0
-  currentHP: 0
-  currentSpeed: 0
-  dashSpeed: 0
-  dashDuration: 0
-  staminaConsume: 0
+  currentStamina: 100
+  maxHP: 150
+  currentHP: 150
+  currentSpeed: 1
+  walkSpeed: 1
+  dashSpeed: 3
+  dashDuration: 1
+  staminaConsume: 25
   staminaRefillRate: 25
   staminaRefillInterval: 15
-  currentStamina: 0

@@ -27,7 +27,7 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
     {
         base.PhysicsUpdate();
 
-        Vector2 vel = new(dir.x * enemy.moveSpeed, dir.y * enemy.moveSpeed);
+        Vector2 vel = dir * enemy.moveSpeed;
 
         enemy.enemyAnim.SetFloat("x", dir.x);
         enemy.enemyAnim.SetFloat("y", dir.y);

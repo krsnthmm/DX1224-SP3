@@ -5,7 +5,6 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     private GameObject target;
-    private Enemy enemy;
     private PlayerController player;
 
     private Animator animator;
