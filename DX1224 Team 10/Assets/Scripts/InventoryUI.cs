@@ -11,7 +11,7 @@ public class InventoryUI : MonoBehaviour
     public Inventory inventory;
     //public GameObject iconPrefab;
     public GameObject iconPrefab;
-    List<GameObject> itemsDisplayed = new List<GameObject>();
+    public List<GameObject> itemsDisplayed = new();
     public int X_START;
     public int Y_START;
     public int X_SPACE_BETWEEN_ITEM;
@@ -47,19 +47,26 @@ public class InventoryUI : MonoBehaviour
         // Instantiate item icons in the inventory bar
         //var obj = Instantiate(inventory.Container[i].item.itemIcon, Vector3.zero, Quaternion.identity, transform);
         var obj = Instantiate(iconPrefab, Vector3.zero, Quaternion.identity, transform);
+
         // set iconPrefab's scriptable object to its respective item
         obj.GetComponent<InventoryUIIcon>().SetItem(inventory.Container[i].item);
+
         // set item icon to its respective icon
-        obj.GetComponentInChildren<Image>().sprite = inventory.Container[i].item.itemIcon;
+        obj.transform.GetChild(1).gameObject.GetComponentInChildren<Image>().sprite = inventory.Container[i].item.itemIcon;
+
         // set item icon positions 
         obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
+
         // get the amount of items and display it
         obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+
         // add the item to our Dictionary
         //itemsDisplayed.Add(inventory.Container[i], obj);
+
         // add item to our list
         itemsDisplayed.Add(obj);
-        
+
+        Debug.Log(obj.transform.GetChild(1).gameObject);
     }
 
     public void UpdateDisplay()
@@ -90,13 +97,17 @@ public class InventoryUI : MonoBehaviour
             {
                 // get the current index
                 currinventoryIndex = i;
+
                 // Select the icon shown
                 inventoryUIIcon.Select();
+
                 // swap the values together
                 int tempValue = currinventoryIndex;
                 currinventoryIndex = prevInventoryIndex;
                 prevInventoryIndex = tempValue;
+
                 // deselect the previous value
+                //itemsDisplayed[prevInventoryIndex].GetComponent<InventoryUIIcon>().ToggleSelection();
 
                 Debug.Log("Current: " + currinventoryIndex + " Previous: " + prevInventoryIndex);
             }
