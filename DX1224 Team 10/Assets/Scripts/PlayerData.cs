@@ -19,10 +19,13 @@ public class PlayerData : ScriptableObject
     public float maxHP;
     public float currentHP;
 
+    public float coins;
+    public float levels;
+
     [HideInInspector] public float currentSpeed;
-    [HideInInspector] public float dashSpeed;
-    [HideInInspector] public float dashDuration;
-    [HideInInspector] public float staminaConsume;
+    [HideInInspector] public float dashSpeed=7f;
+    [HideInInspector] public float dashDuration=0.5f;
+    [HideInInspector] public float staminaConsume=25f;
     [HideInInspector] public float staminaRefillRate=25f;
     [HideInInspector] public float staminaRefillInterval = 15f;
 
@@ -38,6 +41,7 @@ public class PlayerData : ScriptableObject
     public float GetMovementSpeed()
     {
         return defaultSpeed;
+      
     }
 
     public void SetMovementSpeed(float speed)
@@ -54,6 +58,4 @@ public class PlayerData : ScriptableObject
     {
         dashDuration = duration;
     }
-  
-    
 }
