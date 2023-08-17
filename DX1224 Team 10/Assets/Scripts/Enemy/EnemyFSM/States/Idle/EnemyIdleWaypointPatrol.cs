@@ -1,24 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 [CreateAssetMenu(fileName = "Idle - Waypoint Patrol", menuName = "Enemy States/Idle/Waypoint Patrol")]
 public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
 {
+    public float nextWaypointDistance = 0.1f;
+
+    Path path;
+    private int currentWaypoint = 0;
+
     private Vector3 destination;
     private Vector3 dir;
     private int targetIndex;
 
-    private float timer = 0f;
+    private float idleTimer = 0f;
 
-    private bool hasReachedPoint;
+    private bool reachedEndOfPath;
+    private bool isIdle;
 
     public override void Enter()
     {
         base.Enter();
 
-        destination = enemy.waypoints[targetIndex].transform.position;
-        dir = (destination - enemy.transform.position).normalized;
+        enemy.seeker.StartPath(enemy.rb.position, enemy.waypoints[targetIndex].transform.position, OnPathComplete);
 
         enemy.enemyAnim.SetBool("idle", false);
         enemy.enemyAnim.SetBool("walk", true);
@@ -38,59 +44,89 @@ public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
     {
         base.LogicUpdate();
 
-        if (!hasReachedPoint)
+        if (isIdle)
         {
-            timer = 0f;
+            idleTimer += Time.deltaTime;
 
-            if (Vector3.Distance(destination, enemy.transform.position) <= 0.5f)
+            if (idleTimer >= 1.0f)
             {
-                targetIndex++;
-                targetIndex %= enemy.waypoints.Count;
+                isIdle = false;
+                reachedEndOfPath = false;
 
-                hasReachedPoint = true;
-
-                enemy.enemyAnim.SetBool("idle", true);
-                enemy.enemyAnim.SetBool("walk", false);
+                Debug.Log(idleTimer);
             }
         }
         else
         {
-            timer += Time.deltaTime;
-
-            if (timer >= 1.0f)
-            {
-                hasReachedPoint = false;
-
-                destination = enemy.waypoints[targetIndex].transform.position;
-                dir = (destination - enemy.transform.position).normalized;
-
-                enemy.enemyAnim.SetBool("idle", false);
-                enemy.enemyAnim.SetBool("walk", true);
-
-                Debug.Log(timer + " " + destination);
-            }
+            idleTimer = 0f;
         }
+
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
 
-        if (!hasReachedPoint)
+        if (isIdle)
         {
-            enemy.rb.velocity = dir * enemy.moveSpeed;
-
-            enemy.enemyAnim.SetFloat("x", enemy.rb.velocity.x);
-            enemy.enemyAnim.SetFloat("y", enemy.rb.velocity.y);
+            enemy.rb.velocity = Vector2.zero;
         }
         else
         {
-            enemy.rb.velocity = Vector2.zero;
+            if (path == null)
+            {
+                return;
+            }
+
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                currentWaypoint = 0;
+
+                targetIndex++;
+                targetIndex %= enemy.waypoints.Count;
+
+                enemy.seeker.StartPath(enemy.rb.position, enemy.waypoints[targetIndex].transform.position, OnPathComplete);
+
+                reachedEndOfPath = true;
+                isIdle = true;
+
+                enemy.enemyAnim.SetBool("idle", true);
+                enemy.enemyAnim.SetBool("walk", false);
+            }
+            else
+            {
+                reachedEndOfPath = false;
+
+                enemy.enemyAnim.SetBool("idle", false);
+                enemy.enemyAnim.SetBool("walk", true);
+            }
+
+            dir = ((Vector2)path.vectorPath[currentWaypoint] - enemy.rb.position).normalized;
+            enemy.rb.velocity = dir * enemy.moveSpeed;
+
+            enemy.enemyAnim.SetFloat("x", dir.x);
+            enemy.enemyAnim.SetFloat("y", dir.y);
+
+            float distance = Vector2.Distance(enemy.rb.position, path.vectorPath[currentWaypoint]);
+
+            if (distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
         }
     }
 
     public override void ResetValues()
     {
         base.ResetValues();
+    }
+
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
     }
 }

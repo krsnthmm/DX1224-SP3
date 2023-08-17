@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 751747471342775902}
   - component: {fileID: 2045369118}
   - component: {fileID: 2045369117}
+  - component: {fileID: 7404668737345593134}
   m_Layer: 0
   m_Name: FireWizardPrefab
   m_TagString: Untagged
@@ -309,7 +310,7 @@ MonoBehaviour:
   isInAttackRange: 0
   rb: {fileID: 977845911494199913}
   enemyAnim: {fileID: 88758631542646843}
-  seeker: {fileID: 0}
+  seeker: {fileID: 7404668737345593134}
   aggroCheck: {fileID: 751747472939993101}
   attackRangeCheck: {fileID: 751747472051462200}
   waypoints: []
@@ -431,6 +432,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: ab669bd9d0c050e4f9c1b39aecb6fc6b, type: 3}
+--- !u!114 &7404668737345593134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075846268399014460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &8943305361718057658
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,8 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
     public float nextWaypointDistance = 0.1f;
 
     Path path;
-    int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
+    private int currentWaypoint = 0;
+    private bool reachedEndOfPath = false;
 
     float timer;
 
@@ -62,10 +62,8 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
             reachedEndOfPath = false;
         }
 
-        dir = ((Vector2)path.vectorPath[currentWaypoint] - enemy.rb.position).normalized;
-
-        Vector2 vel = dir * enemy.moveSpeed;
-        enemy.rb.velocity = vel;
+        dir = (enemy.rb.position - (Vector2)path.vectorPath[currentWaypoint]).normalized;
+        enemy.rb.velocity = dir * enemy.moveSpeed;
 
         enemy.enemyAnim.SetFloat("x", dir.x);
         enemy.enemyAnim.SetFloat("y", dir.y);
@@ -76,8 +74,6 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
         {
             currentWaypoint++;
         }
-
-        Debug.Log(currentWaypoint);
     }
 
     public override void ResetValues()

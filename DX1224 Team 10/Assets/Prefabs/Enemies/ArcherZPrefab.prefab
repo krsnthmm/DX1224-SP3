@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 395754718479010730}
   - component: {fileID: 7465994449302330098}
   - component: {fileID: 3138042571845881282}
+  - component: {fileID: 4333851957276718982}
   m_Layer: 0
   m_Name: ArcherZPrefab
   m_TagString: Enemy
@@ -340,9 +341,9 @@ MonoBehaviour:
   isInAttackRange: 0
   rb: {fileID: 180917125322469277}
   enemyAnim: {fileID: 1021168155907984847}
-  seeker: {fileID: 0}
-  aggroCheck: {fileID: 0}
-  attackRangeCheck: {fileID: 0}
+  seeker: {fileID: 4333851957276718982}
+  aggroCheck: {fileID: 395754717963988473}
+  attackRangeCheck: {fileID: 395754717107684812}
   waypoints: []
   projLauncher: {fileID: 395754717795904982}
   projPrefab: {fileID: 1943793143760951685, guid: 333bbad515dee4a4ca59fdb76fe115a8, type: 3}
@@ -351,7 +352,7 @@ MonoBehaviour:
   weaponOffset: 90
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!82 &7465994449302330098
 AudioSource:
   m_ObjectHideFlags: 0
@@ -463,3 +464,31 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 5bba9c42b3b4fe2418d741400e59eb84, type: 3}
   - {fileID: 8300000, guid: 261c7f4b1bb219245af96d711f6d3430, type: 3}
+--- !u!114 &4333851957276718982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719936011356157896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7088010211664082459}
   - component: {fileID: 636585778848313958}
   - component: {fileID: 8554457440945324962}
+  - component: {fileID: 1694944053}
   m_Layer: 0
   m_Name: StrongZPrefab
   m_TagString: Untagged
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df788e08dcaa173418e182cb3b92bfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleBase: {fileID: 11400000, guid: 38c4ca798e1b6c941bb3c49b91937997, type: 2}
+  IdleBase: {fileID: 11400000, guid: 34488d4fc62d0a444aac126694ef1500, type: 2}
   ChaseBase: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
   AttackBase: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
   attack: 10
@@ -186,10 +187,13 @@ MonoBehaviour:
   isInAttackRange: 0
   rb: {fileID: 7323156736994775596}
   enemyAnim: {fileID: 7568370011218276478}
-  seeker: {fileID: 0}
+  seeker: {fileID: 1694944053}
   aggroCheck: {fileID: 7088010211114995784}
   attackRangeCheck: {fileID: 7088010210762553469}
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   projLauncher: {fileID: 0}
   projPrefab: {fileID: 0}
   numOfProjectiles: 0
@@ -309,6 +313,34 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 5bba9c42b3b4fe2418d741400e59eb84, type: 3}
   - {fileID: 8300000, guid: 6a0517b147aa6e44791286ef76720151, type: 3}
+--- !u!114 &1694944053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799865295216396921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: 1
 --- !u!1 &7088010210762553468
 GameObject:
   m_ObjectHideFlags: 0

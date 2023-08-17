@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     //Referencing PlayerData Script
     public PlayerData playerData;
+    public Inventory playerInventory;
 
     private bool isDashing;
     private bool isDead;
@@ -20,8 +21,6 @@ public class PlayerController : MonoBehaviour
     //stamina bar
     public Image StaminaBar;
     private float timeSinceLastIdleRefill;
-
-    public Inventory playerInventory;
 
     void Start()
     {
