@@ -57,6 +57,8 @@ public class InventorySlot
     // amount of items in the inventory
     public int amount;
     // probably won't use maxAmount since this is a small game
+    // check if this is selected
+    public bool isSelected;
     // Inventory slot of the item and its amount
     public InventorySlot(InventoryItem _item, int _amount)
     {
