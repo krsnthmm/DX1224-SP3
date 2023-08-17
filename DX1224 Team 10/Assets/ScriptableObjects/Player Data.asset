@@ -10,15 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31466e17871ac4d44b7cf3182e1ed68f, type: 3}
-  m_Name: PlayerData
+  m_Name: Player Data
   m_EditorClassIdentifier: 
-  defaultSpeed: 10
-  defaultHP: 150
-  defaultStamina: 75
-  defaultLives: 3
-  maxLives: 3
+  defaultSpeed: 1
+  defaultHP: 0
+  maxStamina: 100
+  defaultStamina: 0
+  defaultLives: 0
+  maxLives: 0
   currentLives: 0
-  maxHP: 150
-  currentHP: 150
-  maxStamina: 75
-  currentStamina: 75
+  maxHP: 0
+  currentHP: 0
+  currentSpeed: 0
+  dashSpeed: 0
+  dashDuration: 0
+  staminaConsume: 0
+  staminaRefillRate: 25
+  staminaRefillInterval: 15
+  currentStamina: 0

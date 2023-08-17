@@ -5,34 +5,29 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private Animator m_animator;
-
-    [SerializeField] private float movementSpeed = 1f;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
 
     private bool isAnimFinished;
 
+    //Referencing PlayerData Script
+    public PlayerData playerData;
+
     private bool isDashing;
     private bool isDead;
     public bool knockedBack;
-    [SerializeField] private float DashSpeed;
-    [SerializeField] private float DashDuration;
 
     //stamina bar
     public Image StaminaBar;
-    public float Stamina, MaxStamina;
-    public float Dashing;
-
-    // Refill rate and interval
-    [SerializeField] private float staminaRefillRate = 0.5f; // Amount of stamina to refill per second
-    [SerializeField] private float idleStaminaRefillInterval = 1f; // Interval to refill stamina while idle
     private float timeSinceLastIdleRefill;
 
     public Inventory playerInventory;
-    public PlayerData playerData;
 
     void Start()
     {
+        playerData.currentStamina = playerData.maxStamina;
+        playerData.currentSpeed = playerData.walkSpeed;
+
         m_animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -48,14 +43,7 @@ public class PlayerController : MonoBehaviour
 
         if (!knockedBack && !isDead)
         {
-            if (!isDashing)
-            {
-                rb.velocity = moveDirection * movementSpeed;
-            }
-            else
-            {
-                rb.velocity = moveDirection * DashSpeed;
-            }
+            rb.velocity = moveDirection * playerData.currentSpeed;
         }
         else if (isDead)
         {
@@ -73,26 +61,31 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && !isDashing && playerData.currentStamina > 0) // Added Stamina > 0 condition
             {
                 isDashing = true;
+
                 StartCoroutine(Dash());
                 Debug.Log("dashing");
-                //Stamina -= Dashing;
+
+                playerData.currentStamina -= playerData.staminaConsume;
                 if (playerData.currentStamina <= 0)
                 {
                     playerData.currentStamina = 0;
                     isDashing = false;
                 }
-                //StaminaBar.fillAmount = Stamina / MaxStamina;
+                //stamina bar decrease logic
+                playerData.currentStamina -= playerData.staminaConsume * Time.deltaTime;
+                StaminaBar.fillAmount = playerData.currentStamina / playerData.maxStamina;
+
             }
 
             else if (!isDashing)
             {
-                // Refill stamina gradually when idle
+                // Refill stamina gradually when idle/walking
                 timeSinceLastIdleRefill += Time.deltaTime;
-                if (timeSinceLastIdleRefill >= idleStaminaRefillInterval)
+                if (timeSinceLastIdleRefill >= playerData.staminaRefillInterval)
                 {
                     timeSinceLastIdleRefill = 1f;
-                    playerData.currentStamina = Mathf.Clamp(playerData.currentStamina + staminaRefillRate * idleStaminaRefillInterval, 0f, playerData.maxStamina);
-                    //StaminaBar.fillAmount = Stamina / MaxStamina;
+                    playerData.currentStamina = Mathf.Clamp(playerData.currentStamina + playerData.staminaRefillRate * playerData.staminaRefillInterval, 0f, playerData.maxStamina);
+                    StaminaBar.fillAmount = playerData.currentStamina / playerData.maxStamina;
                 }
             }
         }
@@ -143,22 +136,17 @@ public class PlayerController : MonoBehaviour
         m_animator.SetBool("idle", false);
         m_animator.SetBool("walk", false);
 
-        // Store the player's original movement speed
-        float originalSpeed = movementSpeed;
-
         // Increase the player's movement speed for the dash
-        movementSpeed = DashSpeed;
+        playerData.currentSpeed = playerData.dashSpeed;
 
         // Play dash animation
         m_animator.SetBool("dash", true);
 
         // Continue dashing for the specified duration
-        yield return new WaitForSeconds(DashDuration);
+        yield return new WaitForSeconds(playerData.dashDuration);
 
         // Reset movement speed
-        movementSpeed = originalSpeed;
-
-        Stamina -= Dashing * Time.deltaTime;
+        playerData.currentSpeed = playerData.walkSpeed;
 
         // Set dashing to false
         m_animator.SetBool("dash", false);
