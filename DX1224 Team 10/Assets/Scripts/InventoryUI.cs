@@ -5,7 +5,7 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    public GameObject inventoryPrefab;
+    //public GameObject inventoryPrefab;
     // Inventory Obj that we want to display
     public Inventory inventory;
     public int X_START;

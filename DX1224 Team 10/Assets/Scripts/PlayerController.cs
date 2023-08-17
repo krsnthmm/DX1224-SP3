@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     //Referencing PlayerData Script
     public PlayerData playerData;
+    public Inventory playerInventory;
 
     private bool isIdle;
     private bool isWalking;
@@ -144,5 +145,19 @@ public class PlayerController : MonoBehaviour
 
         // Set dashing to false
         isDashing = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        var item = col.GetComponent<Item>();
+        // check if player that collides with the object has an item script
+        if (item)
+        {
+            Debug.Log("!");
+            // add the item to the player's inventory
+            playerInventory.AddItem(item.item, 1);
+            // Destroy the item after adding it to inventory
+            Destroy(col.gameObject);
+        }
     }
 }
