@@ -10,6 +10,8 @@ public class FogOfWar : MonoBehaviour
 
     private float fadeInDuration = 0.5f; 
     private Coroutine fadingCoroutine;
+
+    private bool InsideLocker = false;
     private void Start()
     {
         foreach (Tilemap tilemap in fadeInRoom)
@@ -18,6 +20,11 @@ public class FogOfWar : MonoBehaviour
             color.a = 0f;
             tilemap.color = color;
         }
+    }
+
+    private void Update()
+    {
+     
     }
 
     private void OnTriggerEnter2D(Collider2D other)
