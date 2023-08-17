@@ -4,18 +4,21 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Enemy
   - Item
   - Arrow
   - shield
   - Sheild
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Walls
   - Water
   - UI
   - DeflectedArrow
+  - Player
   - 
   - 
   - 
