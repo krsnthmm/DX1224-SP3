@@ -62,7 +62,7 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
             reachedEndOfPath = false;
         }
 
-        dir = (enemy.rb.position - (Vector2)path.vectorPath[currentWaypoint]).normalized;
+        dir = ((Vector2)path.vectorPath[currentWaypoint] - enemy.rb.position).normalized;
         enemy.rb.velocity = dir * enemy.moveSpeed;
 
         enemy.enemyAnim.SetFloat("x", dir.x);

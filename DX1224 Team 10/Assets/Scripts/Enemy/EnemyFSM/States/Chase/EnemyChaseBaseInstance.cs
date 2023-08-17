@@ -10,7 +10,6 @@ public class EnemyChaseBaseInstance : ScriptableObject
 
     protected Transform playerTransform;
 
-    protected Vector3 destination;
     protected Vector3 dir;
 
     public virtual void Init(GameObject gameObject, Enemy enemy)
