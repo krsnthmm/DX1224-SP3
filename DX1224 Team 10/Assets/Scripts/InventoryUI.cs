@@ -18,12 +18,15 @@ public class InventoryUI : MonoBehaviour
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEMS;
     private int prevInventoryIndex;
-    private int currinventoryIndex;
+    private int currInventoryIndex;
     //Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
+        // init prev index as -1
+        // otherwise, we cannot select inventoryUIIcon[0] without selecting something else first
+        prevInventoryIndex = -1;
         CreateDisplay();
     }
 
@@ -94,22 +97,33 @@ public class InventoryUI : MonoBehaviour
             }
 
             if (inventoryUIIcon.isSelected)
-            {
-                // get the current index
-                currinventoryIndex = i;
+            {   
+                if (prevInventoryIndex != -1)
+                {
+                    // swap the values
+                    int tempValue = currInventoryIndex;
+                    prevInventoryIndex = tempValue;
+                }
+
+                // get the new current index
+                currInventoryIndex = i;
+
+                if (currInventoryIndex != prevInventoryIndex && prevInventoryIndex != -1)
+                {
+                    // deselect the previous value
+                    itemsDisplayed[prevInventoryIndex].GetComponent<InventoryUIIcon>().isSelected = false;
+
+                }
+                else if (prevInventoryIndex == -1)
+                {
+                    // set the new prev index to the current index so that future clicks work
+                    prevInventoryIndex = currInventoryIndex;
+                }
 
                 // Select the icon shown
                 inventoryUIIcon.Select();
 
-                // swap the values together
-                int tempValue = currinventoryIndex;
-                currinventoryIndex = prevInventoryIndex;
-                prevInventoryIndex = tempValue;
-
-                // deselect the previous value
-                //itemsDisplayed[prevInventoryIndex].GetComponent<InventoryUIIcon>().ToggleSelection();
-
-                Debug.Log("Current: " + currinventoryIndex + " Previous: " + prevInventoryIndex);
+                Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
             }
             else
             {
