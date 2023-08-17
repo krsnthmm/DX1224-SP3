@@ -122,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1943793143760951685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da759ea4cf57d6c4d8747bf92d1ea3d3, type: 3}
+  m_Script: {fileID: 11500000, guid: c914758e1d801fe459a9d1058fcc5029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1000
@@ -130,7 +130,9 @@ MonoBehaviour:
   distance: 0.5
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 128
+  deflector: {fileID: 0}
+  isDeflected: 0
 --- !u!50 &-7160500048949230750
 Rigidbody2D:
   serializedVersion: 4
