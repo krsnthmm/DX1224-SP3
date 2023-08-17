@@ -10,10 +10,10 @@ using TMPro;
 public class SceneLoader : MonoBehaviour
 {
     private TMP_Text percentText;
-
     public string sceneToLoad;
-    public GameObject loadingScreen;
-    public Slider slider;
+
+    //public GameObject loadingScreen;
+    //public Slider slider;
 
     // Start is called before the first frame update
     void Start()
@@ -34,13 +34,11 @@ public class SceneLoader : MonoBehaviour
     {
         AsyncOperationHandle op = Addressables.LoadSceneAsync(sceneName);
 
-        loadingScreen.SetActive(true);
-
         while (!op.IsDone)
         {
             float PercentComplete = Mathf.Clamp01(op.PercentComplete / .9f);
-            slider.value = op.PercentComplete;
-            percentText.text = PercentComplete * 100f + "%";
+            //slider.value = op.PercentComplete;
+            //percentText.text = PercentComplete * 100f + "%";
 
             yield return null;
         }
