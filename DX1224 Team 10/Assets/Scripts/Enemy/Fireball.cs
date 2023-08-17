@@ -76,6 +76,10 @@ public class Fireball : MonoBehaviour
             player = collision.gameObject.GetComponent<PlayerController>();
             player.TakeDamage(15);
         }
+        else if (collision.gameObject.layer == 3)
+        {
+            hitSolid = true;
+        }
     }
 
     private void AnimationFinishTrigger()

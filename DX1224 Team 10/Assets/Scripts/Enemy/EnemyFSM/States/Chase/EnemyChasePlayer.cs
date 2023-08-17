@@ -1,13 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 [CreateAssetMenu(fileName = "Chase - Chase Player", menuName = "Enemy States/Chase/Chase Player")]
 public class EnemyChasePlayer : EnemyChaseBaseInstance
 {
+    public float nextWaypointDistance = 0.1f;
+
+    Path path;
+    int currentWaypoint = 0;
+    bool reachedEndOfPath = false;
+
+    float timer;
+
     public override void Enter()
     {
         base.Enter();
+
+        enemy.seeker.StartPath(enemy.rb.position, playerTransform.position, OnPathComplete);
     }
 
     public override void Exit()
@@ -19,24 +30,67 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
     {
         base.LogicUpdate();
 
-        destination = GameObject.FindGameObjectWithTag("Player").transform.position;
-        dir = (destination - enemy.transform.position).normalized;
+        timer += Time.deltaTime;
+
+        if (timer >= 0.5f)
+        {
+            if (enemy.seeker.IsDone())
+            {
+                enemy.seeker.StartPath(enemy.rb.position, playerTransform.position, OnPathComplete);
+            }
+
+            timer = 0f;
+        }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
 
+        if (path == null)
+        {
+            return;
+        }
+
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
+
+        dir = ((Vector2)path.vectorPath[currentWaypoint] - enemy.rb.position).normalized;
+
         Vector2 vel = dir * enemy.moveSpeed;
+        enemy.rb.velocity = vel;
 
         enemy.enemyAnim.SetFloat("x", dir.x);
         enemy.enemyAnim.SetFloat("y", dir.y);
 
-        enemy.rb.velocity = vel;
+        float distance = Vector2.Distance(enemy.rb.position, path.vectorPath[currentWaypoint]);
+
+        if (distance < nextWaypointDistance)
+        {
+            currentWaypoint++;
+        }
+
+        Debug.Log(currentWaypoint);
     }
 
     public override void ResetValues()
     {
         base.ResetValues();
+    }
+
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
     }
 }
