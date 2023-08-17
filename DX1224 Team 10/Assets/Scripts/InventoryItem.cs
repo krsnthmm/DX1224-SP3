@@ -20,7 +20,15 @@ public abstract class InventoryItem : ScriptableObject
     public ItemType type;
     [TextArea]
     public string description;
+    //public bool isSelected;
+
+    //public void Awake()
+    //{
+    //    isSelected = false;
+    //}
 }
+
+
 
 //[System.Serializable]
 //public class Item

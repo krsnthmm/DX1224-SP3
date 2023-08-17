@@ -20,12 +20,10 @@ public class InventoryUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && !inventoryMenu.activeSelf)
         {
-            Debug.Log("!");
             ShowMenu();
         }
         else if (Input.GetKeyDown(KeyCode.E) && inventoryMenu.activeSelf)
         {
-            Debug.Log("!");
             HideMenu();
         }
 

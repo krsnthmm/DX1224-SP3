@@ -17,6 +17,8 @@ public class InventoryUI : MonoBehaviour
     public int X_SPACE_BETWEEN_ITEM;
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEMS;
+    private int prevInventoryIndex;
+    private int currinventoryIndex;
     //Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
     // Start is called before the first frame update
@@ -86,8 +88,19 @@ public class InventoryUI : MonoBehaviour
 
             if (inventoryUIIcon.isSelected)
             {
+                // get the current index
+                currinventoryIndex = i;
+                // Select the icon shown
                 inventoryUIIcon.Select();
-            } else
+                // swap the values together
+                int tempValue = currinventoryIndex;
+                currinventoryIndex = prevInventoryIndex;
+                prevInventoryIndex = tempValue;
+                // deselect the previous value
+
+                Debug.Log("Current: " + currinventoryIndex + " Previous: " + prevInventoryIndex);
+            }
+            else
             {
                 inventoryUIIcon.Deselect();
             }
