@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
     //public GameObject inventoryPrefab;
     // Inventory Obj that we want to display
     public Inventory inventory;
+    public GameObject iconPrefab;
     public int X_START;
     public int Y_START;
     public int X_SPACE_BETWEEN_ITEM;
@@ -32,15 +34,27 @@ public class InventoryUI : MonoBehaviour
         // loop through items in the inventory obj
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            // Instantiate item icons in the inventory bar
-            var obj = Instantiate(inventory.Container[i].item.itemIcon, Vector3.zero, Quaternion.identity, transform);
-            // set item icon positions 
-            obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-            // get the amount of items and display it
-            obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-            // add the item to our Dictionary
-            itemsDisplayed.Add(inventory.Container[i], obj);
+            CreateItemIcon(i);
         }
+
+
+    }
+
+    private void CreateItemIcon(int i)
+    {
+        // Instantiate item icons in the inventory bar
+        //var obj = Instantiate(inventory.Container[i].item.itemIcon, Vector3.zero, Quaternion.identity, transform);
+        var obj = Instantiate(iconPrefab, Vector3.zero, Quaternion.identity, transform);
+        // set iconPrefab's scriptable object to its respective item
+        obj.GetComponent<InventoryUIIcon>().SetItem(inventory.Container[i].item);
+        // set item icon to its respective icon
+        obj.GetComponentInChildren<Image>().sprite = inventory.Container[i].item.itemIcon;
+        // set item icon positions 
+        obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
+        // get the amount of items and display it
+        obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+        // add the item to our Dictionary
+        itemsDisplayed.Add(inventory.Container[i], obj);
     }
 
     public void UpdateDisplay()
@@ -56,15 +70,7 @@ public class InventoryUI : MonoBehaviour
             } else
             {
                 // if not, create the item icon on display on the UI
-                // Instantiate item icons in the inventory bar
-                var obj = Instantiate(inventory.Container[i].item.itemIcon, Vector3.zero, Quaternion.identity, transform);
-                //obj.transform.GetChild(0).GetComponentInChildren<Image>().sprite = ;
-                // set item icon positions 
-                obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-                // get the amount of items and display it
-                obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-                // add the item to our Dictionary
-                itemsDisplayed.Add(inventory.Container[i], obj);
+                CreateItemIcon(i);
             }
         }
     }

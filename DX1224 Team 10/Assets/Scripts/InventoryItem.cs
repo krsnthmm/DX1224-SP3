@@ -14,12 +14,13 @@ public enum ItemType
 // base class to extend other item classes from
 public abstract class InventoryItem : ScriptableObject
 {
-    public GameObject itemIcon;
+    public Sprite itemIcon;
     //public int id;
     //public Sprite itemIcon;
     public ItemType type;
     [TextArea]
     public string description;
+    public bool isSelected;
 }
 
 //[System.Serializable]
