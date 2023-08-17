@@ -28,23 +28,13 @@ public class EnemyChaseState : EnemyState
 
         enemy.ChaseBaseInstance.LogicUpdate();
 
-        if (!enemy.runsAway)
+        if (enemy.isInAttackRange)
         {
-            if (enemy.isInAttackRange)
-            {
-                sm.ChangeState(enemy.AttackState);
-            }
-            else if (!enemy.isAggroed)
-            {
-                sm.ChangeState(enemy.IdleState);
-            }
+            sm.ChangeState(enemy.AttackState);
         }
-        else
+        else if (!enemy.isAggroed)
         {
-            if (!enemy.isAggroed)
-            {
-                sm.ChangeState(enemy.AttackState);
-            }
+            sm.ChangeState(enemy.IdleState);
         }
     }
 

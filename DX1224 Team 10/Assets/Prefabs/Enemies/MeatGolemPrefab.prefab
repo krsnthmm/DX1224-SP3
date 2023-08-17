@@ -276,7 +276,7 @@ MonoBehaviour:
   moveSpeed: 1
   idleTime: 0
   runsAway: 0
-  doesMultiShot: 0
+  canKnockback: 1
   thrust: 10
   knockbackTime: 0.1
   isAggroed: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   weaponOffset: 0
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
 --- !u!58 &2451237203087142890
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -199,7 +199,7 @@ MonoBehaviour:
   weaponOffset: 0
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!82 &6192571865321923819
 AudioSource:
   m_ObjectHideFlags: 0

@@ -328,17 +328,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdleBase: {fileID: 11400000, guid: 38c4ca798e1b6c941bb3c49b91937997, type: 2}
-  ChaseBase: {fileID: 11400000, guid: 60cac986642be7b45b8db46b73a81c42, type: 2}
+  ChaseBase: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
   AttackBase: {fileID: 11400000, guid: 09e4ed60868d8614ca2480c572a613d3, type: 2}
   attack: 7
   moveSpeed: 1
   idleTime: 0
   runsAway: 1
-  doesMultiShot: 0
+  canKnockback: 0
   thrust: 0
   knockbackTime: 0
   isAggroed: 0
   isInAttackRange: 0
+  isNearWall: 0
   rb: {fileID: 180917125322469277}
   enemyAnim: {fileID: 1021168155907984847}
   seeker: {fileID: 4333851957276718982}
@@ -352,7 +353,7 @@ MonoBehaviour:
   weaponOffset: 90
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
 --- !u!82 &7465994449302330098
 AudioSource:
   m_ObjectHideFlags: 0

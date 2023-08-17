@@ -22,14 +22,14 @@ public class Enemy : MonoBehaviour
     public int attack;
     public float moveSpeed;
     public float idleTime; // cooldown between attacks
-    public bool runsAway; // does the enemy run from the player?
-    public bool doesMultiShot; // does the enemy shoot multiple projectiles at on
+    public bool canKnockback; // can this enemy knock the player back?
     public float thrust;
     public float knockbackTime;
 
     [Header("State Change Triggers")]
     [HideInInspector] public bool isAggroed; // idle/patrol => chase
     [HideInInspector] public bool isInAttackRange; // chase => attack
+    [HideInInspector] public bool isNearWall; // run away => attack
 
     [Header("Components")]
     public Rigidbody2D rb;
@@ -95,20 +95,27 @@ public class Enemy : MonoBehaviour
         Instantiate(projPrefab, projLauncher.transform.position, projLauncher.transform.rotation);
     }
 
-    public void Knockback() 
+    public void MeleeAttack() 
     {
         Collider2D target = Physics2D.OverlapCircle(attackRangeCheck.position, attackRangeCheck.GetComponent<CircleCollider2D>().radius, whatIsPlayer);
+
         if (target != null)
         {
             PlayerController player = target.GetComponent<PlayerController>();
-            player.knockedBack = true;
 
-            Rigidbody2D playerRb = target.GetComponent<Rigidbody2D>();
-            if (playerRb != null) 
+            player.TakeDamage(attack);
+
+            if (canKnockback)
             {
-                Vector2 direction = (target.transform.position - transform.position).normalized * thrust;
-                playerRb.AddForce(direction, ForceMode2D.Impulse);
-                StartCoroutine(KnockbackCo(playerRb));
+                player.knockedBack = true;
+
+                Rigidbody2D playerRb = target.GetComponent<Rigidbody2D>();
+                if (playerRb != null)
+                {
+                    Vector2 direction = (target.transform.position - transform.position).normalized * thrust;
+                    playerRb.AddForce(direction, ForceMode2D.Impulse);
+                    StartCoroutine(KnockbackCo(playerRb));
+                }
             }
         }
     }

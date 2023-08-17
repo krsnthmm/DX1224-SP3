@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 168413758}
   - component: {fileID: 1162793954}
   - component: {fileID: 1162793959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -374,6 +374,10 @@ PrefabInstance:
     - target: {fileID: 2007188648143759935, guid: a8408544cdfe8454db326065fd36717d, type: 3}
       propertyPath: m_Name
       value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007188648143759935, guid: a8408544cdfe8454db326065fd36717d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2007188648143759935, guid: a8408544cdfe8454db326065fd36717d, type: 3}
       propertyPath: m_IsActive

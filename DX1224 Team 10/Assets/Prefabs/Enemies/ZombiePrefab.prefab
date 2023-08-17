@@ -302,11 +302,12 @@ MonoBehaviour:
   moveSpeed: 1
   idleTime: 0
   runsAway: 0
-  doesMultiShot: 0
+  canKnockback: 0
   thrust: 0
   knockbackTime: 0
   isAggroed: 0
   isInAttackRange: 0
+  isNearWall: 0
   rb: {fileID: 575545937297297712}
   enemyAnim: {fileID: 816818214761739106}
   seeker: {fileID: 1330125140}
@@ -323,7 +324,7 @@ MonoBehaviour:
   weaponOffset: 0
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!82 &1330125148
 AudioSource:
   m_ObjectHideFlags: 0

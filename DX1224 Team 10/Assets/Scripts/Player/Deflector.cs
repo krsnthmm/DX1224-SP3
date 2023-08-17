@@ -11,7 +11,7 @@ public class Deflector : MonoBehaviour
     private bool isShieldActive;
     private void Start()
     {
-        shield = GameObject.Find("shield");
+        shield = GameObject.Find("Shield");
         isShieldActive = false;
         shield.SetActive(false);
     }
@@ -31,8 +31,6 @@ public class Deflector : MonoBehaviour
             isShieldActive = !isShieldActive;
             shield.SetActive(isShieldActive);
         }
-       
-       
     }
 
 
@@ -44,8 +42,6 @@ public class Deflector : MonoBehaviour
         {
             // Calculate the deflection direction based on the collision normal
             deflectionDirection = Vector2.Reflect(collision.relativeVelocity.normalized, collision.contacts[0].normal);
-
-            
 
             // Get the arrow's rigidbody if it has one
             Rigidbody2D arrowRigidbody = collision.collider.GetComponent<Rigidbody2D>();

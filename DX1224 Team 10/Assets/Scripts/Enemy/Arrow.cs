@@ -17,7 +17,6 @@ public class Arrow : MonoBehaviour
 
     private void Start()
     {
-        //isDeflected = false;
         rb = GetComponent<Rigidbody2D>();
         timer = 0f;
     }
@@ -34,6 +33,7 @@ public class Arrow : MonoBehaviour
             {
                 if (hitInfo.collider.CompareTag("Player"))
                 {
+                    hitInfo.collider.gameObject.GetComponent<PlayerController>().TakeDamage(7);
                     Debug.Log("Player takes damage!");
                 }
                 Destroy(gameObject);

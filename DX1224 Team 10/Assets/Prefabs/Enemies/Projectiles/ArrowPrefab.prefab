@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943793143760951685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1541, y: 0.282, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,8 +130,8 @@ MonoBehaviour:
   distance: 0.5
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 128
-  deflector: {fileID: 0}
+    m_Bits: 136
+  deflector: {fileID: 1162793959, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   isDeflected: 0
 --- !u!50 &-7160500048949230750
 Rigidbody2D:
