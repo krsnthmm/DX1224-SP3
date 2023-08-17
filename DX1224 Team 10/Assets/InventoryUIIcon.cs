@@ -8,15 +8,46 @@ public class InventoryUIIcon : MonoBehaviour
     // Serialized to check if the right object is assigned to the icon
     [SerializeField] private InventoryItem item;
     [SerializeField] private Image borderImage;
+    public bool isSelected;
 
     public void Awake()
     {
         Deselect();
+        isSelected = false;
+    }
+
+    //private void Update()
+    //{
+    //    if (isSelected)
+    //    {
+    //        Select();
+    //    }
+    //    else if (!isSelected)
+    //    {
+    //        Deselect();
+    //    }
+    //}
+
+    public InventoryItem GetItem()
+    {
+        return item;
     }
 
     public void SetItem(InventoryItem itemSet)
     {
         item = itemSet;
+    }
+
+    public void ToggleSelection()
+    {
+        if (!isSelected)
+        {
+            isSelected = true;
+        }
+        else if (isSelected)
+        {
+            isSelected = false;
+        }
     }
 
     public void Select()

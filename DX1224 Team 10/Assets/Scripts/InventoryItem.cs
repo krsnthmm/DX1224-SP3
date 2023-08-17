@@ -20,7 +20,6 @@ public abstract class InventoryItem : ScriptableObject
     public ItemType type;
     [TextArea]
     public string description;
-    public bool isSelected;
 }
 
 //[System.Serializable]

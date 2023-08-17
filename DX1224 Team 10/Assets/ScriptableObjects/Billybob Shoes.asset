@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004f3dec5620a5a4487ed68fec49005e, type: 3}
   m_Name: Billybob Shoes
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 322224502540907432, guid: 8c31e3a8ad14aa044a64be6fce4a27af, type: 3}
+  itemIcon: {fileID: 21300000, guid: 076992e8ade9f684b8d89488d4066e26, type: 3}
   type: 1
   description: Increases movement speed by 15.
   speedValue: 15

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792fc48c5c96bb2449872bfe3bb4f486, type: 3}
   m_Name: Scroll 1
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 322224502540907432, guid: 8c31e3a8ad14aa044a64be6fce4a27af, type: 3}
+  itemIcon: {fileID: 21300000, guid: 2be1f7b3ff21cfe448833e01aa171250, type: 3}
   type: 3
   description: A mysterious scroll.
   keyText: '[insert riddle here]'

@@ -9,13 +9,15 @@ public class InventoryUI : MonoBehaviour
     //public GameObject inventoryPrefab;
     // Inventory Obj that we want to display
     public Inventory inventory;
+    //public GameObject iconPrefab;
     public GameObject iconPrefab;
+    List<GameObject> itemsDisplayed = new List<GameObject>();
     public int X_START;
     public int Y_START;
     public int X_SPACE_BETWEEN_ITEM;
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEMS;
-    Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    //Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +38,6 @@ public class InventoryUI : MonoBehaviour
         {
             CreateItemIcon(i);
         }
-
-
     }
 
     private void CreateItemIcon(int i)
@@ -54,7 +54,10 @@ public class InventoryUI : MonoBehaviour
         // get the amount of items and display it
         obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
         // add the item to our Dictionary
-        itemsDisplayed.Add(inventory.Container[i], obj);
+        //itemsDisplayed.Add(inventory.Container[i], obj);
+        // add item to our list
+        itemsDisplayed.Add(obj);
+        
     }
 
     public void UpdateDisplay()
@@ -62,15 +65,31 @@ public class InventoryUI : MonoBehaviour
         // loop through items in the inventory obj
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            // check if the item on display is in the inventory
-            if (itemsDisplayed.ContainsKey(inventory.Container[i]))
+            //// check if the item on display is in the inventory
+            //if (itemsDisplayed.ContainsKey(inventory.Container[i]))
+            //{
+            //    // if yes, update the amount of the same item to the UI
+            //    itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+            //}
+            //else
+            //{
+            InventoryUIIcon inventoryUIIcon = itemsDisplayed[i].GetComponent<InventoryUIIcon>();
+
+            if (inventoryUIIcon.GetItem() == inventory.Container[i].item)
             {
-                // if yes, update the amount of the same item to the UI
-                itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-            } else
-            {
+                inventoryUIIcon.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+            }
+            else { 
                 // if not, create the item icon on display on the UI
                 CreateItemIcon(i);
+            }
+
+            if (inventoryUIIcon.isSelected)
+            {
+                inventoryUIIcon.Select();
+            } else
+            {
+                inventoryUIIcon.Deselect();
             }
         }
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8623063ca0705b4d8c06705797ec614, type: 3}
   m_Name: Billybob Power-ade
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 322224502540907432, guid: 8c31e3a8ad14aa044a64be6fce4a27af, type: 3}
+  itemIcon: {fileID: 21300000, guid: dfc10c62ede30b24787d4f736f31f0f9, type: 3}
   type: 2
   description: Recovers stamina by 30.
   staminaValue: 30
