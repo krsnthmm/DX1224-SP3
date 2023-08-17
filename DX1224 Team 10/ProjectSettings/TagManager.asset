@@ -7,6 +7,12 @@ TagManager:
   - Item
   - TP5
   - NextScene
+  - TP1
+  - TP2
+  - TP3
+  - Hallway
+  - Room4
+  - MainHall
   layers:
   - Default
   - TransparentFX
