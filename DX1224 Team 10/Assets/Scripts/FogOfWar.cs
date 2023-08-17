@@ -5,13 +5,12 @@ using UnityEngine.Tilemaps;
 public class FogOfWar : MonoBehaviour
 {
     public Tilemap[] fogOfWars;
-
     public Tilemap[] fadeInRoom;
-
     private float fadeInDuration = 0.5f; 
     private Coroutine fadingCoroutine;
+    private bool playerNotAtMH;
+    private bool playerNotAtZbRoom;
 
-    private bool InsideLocker = false;
     private void Start()
     {
         foreach (Tilemap tilemap in fadeInRoom)
@@ -24,7 +23,30 @@ public class FogOfWar : MonoBehaviour
 
     private void Update()
     {
-     
+        if (playerNotAtMH)
+        {
+            if (!GameObject.FindGameObjectWithTag("Player"))
+            {
+                foreach (Tilemap tilemap in fogOfWars)
+                {
+                    tilemap.gameObject.SetActive(false);
+                }
+                fogOfWars[5].gameObject.SetActive(true);
+            }
+        }
+
+        else if (playerNotAtZbRoom)
+        {
+            if (!GameObject.FindGameObjectWithTag("Player"))
+            {
+                foreach (Tilemap tilemap in fogOfWars)
+                {
+                    tilemap.gameObject.SetActive(false);
+                }
+                fogOfWars[3].gameObject.SetActive(true);
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -69,6 +91,8 @@ public class FogOfWar : MonoBehaviour
                 tilemap.gameObject.SetActive(false);
                 fogOfWars[3].gameObject.SetActive(true);
             }
+
+            playerNotAtZbRoom = false;
         }
 
         if (other.CompareTag("Player") && gameObject.CompareTag("Room4"))
@@ -97,6 +121,8 @@ public class FogOfWar : MonoBehaviour
                 tilemap.gameObject.SetActive(false);
                 fogOfWars[5].gameObject.SetActive(true);
             }
+
+            playerNotAtMH = false;
         }
     }
 
@@ -143,6 +169,8 @@ public class FogOfWar : MonoBehaviour
             {
                 fogOfWars[3].gameObject.SetActive(false);
             }
+
+            playerNotAtZbRoom = true;
         }
 
         if (other.CompareTag("Player") && gameObject.CompareTag("Room4"))
@@ -159,6 +187,8 @@ public class FogOfWar : MonoBehaviour
             {
                 fogOfWars[5].gameObject.SetActive(false);
             }
+
+            playerNotAtMH = true;
         }
 
         if (other.CompareTag("Player") && !gameObject.CompareTag("TP1") || !gameObject.CompareTag("Hallway") || !gameObject.CompareTag("TP2") || !gameObject.CompareTag("TP3") || !gameObject.CompareTag("Room4") || !gameObject.CompareTag("MainHall"))
@@ -169,6 +199,7 @@ public class FogOfWar : MonoBehaviour
                 fogOfWars[1].gameObject.SetActive(true);
             }
         }
+
     }
 
     private IEnumerator FadeInTilemaps()

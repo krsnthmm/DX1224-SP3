@@ -44,7 +44,6 @@ public class Interactable : MonoBehaviour
         {
             TransformOutOfLocker();
         }
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -77,7 +76,7 @@ public class Interactable : MonoBehaviour
     {
         playerObject.SetActive(true);
 
-        playerObject.transform.position = lockerPosition + Vector3.down ;
+        playerObject.transform.position = lockerPosition + Vector3.down;
         playerObject.transform.rotation = lockerRotation;
 
         IsInLocker = false;
