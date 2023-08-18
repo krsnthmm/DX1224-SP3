@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5866203930767898160}
   - component: {fileID: 5866203930767898163}
   m_Layer: 0
-  m_Name: Hint to Collectables
+  m_Name: Hint to Cross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,4 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d328cb80cd5ec45bcfe5beb8d751b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 24f4c38945a21054e815a4d74cdfd370, type: 2}
+  item: {fileID: 11400000, guid: 0ba8b7fc778593149933af415595877a, type: 2}
