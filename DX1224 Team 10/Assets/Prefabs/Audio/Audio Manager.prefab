@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1834041018234929783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f327b78f176f91247b00a19d570825e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2937545f40e22ff49889f231d769aff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: bae22a64cb22acf4ebff78a50e0fcf79, type: 2}
   masterSlider: {fileID: 0}
   BGMSlider: {fileID: 0}
   SFXSlider: {fileID: 0}

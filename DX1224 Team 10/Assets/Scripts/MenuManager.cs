@@ -29,17 +29,17 @@ public class MenuManager : MonoBehaviour
     public void Settings()
     {
         Debug.Log("!");
-        // check if the settings menu is active 
-        //if (!settingsMenuUI.activeSelf)
-        //{
-        //    mainMenuUI.SetActive(false);
-        //    settingsMenuUI.SetActive(true);
-        //}
-        //else if (settingsMenuUI.activeSelf)
-        //{
-        //    settingsMenuUI.SetActive(false);
-        //    mainMenuUI.SetActive(true);
-        //}
+        //check if the settings menu is active
+        if (!settingsMenuUI.activeSelf)
+        {
+            mainMenuUI.SetActive(false);
+            settingsMenuUI.SetActive(true);
+        }
+        else if (settingsMenuUI.activeSelf)
+        {
+            settingsMenuUI.SetActive(false);
+            mainMenuUI.SetActive(true);
+        }
     }
 
     public void Quit()

@@ -130,19 +130,19 @@ public class InventoryUI : MonoBehaviour
                     prevInventoryIndex = currInventoryIndex;
                 }
 
-                if (inventory.Container[i].amount <= 0)
-                {
-                    inventoryUIIcon.Deselect();
-                    itemsList.Remove(itemsList[currInventoryIndex]);
-                    itemsDictionary.Remove(inventory.Container[i]);
+                //if (inventory.Container[i].amount <= 0)
+                //{
+                //    inventoryUIIcon.Deselect();
+                //    itemsList.Remove(itemsList[currInventoryIndex]);
+                //    itemsDictionary.Remove(inventory.Container[i]);
 
-                    inventory.RemoveItem(inventory.Container[i].item);
+                //    inventory.RemoveItem(inventory.Container[i].item);
 
-                    ResetDisplay();
-                    CreateDisplay();
-                }
-                else
-                {
+                //    ResetDisplay();
+                //    CreateDisplay();
+                //}
+                //else
+                //{
                     inventoryUIIcon.Select();
 
                     itemDetailsIcon.sprite = inventory.Container[i].item.itemIcon;
@@ -151,7 +151,7 @@ public class InventoryUI : MonoBehaviour
                     itemDescription.text = inventory.Container[i].item.description;
 
                     useButton.gameObject.SetActive(true);
-                }
+                //}
 
                 Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
             }
@@ -199,11 +199,11 @@ public class InventoryUI : MonoBehaviour
 
     public void ResetDisplay()
     {
-        GameObject[] iconPrefabs = GameObject.FindGameObjectsWithTag("IconPrefab");
+        //GameObject[] iconPrefabs = GameObject.FindGameObjectsWithTag("IconPrefab");
 
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            Destroy(iconPrefabs[i]);
+            //Destroy(iconPrefabs[i]);
 
             InventoryUIIcon inventoryUIIcon = itemsList[i].GetComponent<InventoryUIIcon>();
 
@@ -213,6 +213,11 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
+        // display default text
+        itemName.text = "None";
+        itemDescription.text = "Click on an item for more details.";
+
+        // use button shouldn't be displayed immediately since an item hasn't been selected
         useButton.gameObject.SetActive(false);
     }
 
