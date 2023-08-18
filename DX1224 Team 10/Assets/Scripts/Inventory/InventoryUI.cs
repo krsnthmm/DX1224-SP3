@@ -51,7 +51,10 @@ public class InventoryUI : MonoBehaviour
         // loop through items in the inventory obj
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            CreateItemIcon(i);
+            if (inventory.Container[i].amount > 0)
+            {
+                CreateItemIcon(i);
+            }
         }
 
         // display default text
@@ -137,6 +140,8 @@ public class InventoryUI : MonoBehaviour
                     itemsDictionary.Remove(inventory.Container[i]);
 
                     inventory.RemoveItem(inventory.Container[i].item);
+
+                    ResetDisplay();
                 }
                 else
                 {
