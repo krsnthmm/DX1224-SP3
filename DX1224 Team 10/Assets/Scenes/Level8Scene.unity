@@ -22697,7 +22697,7 @@ GameObject:
   - component: {fileID: 2060591692}
   - component: {fileID: 2060591694}
   m_Layer: 0
-  m_Name: Maze
+  m_Name: Maze Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
