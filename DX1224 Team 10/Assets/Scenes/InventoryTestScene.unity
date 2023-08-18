@@ -895,10 +895,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1703956493}
     m_Modifications:
-    - target: {fileID: 350526317202486254, guid: 046380a8fb457a548b048df5fa398750, type: 3}
-      propertyPath: m_Name
-      value: Paused
-      objectReference: {fileID: 0}
     - target: {fileID: 350526318607808402, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -987,13 +983,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 350526318607808403, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 350526318607808429, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: settingsMenuUI
       value: 
       objectReference: {fileID: 889025928}
     - target: {fileID: 350526318927200283, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 046380a8fb457a548b048df5fa398750, type: 3}

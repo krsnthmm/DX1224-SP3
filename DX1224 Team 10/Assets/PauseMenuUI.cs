@@ -68,5 +68,6 @@ public class PauseMenuUI : MonoBehaviour
     public void ReturnToMenu()
     {
         // Load Menu Scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MenuScene");
     }
 }
