@@ -7,14 +7,9 @@ public class PauseMenuUI : MonoBehaviour
 {
     public static bool IsPaused = false;
 
+    public GameObject panel;
     public GameObject pauseMenuUI;
     public GameObject settingsMenuUI;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -35,6 +30,7 @@ public class PauseMenuUI : MonoBehaviour
 
     void Pause()
     {
+        panel.SetActive(true);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
@@ -51,6 +47,12 @@ public class PauseMenuUI : MonoBehaviour
         {
             settingsMenuUI.SetActive(false);
         }
+
+        if (panel.activeSelf)
+        {
+            panel.SetActive(false);
+        }
+
         Time.timeScale = 1f;
         IsPaused = false;
     }
@@ -60,8 +62,16 @@ public class PauseMenuUI : MonoBehaviour
         // Open settings UI while paused
         if (IsPaused)
         {
-            pauseMenuUI.SetActive(false);
-            settingsMenuUI.SetActive(true);
+            if (!settingsMenuUI.activeSelf)
+            {
+                pauseMenuUI.SetActive(false);
+                settingsMenuUI.SetActive(true);
+            }
+            else
+            {
+                pauseMenuUI.SetActive(true);
+                settingsMenuUI.SetActive(false);
+            }
         }
     }
 
