@@ -168,6 +168,7 @@ public class InventoryUI : MonoBehaviour
 
         if (inventory.Container[i].amount > 0)
         {
+            // TODO: not make this so,,, hard-coded in ??
             switch (inventory.Container[i].item.name)
             {
                 case ("Billybob Medicine"):
@@ -185,6 +186,16 @@ public class InventoryUI : MonoBehaviour
                     {
                         playerData.currentStamina = playerData.maxStamina;
                     }
+                    break;
+                case ("Billybob-ster Energy"):
+                    playerData.walkSpeed += 5;
+                    // TODO: playerData coroutine, set movementspeed back to 0 at the end of 30s
+                    break;
+                case ("Some Billybob's Heart"):
+                    playerData.maxHP += 50;
+                    break;
+                case ("Billybob Shoes"):
+                    playerData.walkSpeed += 5;
                     break;
                 default:
                     break;
