@@ -10,6 +10,9 @@ TagManager:
   - shield
   - Sheild
   - EnemyAttack
+  - Coin
+  - IconPrefab
+  - ItemPrefab
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,6 @@ TagManager:
   - UI
   - DeflectedArrow
   - Player
-  - 
   - 
   - 
   - 

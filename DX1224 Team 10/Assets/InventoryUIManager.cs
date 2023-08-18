@@ -26,24 +26,7 @@ public class InventoryUIManager : MonoBehaviour
         {
             HideMenu();
         }
-
-        //SelectObject(inventoryIndex);
     }
-
-    //private void SelectObject(int index)
-    //{
-    //    for (int i = 0; i < inventory.Container.Count; i++)
-    //    {
-    //        if (index == i)
-    //        {
-    //            inventory.Container[i].item.isSelected = true;
-    //        }
-    //        else
-    //        {
-    //            inventory.Container[i].item.isSelected = false;
-    //        }
-    //    }
-    //}
 
     private void ShowMenu()
     {
@@ -51,7 +34,7 @@ public class InventoryUIManager : MonoBehaviour
     }
     private void HideMenu()
     {
+        inventoryMenu.GetComponent<InventoryUI>().ResetDisplay();
         inventoryMenu.SetActive(false);
-
     }
 }

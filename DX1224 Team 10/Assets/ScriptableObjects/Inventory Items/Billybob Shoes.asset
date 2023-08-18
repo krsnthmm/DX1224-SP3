@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 004f3dec5620a5a4487ed68fec49005e, type: 3}
-  m_Name: Billybob-ster Energy
+  m_Name: Billybob Shoes
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 887dba543d40c70419939381c5390d8f, type: 3}
+  itemIcon: {fileID: 21300000, guid: 076992e8ade9f684b8d89488d4066e26, type: 3}
   type: 1
-  description: 'Increases movement speed by 15 for 30 seconds. '
-  speedValue: 15
-  isTempBoost: 1
-  buffDuration: 30
+  description: Permanently increases movement speed by 5.
+  speedValue: 5
+  isTempBoost: 0
+  buffDuration: 0

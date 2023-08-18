@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         var item = col.GetComponent<Item>();
+
         // check if player that collides with the object has an item script
         if (item)
         {
@@ -162,6 +163,11 @@ public class PlayerController : MonoBehaviour
             // add the item to the player's inventory
             playerInventory.AddItem(item.item, 1);
             // Destroy the item after adding it to inventory
+            Destroy(col.gameObject);
+        }
+        else if (col.gameObject.CompareTag("Coin"))
+        {
+            playerData.coins++;
             Destroy(col.gameObject);
         }
     }

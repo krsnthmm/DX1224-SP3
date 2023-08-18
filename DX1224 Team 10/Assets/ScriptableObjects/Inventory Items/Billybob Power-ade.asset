@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: dfc10c62ede30b24787d4f736f31f0f9, type: 3}
   type: 2
-  description: Recovers stamina by 30.
+  description: Restores 30 stamina.
   staminaValue: 30

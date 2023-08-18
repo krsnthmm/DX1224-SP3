@@ -6,20 +6,30 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    //public GameObject inventoryPrefab;
-    // Inventory Obj that we want to display
+    [Header("Reference to Player Data")]
+    [SerializeField] private PlayerData playerData;
+
+    [Header("Inventory Display")]
     public Inventory inventory;
-    //public GameObject iconPrefab;
     public GameObject iconPrefab;
-    public List<GameObject> itemsDisplayed = new();
+    public List<GameObject> itemsList = new();
+
+    [Header("Item Details Display")]
+    public Image itemDetailsIcon;
+    public TMP_Text itemName;
+    public TMP_Text itemDescription;
+    public Button useButton;
+
+    [Header("Item Box Placements")]
     public int X_START;
     public int Y_START;
     public int X_SPACE_BETWEEN_ITEM;
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEMS;
+
     private int prevInventoryIndex;
     private int currInventoryIndex;
-    //Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    Dictionary<InventorySlot, GameObject> itemsDictionary = new();
 
     // Start is called before the first frame update
     void Start()
@@ -43,19 +53,26 @@ public class InventoryUI : MonoBehaviour
         {
             CreateItemIcon(i);
         }
+
+        // display default text
+        itemName.text = "None";
+        itemDescription.text = "Click on an item for more details.";
+
+        // use button shouldn't be displayed immediately since an item hasn't been selected
+        useButton.gameObject.SetActive(false);
     }
 
     private void CreateItemIcon(int i)
     {
         // Instantiate item icons in the inventory bar
-        //var obj = Instantiate(inventory.Container[i].item.itemIcon, Vector3.zero, Quaternion.identity, transform);
         var obj = Instantiate(iconPrefab, Vector3.zero, Quaternion.identity, transform);
 
         // set iconPrefab's scriptable object to its respective item
         obj.GetComponent<InventoryUIIcon>().SetItem(inventory.Container[i].item);
 
         // set item icon to its respective icon
-        obj.transform.GetChild(1).gameObject.GetComponentInChildren<Image>().sprite = inventory.Container[i].item.itemIcon;
+        var itemIconObj = obj.transform.GetChild(1).gameObject;
+        itemIconObj.GetComponentInChildren<Image>().sprite = inventory.Container[i].item.itemIcon;
 
         // set item icon positions 
         obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
@@ -64,64 +81,77 @@ public class InventoryUI : MonoBehaviour
         obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
 
         // add the item to our Dictionary
-        //itemsDisplayed.Add(inventory.Container[i], obj);
+        itemsDictionary.Add(inventory.Container[i], obj);
 
         // add item to our list
-        itemsDisplayed.Add(obj);
-
-        Debug.Log(obj.transform.GetChild(1).gameObject);
+        itemsList.Add(obj);
     }
 
     public void UpdateDisplay()
     {
-        // loop through items in the inventory obj
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            //// check if the item on display is in the inventory
-            //if (itemsDisplayed.ContainsKey(inventory.Container[i]))
-            //{
-            //    // if yes, update the amount of the same item to the UI
-            //    itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-            //}
-            //else
-            //{
-            InventoryUIIcon inventoryUIIcon = itemsDisplayed[i].GetComponent<InventoryUIIcon>();
+            if (itemsDictionary.ContainsKey(inventory.Container[i]))
+            {
+                itemsDictionary[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+            }
+            else
+            {
+                CreateItemIcon(i);
+            }
+
+            InventoryUIIcon inventoryUIIcon = itemsList[i].GetComponent<InventoryUIIcon>();
 
             if (inventoryUIIcon.GetItem() == inventory.Container[i].item)
             {
                 inventoryUIIcon.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
             }
-            else { 
-                // if not, create the item icon on display on the UI
+            else
+            {
                 CreateItemIcon(i);
             }
 
             if (inventoryUIIcon.isSelected)
-            {   
+            {
                 if (prevInventoryIndex != -1)
                 {
-                    // swap the values
                     int tempValue = currInventoryIndex;
                     prevInventoryIndex = tempValue;
                 }
 
-                // get the new current index
                 currInventoryIndex = i;
 
                 if (currInventoryIndex != prevInventoryIndex && prevInventoryIndex != -1)
                 {
-                    // deselect the previous value
-                    itemsDisplayed[prevInventoryIndex].GetComponent<InventoryUIIcon>().isSelected = false;
-
+                    itemsList[prevInventoryIndex].GetComponent<InventoryUIIcon>().isSelected = false;
                 }
                 else if (prevInventoryIndex == -1)
                 {
-                    // set the new prev index to the current index so that future clicks work
                     prevInventoryIndex = currInventoryIndex;
                 }
 
-                // Select the icon shown
-                inventoryUIIcon.Select();
+                if (inventory.Container[i].amount <= 0)
+                {
+                    inventoryUIIcon.Deselect();
+                    itemsList.Remove(itemsList[currInventoryIndex]);
+                    itemsDictionary.Remove(inventory.Container[i]);
+
+                    inventory.RemoveItem(inventory.Container[i].item);
+
+                    ResetDisplay();
+                    CreateDisplay();
+                }
+                else
+                {
+                    inventoryUIIcon.Select();
+
+                    itemDetailsIcon.sprite = inventory.Container[i].item.itemIcon;
+
+                    itemName.text = inventory.Container[i].item.name;
+                    itemDescription.text = inventory.Container[i].item.description;
+
+                    useButton.gameObject.SetActive(true);
+                }
 
                 Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
             }
@@ -130,6 +160,60 @@ public class InventoryUI : MonoBehaviour
                 inventoryUIIcon.Deselect();
             }
         }
+    } 
+
+    public void UseItem()
+    {
+        int i = currInventoryIndex;
+
+        if (inventory.Container[i].amount > 0)
+        {
+            switch (inventory.Container[i].item.name)
+            {
+                case ("Billybob Medicine"):
+                    playerData.currentHP += 10;
+
+                    if (playerData.currentHP > playerData.maxHP)
+                    {
+                        playerData.currentHP = playerData.maxHP;
+                    }
+                    break;
+                case ("Billybob Power-ade"):
+                    playerData.currentStamina += 30;
+
+                    if (playerData.currentStamina > playerData.maxStamina)
+                    {
+                        playerData.currentStamina = playerData.maxStamina;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            if (inventory.Container[i].item.type != ItemType.KeyObject)
+            {
+                inventory.Container[i].amount--;
+            }
+        }
+    }
+
+    public void ResetDisplay()
+    {
+        GameObject[] iconPrefabs = GameObject.FindGameObjectsWithTag("IconPrefab");
+
+        for (int i = 0; i < inventory.Container.Count; i++)
+        {
+            Destroy(iconPrefabs[i]);
+
+            InventoryUIIcon inventoryUIIcon = itemsList[i].GetComponent<InventoryUIIcon>();
+
+            if (inventoryUIIcon.isSelected)
+            {
+                inventoryUIIcon.isSelected = false;
+            }
+        }
+
+        useButton.gameObject.SetActive(false);
     }
 
     public Vector3 GetPosition(int i)

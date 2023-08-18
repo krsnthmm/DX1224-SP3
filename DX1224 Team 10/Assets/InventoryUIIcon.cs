@@ -16,18 +16,6 @@ public class InventoryUIIcon : MonoBehaviour
         isSelected = false;
     }
 
-    //private void Update()
-    //{
-    //    if (isSelected)
-    //    {
-    //        Select();
-    //    }
-    //    else if (!isSelected)
-    //    {
-    //        Deselect();
-    //    }
-    //}
-
     public InventoryItem GetItem()
     {
         return item;
@@ -43,10 +31,6 @@ public class InventoryUIIcon : MonoBehaviour
         if (!isSelected)
         {
             isSelected = true;
-        }
-        else if (isSelected)
-        {
-            isSelected = false;
         }
     }
 

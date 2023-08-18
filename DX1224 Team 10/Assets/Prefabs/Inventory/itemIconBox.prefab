@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 7379316583200775572}
   m_Layer: 5
   m_Name: itemIconBox
-  m_TagString: Untagged
+  m_TagString: IconPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3866e3d92911246a494c93d7b378af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryUIManager: {fileID: 9208509077577647943, guid: f025889dcc80dfb4b81c473c4ce8605f, type: 3}
   item: {fileID: 0}
   borderImage: {fileID: 8112982682307730879}
   isSelected: 0
