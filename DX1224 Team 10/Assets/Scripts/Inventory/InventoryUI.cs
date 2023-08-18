@@ -130,19 +130,16 @@ public class InventoryUI : MonoBehaviour
                     prevInventoryIndex = currInventoryIndex;
                 }
 
-                //if (inventory.Container[i].amount <= 0)
-                //{
-                //    inventoryUIIcon.Deselect();
-                //    itemsList.Remove(itemsList[currInventoryIndex]);
-                //    itemsDictionary.Remove(inventory.Container[i]);
+                if (inventory.Container[i].amount <= 0)
+                {
+                    inventoryUIIcon.Deselect();
+                    itemsList.Remove(itemsList[currInventoryIndex]);
+                    itemsDictionary.Remove(inventory.Container[i]);
 
-                //    inventory.RemoveItem(inventory.Container[i].item);
-
-                //    ResetDisplay();
-                //    CreateDisplay();
-                //}
-                //else
-                //{
+                    inventory.RemoveItem(inventory.Container[i].item);
+                }
+                else
+                {
                     inventoryUIIcon.Select();
 
                     itemDetailsIcon.sprite = inventory.Container[i].item.itemIcon;
@@ -151,7 +148,7 @@ public class InventoryUI : MonoBehaviour
                     itemDescription.text = inventory.Container[i].item.description;
 
                     useButton.gameObject.SetActive(true);
-                //}
+                }
 
                 Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
             }
