@@ -95,12 +95,6 @@ public class InventoryUI : MonoBehaviour
         itemsDictionary.Remove(inventory.Container[i]);
 
         inventory.RemoveItem(inventory.Container[i].item);
-
-        // update item icon positions
-        for (int j = 0; j < itemsList.Count; j++)
-        {
-            itemsList[j].GetComponent<RectTransform>().localPosition = GetPosition(j);
-        }
     }
 
     public void UpdateDisplay()
@@ -151,12 +145,11 @@ public class InventoryUI : MonoBehaviour
                     inventoryUIIcon.Deselect();
 
                     RemoveItemIcon(currInventoryIndex);
+                    ResetDisplay();
 
                     // set currInventoryIndex to 0 since the item[i] is gone
                     // this is to prevent any indexOutOfRange errors
                     currInventoryIndex = 0;
-
-                    ResetDisplay();
                 }
                 else
                 {
@@ -189,6 +182,9 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             InventoryUIIcon inventoryUIIcon = itemsList[i].GetComponent<InventoryUIIcon>();
+
+            // update item positions
+            itemsList[i].GetComponent<RectTransform>().localPosition = GetPosition(i);
 
             if (inventoryUIIcon.isSelected)
             {
