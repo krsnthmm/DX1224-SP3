@@ -96,6 +96,7 @@ public class InventoryUI : MonoBehaviour
 
         inventory.RemoveItem(inventory.Container[i].item);
 
+        // update item icon positions
         for (int j = 0; j < itemsList.Count; j++)
         {
             itemsList[j].GetComponent<RectTransform>().localPosition = GetPosition(j);
