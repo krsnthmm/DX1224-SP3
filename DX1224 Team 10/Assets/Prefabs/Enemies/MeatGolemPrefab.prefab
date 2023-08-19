@@ -295,6 +295,9 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  whatIsObstacle:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!58 &2451237203087142890
 CircleCollider2D:
   m_ObjectHideFlags: 0

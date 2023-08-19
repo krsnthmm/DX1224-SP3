@@ -49,8 +49,6 @@ public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
             if (idleTimer >= 1.0f)
             {
                 isIdle = false;
-
-                Debug.Log(idleTimer);
             }
         }
         else

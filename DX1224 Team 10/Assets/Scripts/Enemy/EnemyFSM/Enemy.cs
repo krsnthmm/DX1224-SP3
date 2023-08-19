@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
     public int attack;
     public float moveSpeed;
     public float idleTime; // cooldown between attacks
+
+    [Header("Knockback")]
     public bool canKnockback; // can this enemy knock the player back?
     public float thrust;
     public float knockbackTime;
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour
     public float weaponOffset;
 
     public LayerMask whatIsPlayer;
+    public LayerMask whatIsObstacle;
 
     private void Awake()
     {

@@ -324,6 +324,9 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  whatIsObstacle:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!82 &1330125148
 AudioSource:
   m_ObjectHideFlags: 0
