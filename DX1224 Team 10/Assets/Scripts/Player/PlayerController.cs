@@ -50,6 +50,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // keep rigidbody awake
+        // without this pickupItem input won't work properly
+        rb.WakeUp();
+
         if (playerData.currentHP > 0)
         {
             HandleMovementAnimations();

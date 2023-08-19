@@ -19,8 +19,3 @@ public abstract class InventoryItem : ScriptableObject
     [TextArea]
     public string description;
 }
-
-public class InventoryItemBase : MonoBehaviour
-{
-    public InventoryItem itemData;
-}

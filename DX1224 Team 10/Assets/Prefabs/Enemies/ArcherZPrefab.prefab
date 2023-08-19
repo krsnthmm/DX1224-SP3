@@ -186,7 +186,7 @@ Transform:
   m_GameObject: {fileID: 2719936011356157896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 395754717963988473}
@@ -333,7 +333,6 @@ MonoBehaviour:
   attack: 7
   moveSpeed: 1
   idleTime: 0
-  runsAway: 1
   canKnockback: 0
   thrust: 0
   knockbackTime: 0
@@ -375,7 +374,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 3
-  MaxDistance: 10
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -410,7 +409,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -13,20 +13,6 @@ MonoBehaviour:
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
+  maxItems: 15
   showScrollPopup: 1
-  Container:
-  - item: {fileID: 11400000, guid: 0ba8b7fc778593149933af415595877a, type: 2}
-    amount: 1
-    isSelected: 0
-  - item: {fileID: 11400000, guid: cd547aa1b8879c14da8755a3c0f663af, type: 2}
-    amount: 2
-    isSelected: 0
-  - item: {fileID: 11400000, guid: 24f4c38945a21054e815a4d74cdfd370, type: 2}
-    amount: 2
-    isSelected: 0
-  - item: {fileID: 11400000, guid: 9836d9cd8f9864145bc3748c5d9f9b36, type: 2}
-    amount: 1
-    isSelected: 0
-  - item: {fileID: 11400000, guid: 9c8c897783db016439e8727d42a3bcb2, type: 2}
-    amount: 1
-    isSelected: 0
+  Container: []

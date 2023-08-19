@@ -12,15 +12,18 @@ public class Inventory : ScriptableObject
     [SerializeField] private PlayerData playerData;
 
     [Header("Inventory")]
-    private int maxItems;
+    public int maxItems;
     public bool showScrollPopup;
     public List<InventorySlot> Container = new();
 
     // add to player inventory
     public void AddItem(InventoryItem _item, int _amount)
     {
+        Debug.Log("a");
+
         // check if we have that item in that inventory
         bool hasItem = false;
+
         // loop through the Inventory to check if we have the item
         for (int i = 0; i < Container.Count; i++)
         {

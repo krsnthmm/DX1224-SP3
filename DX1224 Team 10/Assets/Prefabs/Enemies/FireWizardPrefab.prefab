@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 3075846268399014460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.53, y: -3.53, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 751747472939993101}
@@ -302,12 +302,12 @@ MonoBehaviour:
   attack: 15
   moveSpeed: 1
   idleTime: 2
-  runsAway: 0
-  doesMultiShot: 0
+  canKnockback: 0
   thrust: 0
   knockbackTime: 0
   isAggroed: 0
   isInAttackRange: 0
+  isNearWall: 0
   rb: {fileID: 977845911494199913}
   enemyAnim: {fileID: 88758631542646843}
   seeker: {fileID: 7404668737345593134}
@@ -343,7 +343,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 3
-  MaxDistance: 10
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -378,7 +378,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
