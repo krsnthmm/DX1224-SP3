@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool knockedBack;
 
     //stamina bar
-    public Image StaminaBar;
+    public Image staminaBar;
     private float timeSinceLastIdleRefill;
 
     void Start()
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
                 }
                 //stamina bar decrease logic
                 playerData.currentStamina -= playerData.staminaConsume * Time.deltaTime;
-                StaminaBar.fillAmount = playerData.currentStamina / playerData.maxStamina;
+                staminaBar.fillAmount = playerData.currentStamina / playerData.maxStamina;
 
             }
 
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
                 {
                     timeSinceLastIdleRefill = 1f;
                     playerData.currentStamina = Mathf.Clamp(playerData.currentStamina + playerData.staminaRefillRate * playerData.staminaRefillInterval, 0f, playerData.maxStamina);
-                    StaminaBar.fillAmount = playerData.currentStamina / playerData.maxStamina;
+                    staminaBar.fillAmount = playerData.currentStamina / playerData.maxStamina;
                 }
             }
         }
