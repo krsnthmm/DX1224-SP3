@@ -6600,17 +6600,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04c60152d33c49b44bb1eef05b59e7b8, type: 3}
---- !u!114 &790386884 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1834041018234929780, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
-  m_PrefabInstance: {fileID: 872674879}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2937545f40e22ff49889f231d769aff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &853045674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6793,18 +6782,6 @@ PrefabInstance:
     - target: {fileID: 9208509077577647992, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9208509077577647992, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.0783
-      objectReference: {fileID: 0}
-    - target: {fileID: 9208509077577647992, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.0783
-      objectReference: {fileID: 0}
-    - target: {fileID: 9208509077577647992, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.0783
       objectReference: {fileID: 0}
     - target: {fileID: 9208509077577647992, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22946,7 +22923,7 @@ PrefabInstance:
     - target: {fileID: 5701775121865446027, guid: 81fa7f9ed435d2f4eb732fd7a03375f5, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 790386884}
+      objectReference: {fileID: 0}
     - target: {fileID: 5701775121865446027, guid: 81fa7f9ed435d2f4eb732fd7a03375f5, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetBGMVolume
@@ -23002,7 +22979,7 @@ PrefabInstance:
     - target: {fileID: 5701775123407729567, guid: 81fa7f9ed435d2f4eb732fd7a03375f5, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 790386884}
+      objectReference: {fileID: 0}
     - target: {fileID: 5701775123407729567, guid: 81fa7f9ed435d2f4eb732fd7a03375f5, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetMasterVolume
@@ -23022,7 +22999,7 @@ PrefabInstance:
     - target: {fileID: 5701775123544100920, guid: 81fa7f9ed435d2f4eb732fd7a03375f5, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 790386884}
+      objectReference: {fileID: 0}
     - target: {fileID: 5701775123544100920, guid: 81fa7f9ed435d2f4eb732fd7a03375f5, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSFXVolume

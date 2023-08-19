@@ -9,7 +9,7 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public int maxItems;
-    public List<InventorySlot> Container = new List<InventorySlot>();
+    public List<InventorySlot> Container = new();
 
     // add to player inventory
     public void AddItem(InventoryItem _item, int _amount)

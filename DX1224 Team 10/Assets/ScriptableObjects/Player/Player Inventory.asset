@@ -15,11 +15,11 @@ MonoBehaviour:
   maxItems: 15
   Container:
   - item: {fileID: 11400000, guid: 2ffd2d5ad2f3d0a409b229295e2664ab, type: 2}
-    amount: 2
-    isSelected: 0
-  - item: {fileID: 11400000, guid: 1f30414fa541e0348af9e3ca6b9cd9a7, type: 2}
-    amount: 2
+    amount: 1
     isSelected: 0
   - item: {fileID: 11400000, guid: c74216913776d3247ba02bf81f35a645, type: 2}
-    amount: 2
+    amount: 1
+    isSelected: 0
+  - item: {fileID: 11400000, guid: c68e1364badf0db47b516ec6ce77411a, type: 2}
+    amount: 1
     isSelected: 0

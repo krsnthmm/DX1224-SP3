@@ -90,6 +90,21 @@ public class InventoryUI : MonoBehaviour
         itemsList.Add(obj);
     }
 
+    private void RemoveItemIcon(int i)
+    {
+        Destroy(itemsList[i]);
+
+        itemsList.Remove(itemsList[i]);
+        itemsDictionary.Remove(inventory.Container[i]);
+
+        inventory.RemoveItem(inventory.Container[i].item);
+
+        for (int j = 0; j < itemsList.Count; j++)
+        {
+            itemsList[j].GetComponent<RectTransform>().localPosition = GetPosition(j);
+        }
+    }
+
     public void UpdateDisplay()
     {
         for (int i = 0; i < inventory.Container.Count; i++)
@@ -136,10 +151,12 @@ public class InventoryUI : MonoBehaviour
                 if (inventory.Container[i].amount <= 0)
                 {
                     inventoryUIIcon.Deselect();
-                    itemsList.Remove(itemsList[currInventoryIndex]);
-                    itemsDictionary.Remove(inventory.Container[i]);
 
-                    inventory.RemoveItem(inventory.Container[i].item);
+                    RemoveItemIcon(currInventoryIndex);
+
+                    // set currInventoryIndex to 0 since the item[i] is gone
+                    // this is to prevent any indexOutOfRange errors
+                    currInventoryIndex = 0;
 
                     ResetDisplay();
                 }
@@ -153,9 +170,9 @@ public class InventoryUI : MonoBehaviour
                     itemDescription.text = inventory.Container[i].item.description;
 
                     useButton.gameObject.SetActive(true);
-                }
 
-                Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
+                    Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
+                }
             }
             else
             {
@@ -212,12 +229,8 @@ public class InventoryUI : MonoBehaviour
 
     public void ResetDisplay()
     {
-        //GameObject[] iconPrefabs = GameObject.FindGameObjectsWithTag("IconPrefab");
-
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            //Destroy(iconPrefabs[i]);
-
             InventoryUIIcon inventoryUIIcon = itemsList[i].GetComponent<InventoryUIIcon>();
 
             if (inventoryUIIcon.isSelected)
@@ -225,6 +238,9 @@ public class InventoryUI : MonoBehaviour
                 inventoryUIIcon.isSelected = false;
             }
         }
+
+        // display default empty icon
+        itemDetailsIcon.sprite = iconPrefab.GetComponent<Image>().sprite;
 
         // display default text
         itemName.text = "None";

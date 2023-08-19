@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Move the player horizontally and vertically
-        Vector2 moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 moveDirection = new(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         moveDirection = Vector2.ClampMagnitude(moveDirection, 1);
 
         if (!knockedBack && !isDead)

@@ -11,13 +11,11 @@ public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
     Path path;
     private int currentWaypoint = 0;
 
-    private Vector3 destination;
     private Vector3 dir;
     private int targetIndex;
 
     private float idleTimer = 0f;
 
-    private bool reachedEndOfPath;
     private bool isIdle;
 
     public override void Enter()
@@ -51,7 +49,6 @@ public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
             if (idleTimer >= 1.0f)
             {
                 isIdle = false;
-                reachedEndOfPath = false;
 
                 Debug.Log(idleTimer);
             }
@@ -87,7 +84,6 @@ public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
 
                 enemy.seeker.StartPath(enemy.rb.position, enemy.waypoints[targetIndex].transform.position, OnPathComplete);
 
-                reachedEndOfPath = true;
                 isIdle = true;
 
                 enemy.enemyAnim.SetBool("idle", true);
@@ -95,8 +91,6 @@ public class EnemyIdleWaypointPatrol : EnemyIdleBaseInstance
             }
             else
             {
-                reachedEndOfPath = false;
-
                 enemy.enemyAnim.SetBool("idle", false);
                 enemy.enemyAnim.SetBool("walk", true);
             }

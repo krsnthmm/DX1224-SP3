@@ -243,10 +243,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9208509077744414905, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208509077744414905, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9208509077744414906, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
       propertyPath: playerData
       value: 
       objectReference: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
+    - target: {fileID: 9208509077759502277, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
 --- !u!224 &201122828 stripped
@@ -312,7 +324,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.510614
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
