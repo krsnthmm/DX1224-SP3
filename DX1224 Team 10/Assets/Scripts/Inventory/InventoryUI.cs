@@ -6,23 +6,28 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private PlayerData playerData;
+    [SerializeField] private ScrollPopupUI scrollPopupUI;
+
     [Header("Inventory Display")]
-    public Inventory inventory;
-    public GameObject iconPrefab;
-    public List<GameObject> itemsList = new();
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private GameObject iconPrefab;
+    [SerializeField] private List<GameObject> itemsList = new();
 
     [Header("Item Details Display")]
-    public Image itemDetailsIcon;
-    public TMP_Text itemName;
-    public TMP_Text itemDescription;
-    public Button useButton;
+    [SerializeField] private Image itemDetailsIcon;
+    [SerializeField] private TMP_Text itemName;
+    [SerializeField] private TMP_Text itemDescription;
+    [SerializeField] private Button useButton;
+    [SerializeField] private TMP_Text useButtonText;
 
     [Header("Item Box Placements")]
-    public int X_START;
-    public int Y_START;
-    public int X_SPACE_BETWEEN_ITEM;
-    public int NUMBER_OF_COLUMN;
-    public int Y_SPACE_BETWEEN_ITEMS;
+    [SerializeField] private int X_START;
+    [SerializeField] private int Y_START;
+    [SerializeField] private int X_SPACE_BETWEEN_ITEM;
+    [SerializeField] private int NUMBER_OF_COLUMN;
+    [SerializeField] private int Y_SPACE_BETWEEN_ITEMS;
 
     private int prevInventoryIndex;
     private int currInventoryIndex;
@@ -164,17 +169,48 @@ public class InventoryUI : MonoBehaviour
 
                     Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
                 }
+
+                UpdateUseButtonText();
             }
             else
             {
                 inventoryUIIcon.Deselect();
             }
         }
-    } 
+    }
+
+    public void UpdateUseButtonText()
+    {
+        if (inventory.Container[currInventoryIndex].item.name == "Cross")
+        {
+            if (!playerData.hasCrossEquipped)
+                useButtonText.text = "Equip";
+            else
+                useButtonText.text = "Unequip";
+        }
+        else if (inventory.Container[currInventoryIndex].item.type == ItemType.KeyObject)
+        {
+            useButtonText.text = "Check";
+        }
+        else
+        {
+            useButtonText.text = "Use";
+        }
+    }
 
     public void OnUseButtonClick()
     {
-        inventory.UseItem(currInventoryIndex);
+        if (inventory.Container[currInventoryIndex].item.type != ItemType.KeyObject)
+        {
+            inventory.UseItem(currInventoryIndex);
+        }
+        else
+        {
+            var keyItem = inventory.Container[currInventoryIndex].item as KeyObject;
+
+            scrollPopupUI.ToggleScrollPopup();
+            scrollPopupUI.UpdatePopup(keyItem.name, keyItem.keyText);
+        }
     }
 
     public void ResetDisplay()

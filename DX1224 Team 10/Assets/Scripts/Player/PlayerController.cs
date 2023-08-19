@@ -88,8 +88,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            isDead = true;
-
             // set player's current HP to 0 (HP cannot be negative)
             playerData.currentHP = 0;
 
@@ -105,6 +103,13 @@ public class PlayerController : MonoBehaviour
             m_animator.SetBool("dash", false);
 
             m_animator.SetBool("death", true);
+
+            // if death animation is finished, set isDead to true and display death screen
+            if (isAnimFinished)
+            {
+                isDead = true;
+                Debug.Log("Player is dead.");
+            }
         }
     }
 
@@ -134,7 +139,7 @@ public class PlayerController : MonoBehaviour
         m_animator.SetBool("walk", false);
 
         // Increase the player's movement speed for the dash
-        playerData.currentSpeed = playerData.walkSpeed * 2;
+        playerData.currentSpeed = playerData.dashSpeed;
 
         // Play dash animation
         m_animator.SetBool("dash", true);
@@ -148,26 +153,6 @@ public class PlayerController : MonoBehaviour
         // Set dashing to false
         m_animator.SetBool("dash", false);
         isDashing = false;
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        var item = col.GetComponent<Item>();
-
-        // check if player that collides with the object has an item script
-        if (item)
-        {
-            Debug.Log("!");
-            // add the item to the player's inventory
-            playerInventory.AddItem(item.item, 1);
-            // Destroy the item after adding it to inventory
-            Destroy(col.gameObject);
-        }
-        else if (col.gameObject.CompareTag("Coin"))
-        {
-            playerData.coins++;
-            Destroy(col.gameObject);
-        }
     }
 
     public void TakeDamage(int damage)

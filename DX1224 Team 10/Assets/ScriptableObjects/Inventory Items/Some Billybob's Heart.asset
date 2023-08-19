@@ -16,3 +16,4 @@ MonoBehaviour:
   type: 0
   description: Increases Max HP by 50.
   healthValue: 50
+  isMaxIncrease: 1

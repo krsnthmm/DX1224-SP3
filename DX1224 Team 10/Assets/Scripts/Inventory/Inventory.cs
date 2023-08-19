@@ -8,8 +8,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class Inventory : ScriptableObject
 {
-    public int maxItems;
-    public PlayerData playerData;
+    [Header("References")]
+    [SerializeField] private PlayerData playerData;
+
+    [Header("Inventory")]
+    private int maxItems;
+    public bool showScrollPopup;
     public List<InventorySlot> Container = new();
 
     // add to player inventory
@@ -119,11 +123,12 @@ public class Inventory : ScriptableObject
                         playerData.dashSpeed += speedItem.speedValue;
                     }
                     break;
-                case ItemType.KeyObject:
-                    var keyItem = Container[i].item as KeyObject;
-                    break;
                 case ItemType.Default:
                     var defaultItem = Container[i].item as DefaultObject;
+                    if (defaultItem.name == "Cross")
+                    {
+                        playerData.hasCrossEquipped = !playerData.hasCrossEquipped;
+                    }
                     break;
                 default:
                     break;

@@ -10,7 +10,6 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
 
     Path path;
     private int currentWaypoint = 0;
-    private bool reachedEndOfPath = false;
 
     float timer;
 
@@ -54,12 +53,12 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            enemy.isInAttackRange = true;
             return;
         }
         else
         {
-            reachedEndOfPath = false;
+            enemy.isInAttackRange = false;
         }
 
         dir = ((Vector2)path.vectorPath[currentWaypoint] - enemy.rb.position).normalized;

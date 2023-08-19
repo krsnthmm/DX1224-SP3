@@ -22,12 +22,13 @@ MonoBehaviour:
   currentStamina: 75
   maxHP: 150
   currentHP: 150
-  coins: 2
+  coins: 0
   levels: 0
-  currentSpeed: 2
-  walkSpeed: 2
-  dashSpeed: 7
+  currentSpeed: 12
+  walkSpeed: 12
+  dashSpeed: 17
   dashDuration: 0.5
   staminaConsume: 25
   staminaRefillRate: 25
   staminaRefillInterval: 15
+  hasCrossEquipped: 0

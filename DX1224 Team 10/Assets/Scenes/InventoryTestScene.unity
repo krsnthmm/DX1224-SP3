@@ -251,10 +251,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9208509077744414906, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
-      propertyPath: playerData
-      value: 
-      objectReference: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
     - target: {fileID: 9208509077759502277, guid: 6aca307f917cfef4da3c01c213dc08e1, type: 3}
       propertyPath: m_IsActive
       value: 1

@@ -29,9 +29,11 @@ public class PlayerData : ScriptableObject
     public float dashSpeed;
     public float dashDuration;
 
+    [Header("Other Variables")]
     public float staminaConsume;
     [HideInInspector] public float staminaRefillRate = 25f;
     [HideInInspector] public float staminaRefillInterval = 15f;
+    public bool hasCrossEquipped;
 
     //inventory and items stored 
     //player position 
