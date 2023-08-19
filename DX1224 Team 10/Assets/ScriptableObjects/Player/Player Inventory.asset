@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
   maxItems: 15
+  playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
   Container:
   - item: {fileID: 11400000, guid: 2ffd2d5ad2f3d0a409b229295e2664ab, type: 2}
     amount: 1

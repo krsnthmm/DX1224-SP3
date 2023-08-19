@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private Animator m_animator;
-    private SpriteRenderer sr;
     private Rigidbody2D rb;
 
     private bool isAnimFinished;
@@ -28,7 +27,6 @@ public class PlayerController : MonoBehaviour
         playerData.currentSpeed = playerData.walkSpeed;
 
         m_animator = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
 
         isAnimFinished = false;
@@ -136,7 +134,7 @@ public class PlayerController : MonoBehaviour
         m_animator.SetBool("walk", false);
 
         // Increase the player's movement speed for the dash
-        playerData.currentSpeed = playerData.dashSpeed;
+        playerData.currentSpeed = playerData.walkSpeed * 2;
 
         // Play dash animation
         m_animator.SetBool("dash", true);

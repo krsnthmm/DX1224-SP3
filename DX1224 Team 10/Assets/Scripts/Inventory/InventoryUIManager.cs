@@ -6,13 +6,11 @@ public class InventoryUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject inventoryMenu;
     public Inventory inventory;
-    //private int inventoryIndex;
     
     // Start is called before the first frame update
     void Start()
     {
         inventoryMenu.SetActive(false);
-        //inventoryIndex = 0;
     }
 
     // Update is called once per frame

@@ -6,10 +6,10 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Default Player Data")]
-    public float defaultSpeed = 1f;
-    public float defaultHP = 150f;
-    public float defaultStamina = 75f;
-    public int defaultLives = 3;
+    [HideInInspector] public float defaultSpeed = 1f;
+    [HideInInspector] public float defaultHP = 150f;
+    [HideInInspector] public float defaultStamina = 75f;
+    [HideInInspector] public int defaultLives = 3;
 
     [Header("Current Player Data")]
     public int maxLives;

@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    [Header("Reference to Player Data")]
-    [SerializeField] private PlayerData playerData;
-
     [Header("Inventory Display")]
     public Inventory inventory;
     public GameObject iconPrefab;
@@ -181,50 +178,9 @@ public class InventoryUI : MonoBehaviour
         }
     } 
 
-    public void UseItem()
+    public void OnUseButtonClick()
     {
-        int i = currInventoryIndex;
-
-        if (inventory.Container[i].amount > 0)
-        {
-            // TODO: not make this so,,, hard-coded in ??
-            switch (inventory.Container[i].item.name)
-            {
-                case ("Billybob Medicine"):
-                    playerData.currentHP += 10;
-
-                    if (playerData.currentHP > playerData.maxHP)
-                    {
-                        playerData.currentHP = playerData.maxHP;
-                    }
-                    break;
-                case ("Billybob Power-ade"):
-                    playerData.currentStamina += 30;
-
-                    if (playerData.currentStamina > playerData.maxStamina)
-                    {
-                        playerData.currentStamina = playerData.maxStamina;
-                    }
-                    break;
-                case ("Billybob-ster Energy"):
-                    playerData.walkSpeed += 5;
-                    // TODO: playerData coroutine, set movementspeed back to 0 at the end of 30s
-                    break;
-                case ("Some Billybob's Heart"):
-                    playerData.maxHP += 50;
-                    break;
-                case ("Billybob Shoes"):
-                    playerData.walkSpeed += 5;
-                    break;
-                default:
-                    break;
-            }
-
-            if (inventory.Container[i].item.type != ItemType.KeyObject)
-            {
-                inventory.Container[i].amount--;
-            }
-        }
+        inventory.UseItem(currInventoryIndex);
     }
 
     public void ResetDisplay()

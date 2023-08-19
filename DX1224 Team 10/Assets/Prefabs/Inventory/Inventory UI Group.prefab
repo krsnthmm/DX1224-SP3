@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9208509077744414906}
         m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
-        m_MethodName: UseItem
+        m_MethodName: OnUseButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

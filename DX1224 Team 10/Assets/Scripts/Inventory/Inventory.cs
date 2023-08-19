@@ -9,6 +9,7 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public int maxItems;
+    public PlayerData playerData;
     public List<InventorySlot> Container = new();
 
     // add to player inventory
@@ -72,6 +73,51 @@ public class Inventory : ScriptableObject
         if (hasItem)
         {
             Container.Remove(itemToRemove);
+        }
+        else
+            return;
+    }
+
+    public void UseItem(int i)
+    {
+        if (Container[i].amount > 0)
+        {
+            switch (Container[i].item.name)
+            {
+                case ("Billybob Medicine"):
+                    playerData.currentHP += 25;
+
+                    if (playerData.currentHP > playerData.maxHP)
+                    {
+                        playerData.currentHP = playerData.maxHP;
+                    }
+                    break;
+                case ("Billybob Power-ade"):
+                    playerData.currentStamina += 30;
+
+                    if (playerData.currentStamina > playerData.maxStamina)
+                    {
+                        playerData.currentStamina = playerData.maxStamina;
+                    }
+                    break;
+                case ("Billybob-ster Energy"):
+                    playerData.walkSpeed += 5;
+                    // TODO: playerData coroutine, set movementspeed back to 0 at the end of 30s
+                    break;
+                case ("Some Billybob's Heart"):
+                    playerData.maxHP += 50;
+                    break;
+                case ("Billybob Shoes"):
+                    playerData.walkSpeed += 5;
+                    break;
+                default:
+                    break;
+            }
+
+            if (Container[i].item.type != ItemType.KeyObject)
+            {
+                Container[i].amount--;
+            }
         }
         else
             return;

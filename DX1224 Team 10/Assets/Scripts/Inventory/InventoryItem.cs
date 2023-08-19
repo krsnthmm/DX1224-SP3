@@ -15,29 +15,12 @@ public enum ItemType
 public abstract class InventoryItem : ScriptableObject
 {
     public Sprite itemIcon;
-    //public int id;
-    //public Sprite itemIcon;
     public ItemType type;
     [TextArea]
     public string description;
-    //public bool isSelected;
-
-    //public void Awake()
-    //{
-    //    isSelected = false;
-    //}
 }
 
-
-
-//[System.Serializable]
-//public class Item
-//{
-//    public string Name;
-//    public int Id;
-//    public Item(InventoryItem item)
-//    {
-//        Name = item.name;
-//        Id = item.id;
-//    }
-//}
+public class InventoryItemBase : MonoBehaviour
+{
+    public InventoryItem itemData;
+}
