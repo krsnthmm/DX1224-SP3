@@ -80,17 +80,12 @@ public class Inventory : ScriptableObject
 
     public void UseItem(int i)
     {
-        var healthItem = Container[i].item as HealthObject;
-        var staminaItem = Container[i].item as StaminaObject;
-        var speedItem = Container[i].item as SpeedObject;
-        var keyItem = Container[i].item as KeyObject;
-        var defaultItem = Container[i].item as DefaultObject;
-
         if (Container[i].amount > 0)
         {
             switch (Container[i].item.type)
             {
                 case ItemType.Health:
+                    var healthItem = Container[i].item as HealthObject;
                     if (!healthItem.isMaxIncrease)
                     {
                         playerData.currentHP += healthItem.healthValue;
@@ -105,6 +100,7 @@ public class Inventory : ScriptableObject
                     }
                     break;
                 case ItemType.Stamina:
+                    var staminaItem = Container[i].item as StaminaObject;
                     playerData.currentStamina += staminaItem.staminaValue;
                     if (playerData.currentStamina > playerData.maxStamina)
                     {
@@ -112,6 +108,7 @@ public class Inventory : ScriptableObject
                     }
                     break;
                 case ItemType.Speed:
+                    var speedItem = Container[i].item as SpeedObject;
                     if (speedItem.isTempBoost)
                     {
                         playerData.currentSpeed += speedItem.speedValue;
@@ -123,9 +120,10 @@ public class Inventory : ScriptableObject
                     }
                     break;
                 case ItemType.KeyObject:
+                    var keyItem = Container[i].item as KeyObject;
                     break;
                 case ItemType.Default:
-
+                    var defaultItem = Container[i].item as DefaultObject;
                     break;
                 default:
                     break;
