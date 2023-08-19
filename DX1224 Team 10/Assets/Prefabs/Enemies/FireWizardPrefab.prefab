@@ -300,7 +300,7 @@ MonoBehaviour:
   ChaseBase: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
   AttackBase: {fileID: 11400000, guid: 6b9a57d18d55d754082188015fb55087, type: 2}
   attack: 15
-  moveSpeed: 1
+  moveSpeed: 2
   idleTime: 2
   canKnockback: 0
   thrust: 0

@@ -51,16 +51,6 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
             return;
         }
 
-        if (currentWaypoint >= path.vectorPath.Count)
-        {
-            enemy.isInAttackRange = true;
-            return;
-        }
-        else
-        {
-            enemy.isInAttackRange = false;
-        }
-
         dir = ((Vector2)path.vectorPath[currentWaypoint] - enemy.rb.position).normalized;
         enemy.rb.velocity = dir * enemy.moveSpeed;
 
