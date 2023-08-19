@@ -165,7 +165,8 @@ public class InventoryUI : MonoBehaviour
                     itemName.text = inventory.Container[i].item.name;
                     itemDescription.text = inventory.Container[i].item.description;
 
-                    useButton.gameObject.SetActive(true);
+                    if (inventory.Container[currInventoryIndex].item.name != "Key")
+                        useButton.gameObject.SetActive(true);
 
                     Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
                 }

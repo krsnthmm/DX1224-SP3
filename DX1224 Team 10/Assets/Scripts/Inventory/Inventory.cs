@@ -19,8 +19,6 @@ public class Inventory : ScriptableObject
     // add to player inventory
     public void AddItem(InventoryItem _item, int _amount)
     {
-        Debug.Log("a");
-
         // check if we have that item in that inventory
         bool hasItem = false;
 
