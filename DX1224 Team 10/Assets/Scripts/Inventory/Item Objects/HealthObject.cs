@@ -6,6 +6,8 @@ using UnityEngine;
 public class HealthObject : InventoryItem
 {
     public int healthValue;
+    public bool isMaxIncrease;
+
     public void Awake()
     {
         type = ItemType.Health;

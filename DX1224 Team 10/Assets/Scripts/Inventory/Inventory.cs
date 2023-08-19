@@ -80,41 +80,58 @@ public class Inventory : ScriptableObject
 
     public void UseItem(int i)
     {
+        var healthItem = Container[i].item as HealthObject;
+        var staminaItem = Container[i].item as StaminaObject;
+        var speedItem = Container[i].item as SpeedObject;
+        var keyItem = Container[i].item as KeyObject;
+        var defaultItem = Container[i].item as DefaultObject;
+
         if (Container[i].amount > 0)
         {
-            switch (Container[i].item.name)
+            switch (Container[i].item.type)
             {
-                case ("Billybob Medicine"):
-                    playerData.currentHP += 25;
-
-                    if (playerData.currentHP > playerData.maxHP)
+                case ItemType.Health:
+                    if (!healthItem.isMaxIncrease)
                     {
-                        playerData.currentHP = playerData.maxHP;
+                        playerData.currentHP += healthItem.healthValue;
+                        if (playerData.currentHP > playerData.maxHP)
+                        {
+                            playerData.currentHP = playerData.maxHP;
+                        }
+                    }
+                    else
+                    {
+                        playerData.maxHP += healthItem.healthValue;
                     }
                     break;
-                case ("Billybob Power-ade"):
-                    playerData.currentStamina += 30;
-
+                case ItemType.Stamina:
+                    playerData.currentStamina += staminaItem.staminaValue;
                     if (playerData.currentStamina > playerData.maxStamina)
                     {
                         playerData.currentStamina = playerData.maxStamina;
                     }
                     break;
-                case ("Billybob-ster Energy"):
-                    playerData.walkSpeed += 5;
-                    // TODO: playerData coroutine, set movementspeed back to 0 at the end of 30s
+                case ItemType.Speed:
+                    if (speedItem.isTempBoost)
+                    {
+                        playerData.currentSpeed += speedItem.speedValue;
+                    }
+                    else
+                    {
+                        playerData.walkSpeed += speedItem.speedValue;
+                        playerData.dashSpeed += speedItem.speedValue;
+                    }
                     break;
-                case ("Some Billybob's Heart"):
-                    playerData.maxHP += 50;
+                case ItemType.KeyObject:
                     break;
-                case ("Billybob Shoes"):
-                    playerData.walkSpeed += 5;
+                case ItemType.Default:
+
                     break;
                 default:
                     break;
             }
 
-            if (Container[i].item.type != ItemType.KeyObject)
+            if (Container[i].item.type < ItemType.KeyObject)
             {
                 Container[i].amount--;
             }

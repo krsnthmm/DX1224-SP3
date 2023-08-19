@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpeedObject : InventoryItem
 {
     public int speedValue;
-    [SerializeField] private bool isTempBoost;
+    public bool isTempBoost;
     public float buffDuration;
     public void Awake()
     {
