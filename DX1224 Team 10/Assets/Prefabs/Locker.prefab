@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4102765473070152548}
   - component: {fileID: 4102765473070152549}
   - component: {fileID: 4102765473070152347}
-  - component: {fileID: 4102765473070152346}
   - component: {fileID: 4102765473070152345}
+  - component: {fileID: 1401592020926090375}
   m_Layer: 0
   m_Name: Locker
   m_TagString: Locker
@@ -113,18 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.87}
   m_EdgeRadius: 0
---- !u!114 &4102765473070152346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4102765473070152550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2111075dede6b51439f00f9a82f7c561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &4102765473070152345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,3 +139,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &1401592020926090375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4102765473070152550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebada5257c61d6843a63aed88f1720b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObject: {fileID: 0}
+  lockerObject: {fileID: 0}

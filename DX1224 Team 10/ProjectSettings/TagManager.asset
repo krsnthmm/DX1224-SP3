@@ -13,6 +13,17 @@ TagManager:
   - Coin
   - IconPrefab
   - ItemPrefab
+  - Locker
+  - Hallway
+  - TP5
+  - TP2
+  - MainHall
+  - Interactable
+  - TP3
+  - TP1
+  - Room4
+  - Destructible
+  - Key
   layers:
   - Default
   - TransparentFX

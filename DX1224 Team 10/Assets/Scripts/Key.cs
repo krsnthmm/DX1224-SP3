@@ -2,29 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public class Key : MonoBehaviour
 {
-    public PlayerData playerData;
     private bool PlayerInRange;
-
-    private void Start()
+    private bool GotKey = false;
+    // Start is called before the first frame update
+    void Start()
     {
-       
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (PlayerInRange && Input.GetKeyDown(KeyCode.F))
+        if (PlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            if (gameObject.CompareTag("Interactable"))
+            if (gameObject.CompareTag("Key"))
             {
-                playerData.coins++;
-                Debug.Log("Player gets coins");
-            }
-
-            if (gameObject.CompareTag("Destructible"))
-            {
-                playerData.coins++;
+                GotKey = true;
                 Destroy(gameObject);
             }
         }
