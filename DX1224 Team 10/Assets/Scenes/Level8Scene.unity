@@ -7347,7 +7347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1834041018234929783, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
       propertyPath: m_Name
-      value: Audio Manager
+      value: Audio Volume Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3464323662368714177, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
       propertyPath: BGMSlider
@@ -7363,6 +7363,17 @@ PrefabInstance:
       objectReference: {fileID: 92951788}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
+--- !u!114 &872674880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 49992330825320012, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
+  m_PrefabInstance: {fileID: 872674879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd8d4f282d017a448b48a3f59f0a1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &895688302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2626649553254390264, guid: bb2f28f8f57345b47a72a8839be27fb7, type: 3}
@@ -24805,6 +24816,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 898255550195913112, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 898255550195913112, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
     - target: {fileID: 1254675417731203992, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -24817,6 +24836,22 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1127622817}
+    - target: {fileID: 7293799819144912938, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 7293799819144912938, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596483525860523582, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 8596483525860523582, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 046380a8fb457a548b048df5fa398750, type: 3}
 --- !u!224 &6794039469136748532 stripped

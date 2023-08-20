@@ -6,24 +6,25 @@ using UnityEngine.UI;
 
 public class AudioVolumeManager : MonoBehaviour
 {
-    public AudioMixer mixer;
-    public Slider masterSlider;
-    public Slider BGMSlider;
-    public Slider SFXSlider;
+    [Header("Components")]
+    [SerializeField] private AudioMixer mixer;
+    [SerializeField] private AudioPlayer audioPlayer;
+
+    [Header("Volume Sliders")]
+    [SerializeField] private Slider masterSlider;
+    [SerializeField] private Slider BGMSlider;
+    [SerializeField] private Slider SFXSlider;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioPlayer = GetComponent<AudioPlayer>();
+
         masterSlider.value = PlayerPrefsManager.Load("MasterVolume");
         BGMSlider.value = PlayerPrefsManager.Load("BGMVolume");
         SFXSlider.value = PlayerPrefsManager.Load("SFXVolume");
-        Debug.Log(masterSlider.value + ", " + BGMSlider.value + ", " + SFXSlider.value);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(masterSlider.value + ", " + BGMSlider.value + ", " + SFXSlider.value);
     }
 
     public void SetMasterVolume()

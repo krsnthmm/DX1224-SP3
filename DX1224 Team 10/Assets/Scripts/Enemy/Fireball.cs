@@ -6,16 +6,17 @@ public class Fireball : MonoBehaviour
 {
     private GameObject target;
     private PlayerController player;
+    [SerializeField] private GameObject enemy;
 
     private Animator animator;
     private Rigidbody2D rb;
     private ParticleSystem ps;
 
-    public float speed;
-    public float rotateSpeed;
+    private float speed;
+    [SerializeField] private float rotateSpeed;
     private float timer;
-    public float followTime; // amount of time projectile follows the player for in seconds
-    public float lifetime; // projectile lifetime in seconds
+    [SerializeField] private float followTime; // amount of time projectile follows the player for in seconds
+    [SerializeField] private float lifetime; // projectile lifetime in seconds
 
     private bool hitSolid; // has it hit the player / a wall ?
     private bool isAnimFinished;
@@ -25,9 +26,11 @@ public class Fireball : MonoBehaviour
         timer = 0f;
 
         target = GameObject.FindGameObjectWithTag("Player");
+        player = target.GetComponent<PlayerController>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         ps = GetComponentInChildren<ParticleSystem>();
+
 
         animator.SetBool("active", true);
     }
@@ -35,6 +38,9 @@ public class Fireball : MonoBehaviour
     private void FixedUpdate()
     {
         timer += Time.deltaTime;
+
+        // we don't want to make it too easy for the player to run away, so we make our fireball's speed the same as our player's walk speed
+        speed = player.playerData.walkSpeed;
 
         if (timer < followTime)
         {
@@ -47,8 +53,8 @@ public class Fireball : MonoBehaviour
         {
             rb.angularVelocity = 0f;
         }
-            
-        rb.velocity = speed * Time.deltaTime * transform.up;
+
+        rb.velocity = speed * transform.up;
 
         if (hitSolid || timer > lifetime)
         {
@@ -67,16 +73,15 @@ public class Fireball : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player"))
         {
             hitSolid = true;
 
-            player = collision.gameObject.GetComponent<PlayerController>();
-            player.TakeDamage(15);
+            player.TakeDamage(enemy.GetComponent<Enemy>().attack);
         }
-        else if (collision.gameObject.layer == 3)
+        else if (1 << col.gameObject.layer == enemy.GetComponent<Enemy>().whatIsObstacle)
         {
             hitSolid = true;
         }

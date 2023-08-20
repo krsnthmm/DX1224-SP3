@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c914758e1d801fe459a9d1058fcc5029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  enemy: {fileID: 2719936011356157896, guid: 71e63539c3b2e7848972ec57efcdfbd3, type: 3}
+  speed: 10
   lifetime: 1
   distance: 0.5
   whatIsSolid:

@@ -4950,7 +4950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5abf3bf56d23a84899df8e60e810cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  enemy: {fileID: 3075846268399014460, guid: f075c21bcf614dc498e7a9d88b0d2c47, type: 3}
   rotateSpeed: 200
   followTime: 5
   lifetime: 10

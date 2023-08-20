@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    [SerializeField] private GameObject enemy;
+
     public float speed;
     private float timer;
     public float lifetime;
@@ -33,7 +35,8 @@ public class Arrow : MonoBehaviour
             {
                 if (hitInfo.collider.CompareTag("Player"))
                 {
-                    hitInfo.collider.gameObject.GetComponent<PlayerController>().TakeDamage(7);
+                    var target = hitInfo.collider.gameObject;
+                    target.GetComponent<PlayerController>().TakeDamage(enemy.GetComponent<Enemy>().attack);
                     Debug.Log("Player takes damage!");
                 }
                 Destroy(gameObject);
@@ -46,7 +49,7 @@ public class Arrow : MonoBehaviour
 
         if (!isDeflected)
         {
-            rb.velocity = speed * Time.deltaTime * transform.up;
+            rb.velocity = speed * transform.up;
         }
         else
         {
