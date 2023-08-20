@@ -37,8 +37,6 @@ public class SceneLoader : MonoBehaviour
         while (!op.IsDone)
         {
             float PercentComplete = Mathf.Clamp01(op.PercentComplete / .9f);
-            //slider.value = op.PercentComplete;
-            //percentText.text = PercentComplete * 100f + "%";
 
             yield return null;
         }
