@@ -24,23 +24,17 @@ public class AttackRangeCheck : MonoBehaviour
 
         if (raycastHit.collider != null)
         {
-            if (1 << raycastHit.collider.gameObject.layer == enemy.whatIsPlayer.value)
+            if (col.gameObject.CompareTag("Player") && 1 << raycastHit.collider.gameObject.layer != enemy.whatIsObstacle.value)
             {
                 enemy.isInAttackRange = true;
                 Debug.Log("!");
             }
-            else if (1 << raycastHit.collider.gameObject.layer == enemy.whatIsObstacle.value)
-            {
-                enemy.isInAttackRange = false;
-                Debug.Log("...");
-                return;
-            }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D col)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player"))
         {
             enemy.isInAttackRange = false;
             Debug.Log("!!!");

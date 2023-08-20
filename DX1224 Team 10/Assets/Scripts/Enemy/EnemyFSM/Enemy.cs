@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour
 
     public void MeleeAttack() 
     {
-        Collider2D target = Physics2D.OverlapCircle(attackRangeCheck.position, attackRangeCheck.GetComponent<CircleCollider2D>().radius, whatIsPlayer);
+        Collider2D target = Physics2D.OverlapCircle(attackRangeCheck.position, attackRangeCheck.GetComponent<CircleCollider2D>().radius * transform.localScale.x, whatIsPlayer);
 
         if (target != null)
         {

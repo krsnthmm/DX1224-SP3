@@ -46,7 +46,7 @@ public class EnemyChasePlayer : EnemyChaseBaseInstance
     {
         base.PhysicsUpdate();
 
-        if (path == null)
+        if (path == null || currentWaypoint >= path.vectorPath.Count)
         {
             return;
         }
