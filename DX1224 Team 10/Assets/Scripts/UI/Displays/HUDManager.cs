@@ -12,18 +12,40 @@ public class HUDManager : MonoBehaviour
     [Header("UI Components")]
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private Slider healthSlider;
+    [SerializeField] private TMP_Text staminaText;
     [SerializeField] private Slider staminaSlider;
     [SerializeField] private TMP_Text speedText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject crossIcon;
 
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateHealthBar();
+        UpdateStaminaBar();
+        UpdateCrossIcon();
+
+        speedText.text = "" + playerData.currentSpeed;
+    }
+
+    private void UpdateCrossIcon()
+    {
+        if (playerData.hasCrossEquipped)
+            crossIcon.SetActive(true);
+        else
+            crossIcon.SetActive(false);
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthSlider.value = playerData.currentHP;
+        healthSlider.maxValue = playerData.maxHP;
+        healthText.text = Mathf.CeilToInt(playerData.currentHP) + " / " + Mathf.CeilToInt(playerData.maxHP);
+    }
+
+    private void UpdateStaminaBar()
+    {
+        staminaSlider.value = playerData.currentStamina;
+        staminaSlider.maxValue = playerData.maxStamina;
+        staminaText.text = Mathf.CeilToInt(playerData.currentStamina) + " / " + Mathf.CeilToInt(playerData.maxStamina);
     }
 }

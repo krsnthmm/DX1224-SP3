@@ -29,12 +29,10 @@ public class AggroCheck : MonoBehaviour
             if (1 << raycastHit.collider.gameObject.layer == enemy.whatIsPlayer.value)
             {
                 enemy.isAggroed = true;
-                Debug.Log("!");
             }
             else if (1 << raycastHit.collider.gameObject.layer == enemy.whatIsObstacle.value)
             {
                 enemy.isAggroed = false;
-                Debug.Log("...");
                 return;
             }
         }
@@ -45,7 +43,6 @@ public class AggroCheck : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             enemy.isAggroed = false;
-            Debug.Log("...");
         }
     }
 }

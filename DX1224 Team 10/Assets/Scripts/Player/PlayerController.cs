@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour
     private bool isDead;
     public bool knockedBack;
 
-    //stamina bar
-    public Image staminaBar;
     private float timeSinceLastIdleRefill;
 
     void Start()
@@ -55,23 +53,23 @@ public class PlayerController : MonoBehaviour
             HandleMovementAnimations();
 
             // Dashing logic
-            if (Input.GetKeyDown(KeyCode.Space) && !isDashing && playerData.currentStamina > 0) // Added Stamina > 0 condition
+            if (Input.GetKeyDown(KeyCode.Space) && !isDashing && playerData.currentStamina >= playerData.staminaConsume)
             {
                 isDashing = true;
 
                 StartCoroutine(Dash());
                 Debug.Log("dashing");
 
+                //stamina bar decrease logic
                 playerData.currentStamina -= playerData.staminaConsume;
-                if (playerData.currentStamina <= 0)
+
+                if (playerData.currentStamina < 0)
                 {
                     playerData.currentStamina = 0;
                     isDashing = false;
                 }
-                //stamina bar decrease logic
-                playerData.currentStamina -= playerData.staminaConsume * Time.deltaTime;
-                staminaBar.fillAmount = playerData.currentStamina / playerData.maxStamina;
 
+                timeSinceLastIdleRefill = 1f;
             }
 
             else if (!isDashing)
@@ -80,9 +78,12 @@ public class PlayerController : MonoBehaviour
                 timeSinceLastIdleRefill += Time.deltaTime;
                 if (timeSinceLastIdleRefill >= playerData.staminaRefillInterval)
                 {
-                    timeSinceLastIdleRefill = 1f;
-                    playerData.currentStamina = Mathf.Clamp(playerData.currentStamina + playerData.staminaRefillRate * playerData.staminaRefillInterval, 0f, playerData.maxStamina);
-                    staminaBar.fillAmount = playerData.currentStamina / playerData.maxStamina;
+                    playerData.currentStamina += playerData.staminaRefillRate * Time.deltaTime;
+                    if (playerData.currentStamina > 75)
+                    {
+                        playerData.currentStamina = 75;
+                        timeSinceLastIdleRefill = 1f;
+                    }
                 }
             }
         }

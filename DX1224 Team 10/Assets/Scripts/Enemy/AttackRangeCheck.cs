@@ -27,7 +27,6 @@ public class AttackRangeCheck : MonoBehaviour
             if (col.gameObject.CompareTag("Player") && 1 << raycastHit.collider.gameObject.layer != enemy.whatIsObstacle.value)
             {
                 enemy.isInAttackRange = true;
-                Debug.Log("!");
             }
         }
     }
@@ -37,7 +36,6 @@ public class AttackRangeCheck : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             enemy.isInAttackRange = false;
-            Debug.Log("!!!");
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Default Player Data")]
-    [HideInInspector] public float defaultSpeed = 1f;
+    [HideInInspector] public float defaultSpeed = 2f;
     [HideInInspector] public float defaultHP = 150f;
     [HideInInspector] public float defaultStamina = 75f;
     [HideInInspector] public int defaultLives = 3;
@@ -31,8 +31,8 @@ public class PlayerData : ScriptableObject
 
     [Header("Other Variables")]
     public float staminaConsume;
-    [HideInInspector] public float staminaRefillRate = 25f;
-    [HideInInspector] public float staminaRefillInterval = 15f;
+    public float staminaRefillRate;
+    public float staminaRefillInterval; // number of seconds before stamina is refilled
     public bool hasCrossEquipped;
 
     //inventory and items stored 

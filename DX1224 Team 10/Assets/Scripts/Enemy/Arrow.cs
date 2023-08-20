@@ -37,7 +37,6 @@ public class Arrow : MonoBehaviour
                 {
                     var target = hitInfo.collider.gameObject;
                     target.GetComponent<PlayerController>().TakeDamage(enemy.GetComponent<Enemy>().attack);
-                    Debug.Log("Player takes damage!");
                 }
                 Destroy(gameObject);
             }

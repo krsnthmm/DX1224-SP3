@@ -34,12 +34,10 @@ public class BossLevelManager : MonoBehaviour
         if (timer < timeTilExitOpen - timeTilPhaseChange && !hasSwitchedPhase)
         {
             SwitchPhase();
-            Debug.Log("Timer up");
         }
         else if (timer < 0f && !isExitOpen)
         {
             OpenExit();
-            Debug.Log("Timer up");
         }
     }
 
