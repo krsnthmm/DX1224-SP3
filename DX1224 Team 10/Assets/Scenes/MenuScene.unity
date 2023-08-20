@@ -2497,7 +2497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8165d1e3a3c346d44aeaa6f526ed314b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainGameScene: Level8Scene
+  mainGameScene: Level1Scene
   settingsMenuUI: {fileID: 1176154788}
   mainMenuUI: {fileID: 851010245}
 --- !u!4 &2120316643

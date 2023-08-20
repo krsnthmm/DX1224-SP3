@@ -13,11 +13,20 @@ TagManager:
   - Coin
   - IconPrefab
   - ItemPrefab
+  - Hallway
+  - TP5
+  - TP2
+  - MainHall
+  - Interactable
+  - TP3
+  - TP1
+  - Room4
+  - Locker
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Walls
+  - Obstacles
   - Water
   - UI
   - DeflectedArrow

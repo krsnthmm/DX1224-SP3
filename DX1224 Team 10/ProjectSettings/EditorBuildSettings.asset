@@ -9,12 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/InventoryTestScene.unity
-    guid: 8d39f501ff101a34890cc099ab88ddad
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: 6bbb8ca5350e24c41a6874b1521874e2
+  - enabled: 1
+    path: Assets/Scenes/Level1Scene.unity
+    guid: fdb1eb813b77b9048a34339e5af31bc0
+  - enabled: 1
+    path: Assets/Scenes/Level2Scene.unity
+    guid: 85a4e8727ba6e014e8495803a7b21ed4
   - enabled: 1
     path: Assets/Scenes/Level8Scene.unity
     guid: 77aa86c4bfde8794a9b051d7e94cce7f
   - enabled: 1
     path: Assets/Scenes/Level9Scene.unity
     guid: f39ed64b7d7c8f84fac2369918dd726e
+  - enabled: 1
+    path: Assets/Scenes/Level10Scene.unity
+    guid: 91cdf403f4c66e7479f55a2716af9caf
   m_configObjects: {}
