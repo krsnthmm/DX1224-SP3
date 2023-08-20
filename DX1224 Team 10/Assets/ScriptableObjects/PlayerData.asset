@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e301009a98f066246b0605a5ab855de9, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  defaultSpeed: 1
+  defaultSpeed: 10
   defaultHP: 0
   maxStamina: 100
-  defaultStamina: 0
+  defaultStamina: 100
   defaultLives: 0
   maxLives: 0
   currentLives: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   currentHP: 0
   coins: 0
   levels: 0
-  currentSpeed: 0
+  currentSpeed: 10
   dashSpeed: 7
   dashDuration: 0.5
   staminaConsume: 25

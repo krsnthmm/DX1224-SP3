@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Default Player Data")]
-    [HideInInspector] public float defaultSpeed =1f;
+    public float defaultSpeed =10f;
     [HideInInspector] public float defaultHP;
     [HideInInspector] public float maxStamina=100f;
     [HideInInspector] public float defaultStamina;
@@ -22,7 +22,7 @@ public class PlayerData : ScriptableObject
     public float coins;
     public float levels;
 
-    [HideInInspector] public float currentSpeed;
+    public float currentSpeed;
     [HideInInspector] public float dashSpeed=7f;
     [HideInInspector] public float dashDuration=0.5f;
     [HideInInspector] public float staminaConsume=25f;
