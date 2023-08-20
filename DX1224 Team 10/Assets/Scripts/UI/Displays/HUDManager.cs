@@ -15,6 +15,7 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private TMP_Text staminaText;
     [SerializeField] private Slider staminaSlider;
     [SerializeField] private TMP_Text speedText;
+    [SerializeField] private TMP_Text coinText;
     [SerializeField] private GameObject crossIcon;
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class HUDManager : MonoBehaviour
         UpdateCrossIcon();
 
         speedText.text = "" + playerData.currentSpeed;
+        coinText.text = "" + playerData.coins;
     }
 
     private void UpdateCrossIcon()

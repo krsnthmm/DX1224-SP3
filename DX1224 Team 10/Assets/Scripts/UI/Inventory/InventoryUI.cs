@@ -168,10 +168,10 @@ public class InventoryUI : MonoBehaviour
                     if (inventory.Container[currInventoryIndex].item.name != "Key")
                         useButton.gameObject.SetActive(true);
 
-                    Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
-                }
+                    UpdateUseButtonText();
 
-                UpdateUseButtonText();
+                    //Debug.Log("Current: " + currInventoryIndex + " Previous: " + prevInventoryIndex);
+                }
             }
             else
             {
