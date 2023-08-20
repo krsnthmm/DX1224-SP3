@@ -19,9 +19,9 @@ MonoBehaviour:
   maxLives: 3
   currentLives: 0
   maxStamina: 75
-  currentStamina: 75
+  currentStamina: 50
   maxHP: 150
-  currentHP: 120
+  currentHP: 30
   coins: 125
   levels: 0
   currentSpeed: 2

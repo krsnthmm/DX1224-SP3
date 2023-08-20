@@ -109,7 +109,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
 --- !u!114 &8985880827730355940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,11 +272,11 @@ MonoBehaviour:
   IdleBase: {fileID: 11400000, guid: 38c4ca798e1b6c941bb3c49b91937997, type: 2}
   ChaseBase: {fileID: 11400000, guid: c8c8d563ff152ad44a24fa60e001b6d1, type: 2}
   AttackBase: {fileID: 11400000, guid: 7db718a2d20c66a4b85f35ba19940638, type: 2}
-  attack: 20
+  attack: 10
   moveSpeed: 1
-  idleTime: 0
+  idleTime: 2
   canKnockback: 1
-  thrust: 10
+  thrust: 20
   knockbackTime: 0.1
   isAggroed: 0
   isInAttackRange: 0
