@@ -5,6 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject uiToShow;
+
+    [Header("Player's Audio Player")]
+    [SerializeField] private AudioPlayer audioPlayer;
     private bool playerInRange;
 
     // Update is called once per frame
@@ -12,6 +15,7 @@ public class Door : MonoBehaviour
     {
         if (playerInRange && Input.GetKey(KeyCode.F))
         {
+            audioPlayer.PlayClip(3);
             Destroy(gameObject);
         }
     }

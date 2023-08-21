@@ -273,6 +273,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5bba9c42b3b4fe2418d741400e59eb84, type: 3}
   - {fileID: 8300000, guid: 8663a3707a73af84989206af751434bb, type: 3}
   - {fileID: 8300000, guid: a142ae2d9496a29409e2ee32cc99aa2e, type: 3}
+  - {fileID: 8300000, guid: 6cd46e5abab697449a46184eaff8e275, type: 3}
 --- !u!114 &1162793954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +289,6 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
   playerInventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}
   knockedBack: 0
-  StaminaBar: {fileID: 0}
 --- !u!114 &1162793959
 MonoBehaviour:
   m_ObjectHideFlags: 0

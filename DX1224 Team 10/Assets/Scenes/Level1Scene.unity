@@ -550,6 +550,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 1032383712}
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1664326282}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (3)
@@ -624,6 +628,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 1032383712}
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1664326282}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (6)
@@ -14239,6 +14247,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 1032383712}
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1664326282}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (4)
@@ -14848,6 +14860,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 1032383712}
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1664326282}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (2)
@@ -51793,6 +51809,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 1032383712}
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1664326282}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (1)
@@ -58463,6 +58483,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   m_PrefabInstance: {fileID: 1472051799}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1664326282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 168413758, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
+  m_PrefabInstance: {fileID: 1472051799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664326279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd8d4f282d017a448b48a3f59f0a1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1731601472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58474,6 +58505,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 1032383712}
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1664326282}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (7)
@@ -58936,6 +58971,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 1032383712}
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1664326282}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (5)
@@ -60266,21 +60305,17 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 1032383712}
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1664326282}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5647561534522473775, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5647561534522473775, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6499999
       objectReference: {fileID: 0}
     - target: {fileID: 5647561534522473775, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_LocalPosition.x
