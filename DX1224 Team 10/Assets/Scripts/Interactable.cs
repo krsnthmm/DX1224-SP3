@@ -8,7 +8,10 @@ public class Interactable : MonoBehaviour
     private bool hasGottenCoin;
     private bool isInLocker;
 
+    [Header("HUD > Interactable Prompt")]
     [SerializeField] private GameObject uiToShow;
+
+    [Header("References")]
     [SerializeField] private GameObject playerObject;
     [SerializeField] private GameObject lockerObject;
 
