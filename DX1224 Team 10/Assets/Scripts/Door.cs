@@ -10,10 +10,18 @@ public class Door : MonoBehaviour
     [SerializeField] private AudioPlayer audioPlayer;
     private bool playerInRange;
 
+    public PuzzleManager puzzleManager;
+
     // Update is called once per frame
     void Update()
     {
         if (playerInRange && Input.GetKey(KeyCode.F))
+        {
+            audioPlayer.PlayClip(3);
+            Destroy(gameObject);
+        }
+
+        if (puzzleManager.BoxPuzzleCompleted)
         {
             audioPlayer.PlayClip(3);
             Destroy(gameObject);

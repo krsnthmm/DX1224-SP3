@@ -26,7 +26,7 @@ public class Locker : MonoBehaviour
 
     void Update()
     {
-        if (PlayerInRange && Input.GetKeyDown(KeyCode.E) && !IsInLocker)
+        if (PlayerInRange && Input.GetKeyDown(KeyCode.F) && !IsInLocker)
         {
             if (gameObject.CompareTag("Locker"))
             {
@@ -34,7 +34,7 @@ public class Locker : MonoBehaviour
             }
         }
 
-        else if (IsInLocker && Input.GetKeyDown(KeyCode.E))
+        else if (IsInLocker && Input.GetKeyDown(KeyCode.F))
         {
             TransformOutOfLocker();
         }

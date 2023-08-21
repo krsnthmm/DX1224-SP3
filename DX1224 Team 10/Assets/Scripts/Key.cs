@@ -15,7 +15,7 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (PlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
             if (gameObject.CompareTag("Key"))
             {
