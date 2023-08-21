@@ -6,7 +6,6 @@ public class TutorialPrompt : MonoBehaviour
 {
     public GameObject textPrompt;
     private Animator textPromptAnimator;
-    private bool GotKey = true;
 
     private void Start()
     {
@@ -20,21 +19,11 @@ public class TutorialPrompt : MonoBehaviour
         {
             textPromptAnimator.Play("TextFadeIn");
         }
-
-        if (collision.CompareTag("Player") && gameObject.CompareTag("TP5") && GotKey)
-        {
-            textPromptAnimator.Play("TextFadeIn");
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            textPromptAnimator.Play("TextFadeOut");
-        }
-
-        if (collision.CompareTag("Player") && gameObject.CompareTag("TP5") && GotKey)
         {
             textPromptAnimator.Play("TextFadeOut");
         }

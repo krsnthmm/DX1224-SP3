@@ -36,7 +36,7 @@ public class FogOfWar : MonoBehaviour
         }
 
         else if (playerNotAtZbRoom)
-        {
+        { 
             if (!GameObject.FindGameObjectWithTag("Player"))
             {
                 foreach (Tilemap tilemap in fogOfWars)
@@ -46,7 +46,6 @@ public class FogOfWar : MonoBehaviour
                 fogOfWars[3].gameObject.SetActive(true);
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -191,7 +190,7 @@ public class FogOfWar : MonoBehaviour
             playerNotAtMH = true;
         }
 
-        if (other.CompareTag("Player") && !gameObject.CompareTag("TP1") || !gameObject.CompareTag("Hallway") || !gameObject.CompareTag("TP2") || !gameObject.CompareTag("TP3") || !gameObject.CompareTag("Room4") || !gameObject.CompareTag("MainHall"))
+        if (other.CompareTag("Player") && (!gameObject.CompareTag("TP1") || !gameObject.CompareTag("Hallway") || !gameObject.CompareTag("TP2") || !gameObject.CompareTag("TP3") || !gameObject.CompareTag("Room4") || !gameObject.CompareTag("MainHall")))
         {
             foreach (Tilemap tilemap in fogOfWars)
             {

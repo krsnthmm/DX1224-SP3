@@ -2,25 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class MazeDoor : MonoBehaviour
 {
     [SerializeField] private GameObject uiToShow;
 
     [Header("Player's Audio Player")]
     [SerializeField] private AudioPlayer audioPlayer;
     private bool playerInRange;
-    public Key key;
+    public PuzzleManager puzzleManager;
 
     // Update is called once per frame
     void Update()
     {
-        if (playerInRange && Input.GetKey(KeyCode.F) && gameObject.CompareTag("Door"))
-        {
-            audioPlayer.PlayClip(3);
-            Destroy(gameObject);
-        }
-
-        if (playerInRange && Input.GetKey(KeyCode.F) && gameObject.CompareTag("LockedDoor") && key.GotKey)
+        if (puzzleManager.BoxPuzzleCompleted && gameObject.CompareTag("MazeDoor"))
         {
             audioPlayer.PlayClip(3);
             Destroy(gameObject);

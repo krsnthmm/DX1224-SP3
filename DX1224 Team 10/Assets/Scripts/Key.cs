@@ -5,7 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     private bool PlayerInRange;
-    private bool GotKey = false;
+    public bool GotKey = false;
     // Start is called before the first frame update
     void Start()
     {
