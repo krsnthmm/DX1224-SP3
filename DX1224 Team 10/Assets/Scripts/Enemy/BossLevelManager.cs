@@ -46,6 +46,7 @@ public class BossLevelManager : MonoBehaviour
         if (bossEnemy.canKnockback)
         {
             bossEnemy.moveSpeed = playerData.walkSpeed;
+            bossEnemy.attack *= 2;
             bossEnemy.thrust *= 2;
             bossEnemy.idleTime = 1f;
         }
