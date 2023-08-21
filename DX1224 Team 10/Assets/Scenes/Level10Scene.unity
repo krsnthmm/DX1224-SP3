@@ -2492,6 +2492,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 49992330825320012, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 49992330825320012, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
+      propertyPath: audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6cd46e5abab697449a46184eaff8e275, type: 3}
     - target: {fileID: 1834041018234929780, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
       propertyPath: BGMSlider
       value: 
@@ -2868,6 +2876,7 @@ MonoBehaviour:
   finish: {fileID: 1260499149}
   bossEnemyObj: {fileID: 229225976}
   playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
+  audioPlayer: {fileID: 1564391108}
   timer: 0
   timeTilPhaseChange: 60
   timeTilExitOpen: 90

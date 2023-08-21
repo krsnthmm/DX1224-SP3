@@ -9,6 +9,7 @@ public class BossLevelManager : MonoBehaviour
     [SerializeField] private GameObject finish;
     [SerializeField] private GameObject bossEnemyObj;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private AudioPlayer audioPlayer;
     private Enemy bossEnemy;
 
     [Header("Timer")]
@@ -63,6 +64,7 @@ public class BossLevelManager : MonoBehaviour
 
     private void OpenExit()
     {
+        audioPlayer.PlayClip(1);
         exitBlocker.SetActive(false);
         finish.SetActive(true);
         isExitOpen = true;
