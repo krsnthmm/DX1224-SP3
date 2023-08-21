@@ -49,14 +49,14 @@ public class BossLevelManager : MonoBehaviour
             bossEnemy.moveSpeed = playerData.walkSpeed;
             bossEnemy.attack *= 2;
             bossEnemy.thrust *= 2;
-            bossEnemy.idleTime = 1f;
+            bossEnemy.idleTime /= 2;
         }
         else if (bossEnemy.projPrefab != null)
         {
             bossEnemy.moveSpeed = playerData.walkSpeed;
             bossEnemy.numOfProjectiles *= 2;
             bossEnemy.projectileSpread = 350;
-            bossEnemy.idleTime = 1f;
+            bossEnemy.idleTime /= 2;
         }
 
         hasSwitchedPhase = true;

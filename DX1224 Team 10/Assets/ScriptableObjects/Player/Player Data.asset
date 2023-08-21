@@ -16,14 +16,14 @@ MonoBehaviour:
   defaultHP: 150
   defaultStamina: 75
   maxStamina: 75
-  currentStamina: 25
+  currentStamina: 75
   maxHP: 150
   currentHP: 150
   coins: 0
   levels: 0
-  currentSpeed: 2
-  walkSpeed: 2
-  dashSpeed: 7
+  currentSpeed: 5
+  walkSpeed: 5
+  dashSpeed: 12
   dashDuration: 0.5
   staminaConsume: 25
   staminaRefillRate: 10

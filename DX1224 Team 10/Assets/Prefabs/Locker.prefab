@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiToShow: {fileID: 0}
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   lockerObject: {fileID: 4102765473070152550}
 --- !u!61 &4102765473070152345
 BoxCollider2D:

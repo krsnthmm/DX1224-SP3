@@ -301,7 +301,7 @@ MonoBehaviour:
   AttackBase: {fileID: 11400000, guid: 6b9a57d18d55d754082188015fb55087, type: 2}
   attack: 15
   moveSpeed: 2
-  idleTime: 2
+  idleTime: 4
   canKnockback: 0
   thrust: 0
   knockbackTime: 0
