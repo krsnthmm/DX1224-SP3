@@ -19,10 +19,10 @@ MonoBehaviour:
   maxLives: 3
   currentLives: 0
   maxStamina: 75
-  currentStamina: 75
+  currentStamina: 20.174042
   maxHP: 150
   currentHP: 150
-  coins: 10
+  coins: 0
   levels: 0
   currentSpeed: 2
   walkSpeed: 2

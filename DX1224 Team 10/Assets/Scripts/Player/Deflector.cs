@@ -7,55 +7,60 @@ public class Deflector : MonoBehaviour
     public float deflectionForce = 10f;
     public Vector2 deflectionDirection;
 
+    private PlayerController player;
     private GameObject shield;
     private bool isShieldActive;
+
     private void Start()
     {
-        shield = GameObject.Find("Shield");
+        player = GetComponent<PlayerController>();
+        shield = transform.GetChild(0).gameObject;
         isShieldActive = false;
         shield.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (shield != null)
         {
-            ToggleShield();
+            if (Input.GetKeyDown(KeyCode.Q) && player.playerData.hasCrossEquipped)
+            {
+                Debug.Log("a");
+                StartCoroutine(ShieldUpCo());
+            }
+            else if (!player.playerData.hasCrossEquipped)
+            {
+                isShieldActive = false;
+            }
+
+            shield.SetActive(isShieldActive);
         }
     }
 
-    private void ToggleShield()
+    private IEnumerator ShieldUpCo()
     {
         if (shield != null)
         {
-            isShieldActive = !isShieldActive;
-            shield.SetActive(isShieldActive);
+            isShieldActive = true;
+
+            yield return new WaitForSeconds(player.playerData.shieldDuration);
+
+            isShieldActive = false;
         }
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Arrow arrow = collision.collider.GetComponent<Arrow>();
-        
-        if (shield != null && collision.collider.CompareTag("Arrow"))
+        if (shield != null)
         {
-            // Calculate the deflection direction based on the collision normal
-            deflectionDirection = Vector2.Reflect(collision.relativeVelocity.normalized, collision.contacts[0].normal);
-
-            // Get the arrow's rigidbody if it has one
-            Rigidbody2D arrowRigidbody = collision.collider.GetComponent<Rigidbody2D>();
-
-            if (arrowRigidbody != null)
+            if (collision.collider.CompareTag("Arrow"))
             {
-                // Apply a force to the arrow in the deflection direction
-                //arrowRigidbody.velocity = deflectionDirection * deflectionForce;
-                arrow.isDeflected = true;
+                // Calculate the deflection direction based on the collision normal
+                deflectionDirection = Vector2.Reflect(collision.relativeVelocity.normalized, collision.contacts[0].normal).normalized;
             }
+            else
+                return;
         }
-        else
-        {
-            arrow.isDeflected = false;
-        }    
     }
 }

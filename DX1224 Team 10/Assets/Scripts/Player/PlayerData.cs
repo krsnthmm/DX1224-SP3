@@ -9,12 +9,8 @@ public class PlayerData : ScriptableObject
     [HideInInspector] public float defaultSpeed = 2f;
     [HideInInspector] public float defaultHP = 150f;
     [HideInInspector] public float defaultStamina = 75f;
-    [HideInInspector] public int defaultLives = 3;
 
     [Header("Current Player Data")]
-    public int maxLives;
-    public int currentLives;
-
     public float maxStamina;
     public float currentStamina;
 
@@ -34,8 +30,10 @@ public class PlayerData : ScriptableObject
     public float staminaRefillRate;
     public float staminaRefillInterval; // number of seconds before stamina is refilled
     public bool hasCrossEquipped;
+    public float shieldDuration;
 
-    //inventory and items stored 
+    public Inventory inventory;
+
     //player position 
     //level saved
     //doors opened 

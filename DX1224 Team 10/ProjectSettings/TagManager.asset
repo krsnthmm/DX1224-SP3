@@ -7,8 +7,6 @@ TagManager:
   - Enemy
   - Item
   - Arrow
-  - shield
-  - Sheild
   - EnemyAttack
   - Coin
   - IconPrefab
@@ -22,6 +20,9 @@ TagManager:
   - TP1
   - Room4
   - Locker
+  - Shield
+  - shield
+  - Destructible
   layers:
   - Default
   - TransparentFX

@@ -33,12 +33,17 @@ public class Arrow : MonoBehaviour
         {
             if (hitInfo.collider != null)
             {
-                if (hitInfo.collider.CompareTag("Player"))
+                if (!hitInfo.collider.CompareTag("Shield"))
                 {
-                    var target = hitInfo.collider.gameObject;
-                    target.GetComponent<PlayerController>().TakeDamage(enemy.GetComponent<Enemy>().attack);
+                    if (hitInfo.collider.CompareTag("Player"))
+                    {
+                        var target = hitInfo.collider.gameObject;
+                        target.GetComponent<PlayerController>().TakeDamage(enemy.GetComponent<Enemy>().attack);
+                    }
+                    Destroy(gameObject);
                 }
-                Destroy(gameObject);
+                else
+                    isDeflected = true;
             }
         }
         else
@@ -52,7 +57,8 @@ public class Arrow : MonoBehaviour
         }
         else
         {
-            rb.velocity = deflector. deflectionDirection * deflector. deflectionForce;
+            rb.velocity = deflector.deflectionDirection * deflector.deflectionForce;
+            Debug.Log(rb.velocity);
         }
        
     }

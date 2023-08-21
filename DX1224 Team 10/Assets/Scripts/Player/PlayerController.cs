@@ -92,12 +92,6 @@ public class PlayerController : MonoBehaviour
             // set player's current HP to 0 (HP cannot be negative)
             playerData.currentHP = 0;
 
-            if (playerData.currentLives > 0)
-            {
-                // take away a life from the player
-                playerData.currentLives -= 1;
-            }
-
             // set other animation bools to false since player is dead
             m_animator.SetBool("idle", false);
             m_animator.SetBool("walk", false);
