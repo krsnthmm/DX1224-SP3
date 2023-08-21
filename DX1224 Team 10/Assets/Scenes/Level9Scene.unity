@@ -23300,10 +23300,6 @@ PrefabInstance:
       propertyPath: pickupUIManager
       value: 
       objectReference: {fileID: 3763511227401395161}
-    - target: {fileID: 7676121019707229289, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
       propertyPath: m_Name
       value: Player

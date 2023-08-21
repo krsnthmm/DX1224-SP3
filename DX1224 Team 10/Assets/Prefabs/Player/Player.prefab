@@ -372,6 +372,10 @@ PrefabInstance:
       value: Shield
       objectReference: {fileID: 0}
     - target: {fileID: 2007188648143759935, guid: a8408544cdfe8454db326065fd36717d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007188648143759935, guid: a8408544cdfe8454db326065fd36717d, type: 3}
       propertyPath: m_TagString
       value: Shield
       objectReference: {fileID: 0}
