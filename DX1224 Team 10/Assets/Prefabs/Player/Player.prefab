@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1162793954}
   - component: {fileID: 1162793959}
   - component: {fileID: 2791282793535475700}
+  - component: {fileID: 5438457206146372646}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -274,6 +275,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8663a3707a73af84989206af751434bb, type: 3}
   - {fileID: 8300000, guid: a142ae2d9496a29409e2ee32cc99aa2e, type: 3}
   - {fileID: 8300000, guid: 6cd46e5abab697449a46184eaff8e275, type: 3}
+  - {fileID: 8300000, guid: db122062997c3ae49b5d0f824a852eb6, type: 3}
 --- !u!114 &1162793954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f047f2048cacd44f8e42ce1dbef33fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSrc: {fileID: 1748378804121423621, guid: 641056e2a881f394495752ab7485c795, type: 3}
   playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
   playerInventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}
   knockedBack: 0
@@ -316,6 +319,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupUIManager: {fileID: 0}
+--- !u!114 &5438457206146372646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7676121020413916098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3840a86a5d4dc429d47bf9b18facf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: LoseScreen
 --- !u!1001 &8168958068890086998
 PrefabInstance:
   m_ObjectHideFlags: 0

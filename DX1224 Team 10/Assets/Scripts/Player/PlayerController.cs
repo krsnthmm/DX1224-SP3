@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Animator m_animator;
     private Rigidbody2D rb;
+    private SceneLoader sceneLoader;
 
     private bool isAnimFinished;
 
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
         m_animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        sceneLoader = GetComponent<SceneLoader>();
 
         isAnimFinished = false;
     }
@@ -103,7 +105,7 @@ public class PlayerController : MonoBehaviour
             if (isAnimFinished)
             {
                 isDead = true;
-                Debug.Log("Player is dead.");
+                sceneLoader.LoadScene(sceneLoader.sceneToLoad);
             }
         }
     }
