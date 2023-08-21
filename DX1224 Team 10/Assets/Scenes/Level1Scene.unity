@@ -546,6 +546,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99036596}
     m_Modifications:
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (3)
@@ -616,6 +620,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99036596}
     m_Modifications:
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (6)
@@ -7469,6 +7477,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2065318979}
     m_Modifications:
     - target: {fileID: 4102765473070152346, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
+    - target: {fileID: 4102765473070152346, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
       propertyPath: lockerObject
       value: 
       objectReference: {fileID: 344354956}
@@ -7548,6 +7560,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1531973480}
     m_Modifications:
     - target: {fileID: 7235106320481480248, guid: 6303cdd54821f0d4b89f3dfebb4f9af7, type: 3}
+      propertyPath: m_text
+      value: Press [F] to interact when prompted!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235106320481480248, guid: 6303cdd54821f0d4b89f3dfebb4f9af7, type: 3}
+      propertyPath: m_margin.x
+      value: 7.377065
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235106320481480248, guid: 6303cdd54821f0d4b89f3dfebb4f9af7, type: 3}
+      propertyPath: m_margin.z
+      value: 8.533889
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235106320481480248, guid: 6303cdd54821f0d4b89f3dfebb4f9af7, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: ea3c82cccf79cc04abbdd41a0f4449d0, type: 2}
@@ -7565,7 +7589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7235106320481480248, guid: 6303cdd54821f0d4b89f3dfebb4f9af7, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7235106320481480250, guid: 6303cdd54821f0d4b89f3dfebb4f9af7, type: 3}
       propertyPath: m_Name
@@ -7793,11 +7817,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8927469661560495934, guid: 4c605cdd8d87d484786d1d2171ae27c0, type: 3}
       propertyPath: m_text
-      value: WASD to move
+      value: Use the WASD keys to move.
       objectReference: {fileID: 0}
     - target: {fileID: 8927469661560495934, guid: 4c605cdd8d87d484786d1d2171ae27c0, type: 3}
       propertyPath: m_fontSize
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927469661560495934, guid: 4c605cdd8d87d484786d1d2171ae27c0, type: 3}
+      propertyPath: m_margin.x
+      value: 6.4044347
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927469661560495934, guid: 4c605cdd8d87d484786d1d2171ae27c0, type: 3}
+      propertyPath: m_margin.z
+      value: 8.25989
       objectReference: {fileID: 0}
     - target: {fileID: 8927469661560495934, guid: 4c605cdd8d87d484786d1d2171ae27c0, type: 3}
       propertyPath: m_fontAsset
@@ -7833,7 +7865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8927469661560495934, guid: 4c605cdd8d87d484786d1d2171ae27c0, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c605cdd8d87d484786d1d2171ae27c0, type: 3}
@@ -14203,6 +14235,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99036596}
     m_Modifications:
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (4)
@@ -14808,6 +14844,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99036596}
     m_Modifications:
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (2)
@@ -16391,6 +16431,11 @@ Transform:
   m_Father: {fileID: 1536063935}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 80}
+--- !u!1 &1032383712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5147909228199951663, guid: a3704ca29f288bf4cb97e73db1d51d02, type: 3}
+  m_PrefabInstance: {fileID: 559010596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1057871376
 GameObject:
   m_ObjectHideFlags: 0
@@ -35690,7 +35735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2111075dede6b51439f00f9a82f7c561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 0}
+  uiToShow: {fileID: 1032383712}
+  playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
 --- !u!1 &1444594800
 GameObject:
@@ -51743,6 +51789,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99036596}
     m_Modifications:
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (1)
@@ -58350,10 +58400,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Beware!
 
-        That''s not your people anymore...
+        Those aren''t your people anymore...
 
-        Hide in
-        lockers to avoid them'
+        Hide
+        in lockers to avoid them!'
       objectReference: {fileID: 0}
     - target: {fileID: 1487456155741303951, guid: a4304d21085f8774f838af59e1df522b, type: 3}
       propertyPath: m_fontAsset
@@ -58420,6 +58470,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99036596}
     m_Modifications:
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (7)
@@ -58878,6 +58932,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99036596}
     m_Modifications:
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door (5)
@@ -59288,7 +59346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2111075dede6b51439f00f9a82f7c561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 0}
+  uiToShow: {fileID: 1032383712}
+  playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
 --- !u!61 &2013176331
 BoxCollider2D:
@@ -59457,7 +59516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070541475}
   m_Layer: 3
-  m_Name: Interactables(?)
+  m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59699,6 +59758,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2065318979}
     m_Modifications:
     - target: {fileID: 4102765473070152346, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
+    - target: {fileID: 4102765473070152346, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
       propertyPath: lockerObject
       value: 
       objectReference: {fileID: 891645486}
@@ -59767,6 +59830,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2065318979}
     m_Modifications:
+    - target: {fileID: 4102765473070152346, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 4102765473070152346, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
       propertyPath: lockerObject
       value: 
@@ -59837,6 +59904,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1531973480}
     m_Modifications:
     - target: {fileID: 6907888603998371704, guid: 14b74fe084b261342a3023b238f25b62, type: 3}
+      propertyPath: m_text
+      value: Press [SPACE] to dash!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907888603998371704, guid: 14b74fe084b261342a3023b238f25b62, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: ea3c82cccf79cc04abbdd41a0f4449d0, type: 2}
@@ -59858,7 +59929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907888603998371704, guid: 14b74fe084b261342a3023b238f25b62, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6907888603998371705, guid: 14b74fe084b261342a3023b238f25b62, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -60119,6 +60190,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2065318979}
     m_Modifications:
     - target: {fileID: 4102765473070152346, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
+    - target: {fileID: 4102765473070152346, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
       propertyPath: lockerObject
       value: 
       objectReference: {fileID: 65268477}
@@ -60187,6 +60262,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99036596}
     m_Modifications:
+    - target: {fileID: 5647561534522473761, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1032383712}
     - target: {fileID: 5647561534522473773, guid: 9d97439f135324e4f8f1a80f365a6ed3, type: 3}
       propertyPath: m_Name
       value: Door

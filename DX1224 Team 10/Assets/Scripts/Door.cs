@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private bool PlayerInRange;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject uiToShow;
+    private bool playerInRange;
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInRange && Input.GetKey(KeyCode.E))
+        if (playerInRange && Input.GetKey(KeyCode.F))
         {
             Destroy(gameObject);
         }
@@ -24,7 +20,8 @@ public class Door : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerInRange = true;
+            playerInRange = true;
+            ShowUI(true);
         }
     }
 
@@ -32,7 +29,13 @@ public class Door : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerInRange = false;
+            playerInRange = false;
+            ShowUI(false);
         }
+    }
+
+    private void ShowUI(bool b)
+    {
+        uiToShow.SetActive(b);
     }
 }

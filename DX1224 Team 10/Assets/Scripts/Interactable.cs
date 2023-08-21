@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    private bool PlayerInRange;
-    private bool IsInLocker;
+    private bool playerInRange;
+    private bool hasGottenCoin;
+    private bool isInLocker;
 
-    public GameObject playerObject;
-    public GameObject lockerObject;
+    [SerializeField] private GameObject uiToShow;
+    [SerializeField] private GameObject playerObject;
+    [SerializeField] private GameObject lockerObject;
+
     private Vector3 lockerPosition;
     private Quaternion lockerRotation;
     private Vector3 playerPosition;
@@ -16,31 +19,42 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
-        lockerPosition = lockerObject.transform.position;
-        lockerRotation = lockerObject.transform.rotation;
-        playerPosition = playerObject.transform.position;
-        playerRotation = playerObject.transform.rotation;
+        if (lockerObject != null)
+        {
+            lockerPosition = lockerObject.transform.position;
+            lockerRotation = lockerObject.transform.rotation;
+        }
 
-        IsInLocker = false;
+        if (playerObject != null)
+        {
+            playerPosition = playerObject.transform.position;
+            playerRotation = playerObject.transform.rotation;
+        }
+
+        isInLocker = false;
+        hasGottenCoin = false;
     }
 
     void Update()
     {
-        if (PlayerInRange && Input.GetKeyDown(KeyCode.E) && !IsInLocker)
+        if (playerInRange && Input.GetKeyDown(KeyCode.F) && !isInLocker)
         {
-            if (gameObject.CompareTag("Interactable"))
+            if (gameObject.CompareTag("Interactable") && !hasGottenCoin)
             {
                 Debug.Log("Player gets coin");
+                playerObject.GetComponent<PlayerController>().playerData.coins++;
+                playerObject.GetComponent<AudioPlayer>().PlayClip(2);
+                hasGottenCoin = true;
+                ShowUI(false);
             }
-
-            if (gameObject.CompareTag("Locker"))
+            else if (gameObject.CompareTag("Locker"))
             {
                 Debug.Log("Player is interacting with locker");
                 TransformIntoLocker();
             }
         }
 
-        else if (IsInLocker && Input.GetKeyDown(KeyCode.E))
+        else if (isInLocker && Input.GetKeyDown(KeyCode.F))
         {
             TransformOutOfLocker();
         }
@@ -48,9 +62,10 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !hasGottenCoin)
         {
-            PlayerInRange = true;
+            playerInRange = true;
+            ShowUI(true);
         }
     }
 
@@ -58,27 +73,31 @@ public class Interactable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerInRange = false;
+            playerInRange = false;
+            ShowUI(false);
         }
     }
 
     private void TransformIntoLocker()
     {
         playerObject.SetActive(false);
+        playerObject.transform.SetPositionAndRotation(lockerPosition, lockerRotation);
+        ShowUI(true);
 
-        playerObject.transform.position = lockerPosition;
-        playerObject.transform.rotation = lockerRotation;
-
-        IsInLocker = true;
+        isInLocker = true;
     }
 
     private void TransformOutOfLocker()
     {
         playerObject.SetActive(true);
+        playerObject.transform.SetPositionAndRotation(lockerPosition + Vector3.down, lockerRotation);
+        ShowUI(false);
 
-        playerObject.transform.position = lockerPosition + Vector3.down;
-        playerObject.transform.rotation = lockerRotation;
+        isInLocker = false;
+    }
 
-        IsInLocker = false;
+    private void ShowUI(bool b)
+    {
+        uiToShow.SetActive(b);
     }
 }

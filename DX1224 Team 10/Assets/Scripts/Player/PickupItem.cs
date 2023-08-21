@@ -55,7 +55,7 @@ public class PickupItem : MonoBehaviour
         else if (col.gameObject.CompareTag("Coin"))
         {
             // add coins to playerData immediately
-            player.playerData.coins += 5;
+            player.playerData.coins++;
 
             // play pickup coin audio clip
             audioPlayer.PlayClip(2);
