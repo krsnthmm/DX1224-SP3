@@ -25,8 +25,48 @@ MonoBehaviour:
     m_Address: Level1Scene
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: f39ed64b7d7c8f84fac2369918dd726e
+    m_Address: Level9Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f4ef3c3b1548cbe4a9f55d4f4503cb0d
+    m_Address: Level3Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1b1d9c79b38cdc642aae2efadcdbf670
+    m_Address: Level5Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2e9059d43c3ea00409ef665a326bf263
+    m_Address: Level6Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f9a0bc1d49097f742ad33eb3265b5fb5
+    m_Address: Level7Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77aa86c4bfde8794a9b051d7e94cce7f
+    m_Address: Level8Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 91cdf403f4c66e7479f55a2716af9caf
+    m_Address: Level10Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: 2cda990e2423bbf4892e6590ba056729
     m_Address: MenuScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6bbb8ca5350e24c41a6874b1521874e2
+    m_Address: LoadingScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c2781e43a8a1dfd45acd16f7dd2e5b5c
+    m_Address: LoseScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 46fddbf05b0d1a3478497cb9d413c922
+    m_Address: WinScreen
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
