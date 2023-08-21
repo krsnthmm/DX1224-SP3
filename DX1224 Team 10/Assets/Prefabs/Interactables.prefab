@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3327013807393010664}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4322397190269904742}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Interactables (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2436107792594192646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Interactables (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5442986813122551914}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Interactables (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5936204512685341079}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}

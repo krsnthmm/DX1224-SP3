@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4102765473070152347}
   - component: {fileID: 4102765473070152346}
   - component: {fileID: 4102765473070152345}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Locker
   m_TagString: Locker
   m_Icon: {fileID: 0}
@@ -125,6 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2111075dede6b51439f00f9a82f7c561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiToShow: {fileID: 0}
+  playerObject: {fileID: 0}
+  lockerObject: {fileID: 0}
 --- !u!61 &4102765473070152345
 BoxCollider2D:
   m_ObjectHideFlags: 0

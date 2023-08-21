@@ -16,24 +16,27 @@ public class AggroCheck : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        Vector2 start = enemy.rb.position;
-        Vector2 dir = ((Vector2)GameObject.FindGameObjectWithTag("Player").transform.position - enemy.rb.position).normalized;
-        float distance = GetComponent<CircleCollider2D>().radius * enemy.transform.localScale.x;
-
-        Debug.DrawRay(start, dir * distance, Color.red);
-
-        raycastHit = Physics2D.Raycast(start, dir, distance, enemy.whatIsPlayer + enemy.whatIsObstacle);
-
-        if (raycastHit.collider != null)
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
-            if (1 << raycastHit.collider.gameObject.layer == enemy.whatIsPlayer.value)
+            Vector2 start = enemy.rb.position;
+            Vector2 dir = ((Vector2)GameObject.FindGameObjectWithTag("Player").transform.position - enemy.rb.position).normalized;
+            float distance = GetComponent<CircleCollider2D>().radius * enemy.transform.localScale.x;
+
+            Debug.DrawRay(start, dir * distance, Color.red);
+
+            raycastHit = Physics2D.Raycast(start, dir, distance, enemy.whatIsPlayer + enemy.whatIsObstacle);
+
+            if (raycastHit.collider != null)
             {
-                enemy.isAggroed = true;
-            }
-            else if (1 << raycastHit.collider.gameObject.layer == enemy.whatIsObstacle.value)
-            {
-                enemy.isAggroed = false;
-                return;
+                if (1 << raycastHit.collider.gameObject.layer == enemy.whatIsPlayer.value)
+                {
+                    enemy.isAggroed = true;
+                }
+                else if (1 << raycastHit.collider.gameObject.layer == enemy.whatIsObstacle.value)
+                {
+                    enemy.isAggroed = false;
+                    return;
+                }
             }
         }
     }
