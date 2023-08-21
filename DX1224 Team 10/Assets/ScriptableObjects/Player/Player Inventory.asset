@@ -15,4 +15,16 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
   maxItems: 15
   showScrollPopup: 1
-  Container: []
+  Container:
+  - item: {fileID: 11400000, guid: cd547aa1b8879c14da8755a3c0f663af, type: 2}
+    amount: 1
+    isSelected: 0
+  - item: {fileID: 11400000, guid: 24f4c38945a21054e815a4d74cdfd370, type: 2}
+    amount: 1
+    isSelected: 0
+  - item: {fileID: 11400000, guid: 0ba8b7fc778593149933af415595877a, type: 2}
+    amount: 1
+    isSelected: 0
+  - item: {fileID: 11400000, guid: 2ffd2d5ad2f3d0a409b229295e2664ab, type: 2}
+    amount: 10
+    isSelected: 0
