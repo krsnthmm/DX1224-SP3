@@ -23,6 +23,7 @@ TagManager:
   - Shield
   - shield
   - Destructible
+  - PuzzleBox1
   layers:
   - Default
   - TransparentFX
@@ -59,6 +60,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Weather
+    uniqueID: 3257151395
     locked: 0
   - name: layer1
     uniqueID: 2808124833
