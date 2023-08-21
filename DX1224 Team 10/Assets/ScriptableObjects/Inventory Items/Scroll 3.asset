@@ -15,4 +15,9 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 2be1f7b3ff21cfe448833e01aa171250, type: 3}
   type: 3
   description: A mysterious scroll. You feel a little braver with this in your hands.
-  keyText: Riddle for Cross here.
+  keyText: 'For your protection,
+
+    the penultimate level
+
+    has just what you
+    need.'

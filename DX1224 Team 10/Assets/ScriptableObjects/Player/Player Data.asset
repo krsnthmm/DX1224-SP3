@@ -15,11 +15,8 @@ MonoBehaviour:
   defaultSpeed: 2
   defaultHP: 150
   defaultStamina: 75
-  defaultLives: 3
-  maxLives: 3
-  currentLives: 0
   maxStamina: 75
-  currentStamina: 20.174042
+  currentStamina: 25
   maxHP: 150
   currentHP: 150
   coins: 0
@@ -32,3 +29,5 @@ MonoBehaviour:
   staminaRefillRate: 10
   staminaRefillInterval: 5
   hasCrossEquipped: 0
+  shieldDuration: 3
+  inventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}
