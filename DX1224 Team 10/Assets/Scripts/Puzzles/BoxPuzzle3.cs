@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxPuzzle2 : MonoBehaviour
+public class BoxPuzzle3 : MonoBehaviour
 {
-    public bool BoxOnHole2;
+    public bool BoxOnHole3;
 
     // Start is called before the first frame update
     void Start()
@@ -19,22 +19,14 @@ public class BoxPuzzle2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PuzzleBox2"))
+        if (collision.gameObject.CompareTag("PuzzleBox3"))
         {
-            BoxOnHole2 = true;
+            BoxOnHole3 = true;
             collision.transform.position = transform.position;
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
             rb.bodyType = RigidbodyType2D.Static;
         }
     }
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("PuzzleBox2"))
-    //    {
-    //        BoxOnHole2 = false;
-    //    }
-    //}
 }
 
 

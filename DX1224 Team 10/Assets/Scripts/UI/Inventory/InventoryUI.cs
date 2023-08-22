@@ -9,6 +9,7 @@ public class InventoryUI : MonoBehaviour
     [Header("References")]
     [SerializeField] private PlayerData playerData;
     [SerializeField] private ScrollPopupUIManager scrollPopupUI;
+    [SerializeField] private AudioPlayer audioPlayer;
 
     [Header("Inventory Display")]
     [SerializeField] private Inventory inventory;

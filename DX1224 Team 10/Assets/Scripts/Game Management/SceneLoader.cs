@@ -9,13 +9,11 @@ using TMPro;
 
 public class SceneLoader : MonoBehaviour
 {
-    private TMP_Text percentText;
     public string sceneToLoad;
 
     // Start is called before the first frame update
     void Start()
     {
-        percentText = GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame

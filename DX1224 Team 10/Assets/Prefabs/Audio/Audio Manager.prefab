@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: bae22a64cb22acf4ebff78a50e0fcf79, type: 2}
-  audioPlayer: {fileID: 0}
+  audioPlayer: {fileID: 49992330825320012}
   masterSlider: {fileID: 0}
   BGMSlider: {fileID: 0}
   SFXSlider: {fileID: 0}
@@ -161,3 +161,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: b712d8d18051c1849a47005c6c9bdcd1, type: 3}
+  - {fileID: 8300000, guid: a8dfcbe335e33334cbc367b0477b732f, type: 3}

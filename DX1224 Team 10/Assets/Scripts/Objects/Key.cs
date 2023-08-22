@@ -4,33 +4,30 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    private bool PlayerInRange;
-    public bool GotKey = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject uiToShow;
+    private bool playerInRange;
+    public bool gotKey = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInRange && Input.GetKeyDown(KeyCode.F))
+        if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             if (gameObject.CompareTag("Key"))
             {
-                GotKey = true;
+                gotKey = true;
+                //uiToShow.SetActive(false);
                 Destroy(gameObject);
             }
         }
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerInRange = true;
+            playerInRange = true;
+            uiToShow.SetActive(true);
         }
     }
 
@@ -38,7 +35,8 @@ public class Key : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerInRange = false;
+            playerInRange = false;
+            uiToShow.SetActive(false);
         }
     }
 }

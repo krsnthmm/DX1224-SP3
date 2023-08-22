@@ -69,6 +69,10 @@ MonoBehaviour:
     m_Address: WinScreen
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: d1443a0266436e24ca73e65962eaf3b1
+    m_Address: Level4Scene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0d3c561cbb7f4684cb658e9ddf8e6e23, type: 2}
   m_SchemaSet:

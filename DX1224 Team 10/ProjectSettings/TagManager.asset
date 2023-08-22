@@ -21,7 +21,6 @@ TagManager:
   - Room4
   - Locker
   - Shield
-  - shield
   - Destructible
   - PuzzleBox1
   - Shop
@@ -40,6 +39,7 @@ TagManager:
   - CP8
   - CP9
   - CP10
+  - Clue
   layers:
   - Default
   - TransparentFX

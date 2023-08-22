@@ -984,7 +984,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8518131388112587655}
         m_TargetAssemblyTypeName: ShopUI, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 1

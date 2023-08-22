@@ -786,8 +786,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 169023652}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShopUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812372452399120713, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+--- !u!114 &169023652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8518131388112587655, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+  m_PrefabInstance: {fileID: 169023651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17955d382db1cb942aa10db66d3f0e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &170065558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1661314554333053265, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
@@ -1956,7 +2023,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: defe4c07517512244af437c3a2989516, type: 3}
     - target: {fileID: 1748378804121423622, guid: 641056e2a881f394495752ab7485c795, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1748378804121423622, guid: 641056e2a881f394495752ab7485c795, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5053,7 +5120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775240813}
   m_Layer: 0
-  m_Name: Waypoints
+  m_Name: Enemy Waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5136,7 +5203,7 @@ Transform:
   - {fileID: 97092293}
   - {fileID: 1718755651}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &808865892
 PrefabInstance:
@@ -7833,7 +7900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1834041018234929781, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1834041018234929781, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9305,7 +9372,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 13591432152038292, guid: 2f4d9fe32057c15448c305ff8228cf08, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 13591432152038292, guid: 2f4d9fe32057c15448c305ff8228cf08, type: 3}
       propertyPath: m_LocalScale.x
@@ -10999,7 +11066,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1756477418 stripped
 Transform:

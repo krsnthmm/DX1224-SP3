@@ -12,10 +12,14 @@ public class PasscodeTriggerObject : MonoBehaviour
 
     private void Update()
     {
-        if (!PauseMenuUIManager.IsPaused && playerInRange && Input.GetKeyDown(KeyCode.F))
+        if (!PauseMenuUIManager.IsPaused && playerInRange && !enteredCorrectCode && Input.GetKeyDown(KeyCode.F))
         {
             passcodePrompt.SetActive(true);
             Time.timeScale = 0f; //pause the game
+        }
+        else if (enteredCorrectCode)
+        {
+            uiToShow.SetActive(false);
         }
     }
 
@@ -33,13 +37,10 @@ public class PasscodeTriggerObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!enteredCorrectCode)
+        if (collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
-            {
-                uiToShow.SetActive(false);
-                playerInRange = false;
-            }
+            uiToShow.SetActive(false);
+            playerInRange = false;
         }
     }
 

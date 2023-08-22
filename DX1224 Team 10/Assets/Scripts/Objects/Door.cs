@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (playerInRange && Input.GetKey(KeyCode.F) && gameObject.CompareTag("LockedDoor") && key.GotKey)
+        if (playerInRange && Input.GetKey(KeyCode.F) && gameObject.CompareTag("LockedDoor") && key.gotKey)
         {
             audioPlayer.PlayClip(3);
             Destroy(gameObject);
