@@ -10,6 +10,7 @@ public class PauseMenuUIManager : MonoBehaviour
     public GameObject panel;
     public GameObject pauseMenuUI;
     public GameObject settingsMenuUI;
+    public SceneLoader sceneLoader;
 
     // Update is called once per frame
     private void Update()
@@ -78,7 +79,10 @@ public class PauseMenuUIManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        Time.timeScale = 1f;
+        IsPaused = false;
+
         // Load Menu Scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MenuScene");
+        sceneLoader.LoadScene("MenuScene");
     }
 }

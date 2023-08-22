@@ -10,14 +10,17 @@ public class LoadingBar : MonoBehaviour
     private float targetValue;
 
     public SceneLoader sceneLoader; 
-    public float loadThreshold = 1.0f; 
+    public float loadThreshold = 1f; 
 
-    private bool isLoading = false;
+    private bool isLoading;
 
     private void Start()
     {
         startValue = slider.value;
         targetValue = slider.maxValue;
+
+        isLoading = false;
+
 
         StartCoroutine(IncreaseSliderValue());
     }
@@ -29,7 +32,6 @@ public class LoadingBar : MonoBehaviour
             isLoading = true;
             sceneLoader.LoadScene(sceneLoader.sceneToLoad);
         }
-        Debug.Log(slider.value);
     }
 
     private IEnumerator IncreaseSliderValue()
@@ -44,6 +46,7 @@ public class LoadingBar : MonoBehaviour
             slider.value = newValue;
 
             elapsedTime += Time.deltaTime;
+
             yield return null;
         }
 

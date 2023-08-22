@@ -9348,6 +9348,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2444151117007522991, guid: cc205801025426943902c9e40a1ddb55, type: 3}
+      propertyPath: sceneToLoad
+      value: Level9Scene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc205801025426943902c9e40a1ddb55, type: 3}
 --- !u!4 &1247037830 stripped
@@ -9355,6 +9359,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2444151117007522990, guid: cc205801025426943902c9e40a1ddb55, type: 3}
   m_PrefabInstance: {fileID: 1247037829}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1247037831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2444151117007522991, guid: cc205801025426943902c9e40a1ddb55, type: 3}
+  m_PrefabInstance: {fileID: 1247037829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3840a86a5d4dc429d47bf9b18facf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1288784632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1661314554333053265, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
@@ -27500,6 +27515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 350526318607808429, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: sceneLoader
+      value: 
+      objectReference: {fileID: 1247037831}
     - target: {fileID: 898255550195913112, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

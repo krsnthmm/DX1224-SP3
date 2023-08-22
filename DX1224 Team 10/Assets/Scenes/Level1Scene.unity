@@ -15336,6 +15336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 350526318607808429, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: sceneLoader
+      value: 
+      objectReference: {fileID: 798843528}
     - target: {fileID: 350526318765771401, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

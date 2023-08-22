@@ -20723,6 +20723,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2626649553254390264, guid: bb2f28f8f57345b47a72a8839be27fb7, type: 3}
   m_PrefabInstance: {fileID: 1575859225}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &750317879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2444151117007522991, guid: cc205801025426943902c9e40a1ddb55, type: 3}
+  m_PrefabInstance: {fileID: 150556534}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3840a86a5d4dc429d47bf9b18facf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &773919390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28982,6 +28993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu UI Group
       objectReference: {fileID: 0}
+    - target: {fileID: 350526318607808429, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: sceneLoader
+      value: 
+      objectReference: {fileID: 750317879}
     - target: {fileID: 898255550195913112, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

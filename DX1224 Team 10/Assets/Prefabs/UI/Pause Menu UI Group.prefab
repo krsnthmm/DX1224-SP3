@@ -908,6 +908,7 @@ MonoBehaviour:
   panel: {fileID: 2301601955287272280}
   pauseMenuUI: {fileID: 350526318927200283}
   settingsMenuUI: {fileID: 1254675419354158977}
+  sceneLoader: {fileID: 0}
 --- !u!82 &3098024193948554928
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1140,10 +1141,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2444151117007522991, guid: cc205801025426943902c9e40a1ddb55, type: 3}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 350526318607808429}
+        m_TargetAssemblyTypeName: PauseMenuUIManager, Assembly-CSharp
+        m_MethodName: ReturnToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
