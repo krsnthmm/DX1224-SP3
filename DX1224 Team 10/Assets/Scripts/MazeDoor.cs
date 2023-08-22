@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MazeDoor : MonoBehaviour
 {
-    [SerializeField] private GameObject uiToShow;
-
     [Header("Player's Audio Player")]
     [SerializeField] private AudioPlayer audioPlayer;
     private bool playerInRange;
@@ -14,7 +12,7 @@ public class MazeDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (puzzleManager.BoxPuzzleCompleted && gameObject.CompareTag("MazeDoor"))
+        if (puzzleManager.BoxPuzzleCompleted)
         {
             audioPlayer.PlayClip(3);
             Destroy(gameObject);
@@ -26,7 +24,6 @@ public class MazeDoor : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
-            ShowUI(true);
         }
     }
 
@@ -35,12 +32,6 @@ public class MazeDoor : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            ShowUI(false);
         }
-    }
-
-    private void ShowUI(bool b)
-    {
-        uiToShow.SetActive(b);
     }
 }
