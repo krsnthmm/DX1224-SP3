@@ -7,47 +7,60 @@ using TMPro;
 
 public class Passcode : MonoBehaviour
 {
-    string Code = "0853";
-    string Nr = null;
-    int NrIndex = 0;
-    string alpha;
-    public TMP_Text UiText = null;
-    public GameObject passcodeUI;  // Reference to the UI GameObject
+    private string code = "0853";
+    private string codeInput = null;
+    private int maxLength = 4;
 
-    public InteractiveObject interactiveObject;
-    private bool isPromptState = false;
+    [SerializeField] private TMP_Text uiText = null;
+    [SerializeField] private GameObject passcodeUI;  // Reference to the UI GameObject
+    [SerializeField] private PasscodeTriggerObject passcodeTriggerObj;
+    [SerializeField] private GameObject exitDoor;
+    [SerializeField] private AudioPlayer audioPlayer;
 
     private void Start()
     {
+        codeInput = "";
         passcodeUI.SetActive(false);
     }
-    public void CodeFunction(string Numbers)
+
+    public void CodeFunction(string numbers)
     {
-        NrIndex++;
-        Nr = Nr + Numbers;
-        UiText.text = Nr;
+        if (codeInput.Length < maxLength)
+        {
+            codeInput += numbers;
+            uiText.text = codeInput;
+        }
     }
 
     public void Enter()
     {
-        if (Nr == Code)
+        if (codeInput == code)
         {
-            Debug.Log("Entered");
-            passcodeUI.SetActive(false);  // Disable the passcode UI GameObject
-
-            interactiveObject.CompletePrompt();
-            Time.timeScale = 1f;
-
-            SceneManager.LoadScene(1);
+            passcodeTriggerObj.enteredCorrectCode = true;
+            audioPlayer.PlayClip(3);
+            Destroy(exitDoor);
         }
+        else
+        {
+            codeInput = "";
+            uiText.text = codeInput;
+        }
+
+        passcodeUI.SetActive(false);  // Disable the passcode UI GameObject
+        Time.timeScale = 1f;
     }
 
     public void Delete()
     {
-        NrIndex++;
-        Nr = null;
-        UiText.text = Nr;
-        passcodeUI.SetActive(false);
-        interactiveObject.CompletePrompt();
+        if (codeInput.Length <= 0)
+        {
+            passcodeUI.SetActive(false);  // Disable the passcode UI GameObject
+            Time.timeScale = 1f;
+        }
+        else if (codeInput.Length > 0)
+        {
+            codeInput = codeInput.Substring(0, codeInput.Length - 1);
+            uiText.text = codeInput;
+        }
     }
 }

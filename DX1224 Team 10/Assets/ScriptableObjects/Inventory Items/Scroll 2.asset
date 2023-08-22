@@ -15,4 +15,9 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 2be1f7b3ff21cfe448833e01aa171250, type: 3}
   type: 3
   description: A mysterious scroll. You can feel the life flowing through it.
-  keyText: Riddle for Billybob Heart here.
+  keyText: 'Oh, the irony.
+
+    The life you seek for is in
+
+    the heart of the
+    dead.'

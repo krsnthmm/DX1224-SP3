@@ -39,10 +39,6 @@ public class Checkpoint : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(PlayerPrefs.GetString("CP2Unlocked"));
-        Debug.Log(PlayerPrefs.GetString("CP5Unlocked"));
-
-
         if (!PauseMenuUIManager.IsPaused && playerInRange && Input.GetKey(KeyCode.F))
         {
             ToggleCheckpointUI(true);

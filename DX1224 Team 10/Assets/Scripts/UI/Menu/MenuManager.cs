@@ -26,8 +26,6 @@ public class MenuManager : MonoBehaviour
         sceneLoader.LoadScene("LoadingScreen");
     }
 
-    // settings UI may not be working on some branches
-    // uncomment on main
     public void Settings()
     {
         Debug.Log("!");
