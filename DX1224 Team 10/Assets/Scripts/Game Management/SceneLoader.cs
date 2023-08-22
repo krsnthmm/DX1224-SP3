@@ -12,9 +12,6 @@ public class SceneLoader : MonoBehaviour
     private TMP_Text percentText;
     public string sceneToLoad;
 
-    //public GameObject loadingScreen;
-    //public Slider slider;
-
     // Start is called before the first frame update
     void Start()
     {
