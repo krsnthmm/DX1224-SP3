@@ -35,6 +35,11 @@ TagManager:
   - CP3
   - CP4
   - CP5
+  - CP6
+  - CP7
+  - CP8
+  - CP9
+  - CP10
   layers:
   - Default
   - TransparentFX

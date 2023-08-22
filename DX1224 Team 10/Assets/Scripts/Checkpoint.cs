@@ -10,6 +10,7 @@ using TMPro;
 public class Checkpoint : MonoBehaviour
 {
     public GameObject checkpointUI;
+    public GameObject interactablePrompt;
     private bool playerInRange;
 
     public Button Lvl2;
@@ -42,9 +43,9 @@ public class Checkpoint : MonoBehaviour
         Debug.Log(PlayerPrefs.GetString("CP5Unlocked"));
 
 
-        if (playerInRange && Input.GetKey(KeyCode.F))
+        if (!PauseMenuUIManager.IsPaused && playerInRange && Input.GetKey(KeyCode.F))
         {
-            checkpointUI.SetActive(true);
+            ToggleCheckpointUI(true);
         }
 
         //GameObject checkpointpos = GameObject.FindGameObjectWithTag("Checkpoint");
@@ -160,6 +161,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
+            interactablePrompt.SetActive(true);
 
             if (gameObject.CompareTag("CP2"))
             {
@@ -213,8 +215,14 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
-            checkpointUI.SetActive(false);
+            ToggleCheckpointUI(false);
+            interactablePrompt.SetActive(false);
         }
+    }
+
+    public void ToggleCheckpointUI(bool b)
+    {
+        checkpointUI.SetActive(b);
     }
 
     public void LoadScene(string sceneName)
