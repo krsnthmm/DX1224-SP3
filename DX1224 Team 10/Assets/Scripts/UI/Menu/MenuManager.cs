@@ -5,23 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public string mainGameScene;
+    [SerializeField] private SceneLoader sceneLoader;
+    [SerializeField] private PlayerData playerData;
     public GameObject settingsMenuUI;
     public GameObject mainMenuUI;
 
-    // Start is called before the first frame update
     public void NewGame()
     {
         // Create new save data?
         // Open game with new player data
-        SceneManager.LoadScene(mainGameScene);
+        sceneLoader.LoadScene("LoadingScreen");
+        playerData.SetDefaults();
     }
 
     public void LoadGame()
     {
         // Load previous player data
         // Load game scene
-        SceneManager.LoadScene(mainGameScene);
+        sceneLoader.LoadScene("LoadingScreen");
     }
 
     // settings UI may not be working on some branches

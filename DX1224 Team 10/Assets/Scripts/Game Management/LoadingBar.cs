@@ -29,6 +29,7 @@ public class LoadingBar : MonoBehaviour
             isLoading = true;
             sceneLoader.LoadScene(sceneLoader.sceneToLoad);
         }
+        Debug.Log(slider.value);
     }
 
     private IEnumerator IncreaseSliderValue()

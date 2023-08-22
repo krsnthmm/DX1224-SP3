@@ -15336,6 +15336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 350526318765771401, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 798843528}
     - target: {fileID: 898255550195913112, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -36539,8 +36543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2111075dede6b51439f00f9a82f7c561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiToShow: {fileID: 0}
-  playerObject: {fileID: 0}
+  uiToShow: {fileID: 1032383712}
+  playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
 --- !u!1 &1444594800
 GameObject:
@@ -60235,8 +60239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2111075dede6b51439f00f9a82f7c561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiToShow: {fileID: 0}
-  playerObject: {fileID: 0}
+  uiToShow: {fileID: 1032383712}
+  playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
 --- !u!61 &2013176331
 BoxCollider2D:

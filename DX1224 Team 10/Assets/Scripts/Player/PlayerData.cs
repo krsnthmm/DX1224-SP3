@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Default Player Data")]
-    [HideInInspector] public float defaultSpeed = 2f;
+    [HideInInspector] public float defaultWalkSpeed = 2f;
+    [HideInInspector] public float defaultDashSpeed = 7f;
     [HideInInspector] public float defaultHP = 150f;
     [HideInInspector] public float defaultStamina = 75f;
 
@@ -39,4 +40,19 @@ public class PlayerData : ScriptableObject
     //level saved
     //doors opened 
     //maps unlocked
+
+    public void SetDefaults()
+    {
+        currentHP = maxHP = defaultHP;
+        currentStamina = maxStamina = defaultStamina;
+        walkSpeed = defaultWalkSpeed;
+        dashSpeed = defaultDashSpeed;
+
+        coins = 0;
+
+        hasSpeedBoost = false;
+        hasCrossEquipped = false;
+
+        inventory.Container = new();
+    }
 }
