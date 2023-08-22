@@ -17,7 +17,7 @@ public class BoxPuzzle2 : MonoBehaviour
     {
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PuzzleBox2"))
         {
@@ -28,13 +28,13 @@ public class BoxPuzzle2 : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("PuzzleBox2"))
-        {
-            BoxOnHole2 = false;
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("PuzzleBox2"))
+    //    {
+    //        BoxOnHole2 = false;
+    //    }
+    //}
 }
 
 
