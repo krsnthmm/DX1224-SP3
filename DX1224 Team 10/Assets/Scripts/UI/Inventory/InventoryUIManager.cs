@@ -16,7 +16,7 @@ public class InventoryUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenuUIManager.IsPaused && !ScrollPopupUIManager.isUp)
+        if (!PauseMenuUIManager.IsPaused && !ScrollPopupUIManager.isUp && !ShopUIManager.isShopOpen)
         {
             if (Input.GetKeyDown(KeyCode.E) && !inventoryMenu.activeSelf)
             {

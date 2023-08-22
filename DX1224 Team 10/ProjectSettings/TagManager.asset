@@ -24,6 +24,9 @@ TagManager:
   - shield
   - Destructible
   - PuzzleBox1
+  - Door
+  - MazeDoor
+  - Shop
   layers:
   - Default
   - TransparentFX

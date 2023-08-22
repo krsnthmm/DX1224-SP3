@@ -2933,6 +2933,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4102765473070152549, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4102765473070152550, guid: c2e584465f0167a4ea4d318af7fcbb1e, type: 3}
       propertyPath: m_Name
       value: Locker
