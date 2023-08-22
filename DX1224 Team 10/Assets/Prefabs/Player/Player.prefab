@@ -288,9 +288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f047f2048cacd44f8e42ce1dbef33fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSrc: {fileID: 1748378804121423621, guid: 641056e2a881f394495752ab7485c795, type: 3}
   playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
   playerInventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}
+  speedBoostItem: {fileID: 11400000, guid: 2ffd2d5ad2f3d0a409b229295e2664ab, type: 2}
   knockedBack: 0
 --- !u!114 &1162793959
 MonoBehaviour:

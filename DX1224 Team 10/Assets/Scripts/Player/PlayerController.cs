@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     //Referencing PlayerData Script
     public PlayerData playerData;
     public Inventory playerInventory;
+    public SpeedObject speedBoostItem;
 
     private bool isDashing;
     private bool isDead;
@@ -53,6 +54,11 @@ public class PlayerController : MonoBehaviour
         if (playerData.currentHP > 0)
         {
             HandleMovementAnimations();
+            
+            if (playerData.hasSpeedBoost)
+            {
+                StartCoroutine(SpeedBoost());
+            }
 
             // Dashing logic
             if (Input.GetKeyDown(KeyCode.Space) && !isDashing && playerData.currentStamina >= playerData.staminaConsume)
@@ -162,5 +168,20 @@ public class PlayerController : MonoBehaviour
     void AnimationFinishTrigger()
     {
         isAnimFinished = true;
+    }
+
+    private IEnumerator SpeedBoost()
+    {
+        playerData.hasSpeedBoost = false;
+
+        playerData.walkSpeed += speedBoostItem.speedValue;
+        playerData.dashSpeed += speedBoostItem.speedValue;
+        playerData.currentSpeed = playerData.walkSpeed;
+
+        yield return new WaitForSeconds(30);
+
+        playerData.walkSpeed -= speedBoostItem.speedValue;
+        playerData.dashSpeed -= speedBoostItem.speedValue;
+        playerData.currentSpeed = playerData.walkSpeed;
     }
 }

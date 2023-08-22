@@ -116,7 +116,7 @@ public class Inventory : ScriptableObject
                     var speedItem = Container[i].item as SpeedObject;
                     if (speedItem.isTempBoost)
                     {
-                        playerData.currentSpeed += speedItem.speedValue;
+                        playerData.hasSpeedBoost = true;
                     }
                     else
                     {

@@ -29,6 +29,7 @@ public class PlayerData : ScriptableObject
     public float staminaConsume;
     public float staminaRefillRate;
     public float staminaRefillInterval; // number of seconds before stamina is refilled
+    public bool hasSpeedBoost;
     public bool hasCrossEquipped;
     public float shieldDuration;
 
@@ -38,24 +39,4 @@ public class PlayerData : ScriptableObject
     //level saved
     //doors opened 
     //maps unlocked
-
-    public float GetMovementSpeed()
-    {
-        return defaultSpeed;
-    }
-
-    public void SetMovementSpeed(float speed)
-    {
-        defaultSpeed = speed;
-    }
-
-    public float GetDashSpeed()
-    {
-        return dashSpeed;
-    }
-
-    public void SetDashDuration(float duration)
-    {
-        dashDuration = duration;
-    }
 }
