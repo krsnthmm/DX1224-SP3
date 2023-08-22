@@ -31,7 +31,10 @@ TagManager:
   - PuzzleBox3
   - PuzzleBox2
   - Key
-  - Checkpoint
+  - CP2
+  - CP3
+  - CP4
+  - CP5
   layers:
   - Default
   - TransparentFX

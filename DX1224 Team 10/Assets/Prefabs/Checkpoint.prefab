@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 13591431362809977}
   m_Layer: 0
   m_Name: Checkpoint
-  m_TagString: Checkpoint
+  m_TagString: CP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointUI: {fileID: 0}
+  Lvl2: {fileID: 0}
+  Lvl3: {fileID: 0}
+  Lvl4: {fileID: 0}
+  Lvl5: {fileID: 0}
+  Lvl6: {fileID: 0}
+  Lvl7: {fileID: 0}
+  Lvl8: {fileID: 0}
+  Lvl9: {fileID: 0}
+  Lvl10: {fileID: 0}
 --- !u!61 &13591431362809977
 BoxCollider2D:
   m_ObjectHideFlags: 0

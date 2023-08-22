@@ -22,16 +22,6 @@ public class Checkpoint : MonoBehaviour
     public Button Lvl9;
     public Button Lvl10;
 
-    public bool Lvl2Unlocked;
-    public bool Lvl3Unlocked;
-    public bool Lvl4Unlocked;
-    public bool Lvl5Unlocked;
-    public bool Lvl6Unlocked;
-    public bool Lvl7Unlocked;
-    public bool Lvl8Unlocked;
-    public bool Lvl9Unlocked;
-    public bool Lvl10Unlocked;
-
     void Start()
     {
         checkpointUI.SetActive(false);
@@ -48,14 +38,17 @@ public class Checkpoint : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(PlayerPrefs.GetString("CP2Unlocked"));
+        Debug.Log(PlayerPrefs.GetString("CP5Unlocked"));
+
 
         if (playerInRange && Input.GetKey(KeyCode.F))
         {
             checkpointUI.SetActive(true);
         }
 
-        GameObject checkpointpos = GameObject.FindGameObjectWithTag("Checkpoint");
-        checkpointpos.transform.position = gameObject.transform.position;
+        //GameObject checkpointpos = GameObject.FindGameObjectWithTag("Checkpoint");
+        //checkpointpos.transform.position = gameObject.transform.position;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
@@ -65,8 +58,98 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true" && player != null)
             {
-                player.transform.position = checkpointpos.transform.position;
+                player.transform.position = gameObject.transform.position;
                 PlayerPrefs.SetString("sceneLoaded", "false");
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP2Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP2Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl2.interactable = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP3Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP3Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl3.interactable = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP4Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP4Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl4.interactable = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP5Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP5Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl5.interactable = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP6Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP6Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl6.interactable = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP7Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP7Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl7.interactable = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP8Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP8Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl8.interactable = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP9Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP9Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl9.interactable = true;
+            }
+        }
+
+        if (PlayerPrefs.HasKey("CP10Unlocked"))
+        {
+            string boolContainer = PlayerPrefs.GetString("CP10Unlocked");
+
+            if (boolContainer.ToLower() == "true")
+            {
+                Lvl10.interactable = true;
             }
         }
 
@@ -77,9 +160,50 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
-            if (gameObject.CompareTag("CP1"))
+
+            if (gameObject.CompareTag("CP2"))
             {
-                //checkpointUnlocked = true;
+                PlayerPrefs.SetString("CP2Unlocked", "true");
+            }
+
+            else if (gameObject.CompareTag("CP3"))
+            {
+                PlayerPrefs.SetString("CP3Unlocked", "true");
+            }
+
+            else if (gameObject.CompareTag("CP4"))
+            {
+                PlayerPrefs.SetString("CP4Unlocked", "true");
+            }
+
+            else if (gameObject.CompareTag("CP5"))
+            {
+                PlayerPrefs.SetString("CP5Unlocked", "true");
+            }
+
+            else if (gameObject.CompareTag("CP6"))
+            {
+                PlayerPrefs.SetString("CP6Unlocked", "true");
+            }
+
+            else if (gameObject.CompareTag("CP7"))
+            {
+                PlayerPrefs.SetString("CP7Unlocked", "true");
+            }
+
+            else if (gameObject.CompareTag("CP8"))
+            {
+                PlayerPrefs.SetString("CP8Unlocked", "true");
+            }
+
+            else if (gameObject.CompareTag("CP9"))
+            {
+                PlayerPrefs.SetString("CP9Unlocked", "true");
+            }
+
+            else if (gameObject.CompareTag("CP10"))
+            {
+                PlayerPrefs.SetString("CP10Unlocked", "true");
             }
         }
     }
