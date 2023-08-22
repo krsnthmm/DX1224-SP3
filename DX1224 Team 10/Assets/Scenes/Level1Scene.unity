@@ -15341,9 +15341,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 798843528}
     - target: {fileID: 350526318765771401, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350526318765771401, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 798843528}
+      objectReference: {fileID: 2147255083}
+    - target: {fileID: 350526318765771401, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 350526318765771401, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 898255550195913112, guid: 046380a8fb457a548b048df5fa398750, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -61031,6 +61043,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2147255083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 350526318607808429, guid: 046380a8fb457a548b048df5fa398750, type: 3}
+  m_PrefabInstance: {fileID: 647503850}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7ccae6c925e5545b8059e1a1efbf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &120512747832040258
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private Inventory inventory;
     public GameObject settingsMenuUI;
     public GameObject mainMenuUI;
 
