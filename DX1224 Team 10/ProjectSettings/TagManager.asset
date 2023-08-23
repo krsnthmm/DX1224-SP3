@@ -80,3 +80,12 @@ TagManager:
   - name: layer1
     uniqueID: 2808124833
     locked: 0
+  - name: Groud
+    uniqueID: 610089515
+    locked: 0
+  - name: Deco
+    uniqueID: 3725049315
+    locked: 0
+  - name: UI
+    uniqueID: 1612561511
+    locked: 0
