@@ -32,50 +32,23 @@ public class FogOfWar : MonoBehaviour
     {
         Debug.Log(playerAtZbRoom);
 
-        //if (playerAtMH)
-        //{
-        //    playerAtZbRoom = false;
-        //}
-        //else if (playerAtZbRoom)
-        //{
-        //    playerAtMH = false;
-        //}
-        if (atHallway)
+        if (!GameObject.FindGameObjectWithTag("Player") && playerAtMH)
         {
-            playerAtZbRoom = false;
-            playerAtMH = false;
-            playerInMHLocker = false;
-            playerInRoomLocker = false;
-        }
-
-        else if (!atHallway && !playerAtMH && !playerAtZbRoom &&!playerInMHLocker)
-        {
-
-        }
-
-        if (!playerAtMH && !playerAtZbRoom && playerInMHLocker &&!playerInRoomLocker)
-        {
-            if (!GameObject.FindGameObjectWithTag("Player"))
+            foreach (Tilemap tilemap in fogOfWars)
             {
-                foreach (Tilemap tilemap in fogOfWars)
-                {
-                    tilemap.gameObject.SetActive(false);
-                }
-                fogOfWars[5].gameObject.SetActive(true);
+                tilemap.gameObject.SetActive(false);
             }
+            fogOfWars[5].gameObject.SetActive(true);
         }
 
-        else if (!playerAtZbRoom && !playerAtMH && playerInRoomLocker && !playerInMHLocker)
+        else if (!GameObject.FindGameObjectWithTag("Player") && playerAtZbRoom)
         {
-            if (!GameObject.FindGameObjectWithTag("Player"))
+            foreach (Tilemap tilemap in fogOfWars)
             {
-                foreach (Tilemap tilemap in fogOfWars)
-                {
-                    tilemap.gameObject.SetActive(false);
-                }
-                fogOfWars[3].gameObject.SetActive(true);
-                Debug.Log("This if statement is being called");
+                tilemap.gameObject.SetActive(false);
             }
+            fogOfWars[3].gameObject.SetActive(true);
+            Debug.Log("This if statement is being called");
         }
     }
 
