@@ -2587,7 +2587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneLoader: {fileID: 2007163784}
   playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
-  shop: {fileID: 0}
+  shop: {fileID: 11400000, guid: 5b430c3ebff8115498a24bf0b4656525, type: 2}
   settingsMenuUI: {fileID: 1176154788}
   mainMenuUI: {fileID: 851010245}
 --- !u!4 &2120316643

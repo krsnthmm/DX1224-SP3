@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
         // Open game with new player data
         sceneLoader.LoadScene("LoadingScreen");
         playerData.SetDefaults();
+        shop.SetDefaults();
 
         // set timeScale to 1
         // this is so that the scene to load isn't paused after returning to the main menu from the pause menu
