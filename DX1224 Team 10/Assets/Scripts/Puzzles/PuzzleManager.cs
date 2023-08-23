@@ -2,17 +2,21 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
-    public BoxPuzzle1 boxPuzzle1;
-    public BoxPuzzle2 boxPuzzle2;
-    public BoxPuzzle3 boxPuzzle3;
-    public bool BoxPuzzleCompleted = false;
+    [SerializeField] private BoxPuzzle[] boxPuzzles;
+    public bool boxPuzzleCompleted = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (boxPuzzle1.BoxOnHole1 && boxPuzzle2.BoxOnHole2 && boxPuzzle3.BoxOnHole3)
+        boxPuzzleCompleted = true;
+
+        for (int i = 0; i < boxPuzzles.Length; i++)
         {
-            BoxPuzzleCompleted = true;
+            if (!boxPuzzles[i].isBoxInHole)
+            {
+                boxPuzzleCompleted = false;
+                break;
+            }
         }
     }
 }

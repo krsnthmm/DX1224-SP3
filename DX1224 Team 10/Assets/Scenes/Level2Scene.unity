@@ -14193,6 +14193,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2486289507314612960, guid: fa1ca015089edb64c9bb910bf2895561, type: 3}
   m_PrefabInstance: {fileID: 94183277}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &143115939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2116640508039392707, guid: bedb6a98fe819f24d81bc1cdeb04b8b7, type: 3}
+  m_PrefabInstance: {fileID: 2116640506779987023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &159110793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14204,6 +14209,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1134430828}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1479374444}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 739330381}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -14622,7 +14639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &308095511
 Transform:
   m_ObjectHideFlags: 0
@@ -15176,6 +15193,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1134430828}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1479374444}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 739330381}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -15368,6 +15397,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2626649553254390264, guid: bb2f28f8f57345b47a72a8839be27fb7, type: 3}
   m_PrefabInstance: {fileID: 703351056}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &739330381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
+  m_PrefabInstance: {fileID: 1479374441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &753296875 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5565614124959998753, guid: b66c7ec0bc5ae5543ae0fb62edae5d9e, type: 3}
@@ -15445,6 +15479,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2486289507314612960, guid: fa1ca015089edb64c9bb910bf2895561, type: 3}
   m_PrefabInstance: {fileID: 763636768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &765159720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2848496448458699809, guid: d877f0c4a5153ab43959a31b0f1a9137, type: 3}
+  m_PrefabInstance: {fileID: 6247396}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &770314944
 GameObject:
@@ -16099,6 +16138,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1134430828}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1479374444}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 739330381}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
 --- !u!1 &968246754 stripped
@@ -16584,17 +16635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8469b5be1e5784d90a82386e4df7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1295057293 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2116640508039392706, guid: bedb6a98fe819f24d81bc1cdeb04b8b7, type: 3}
-  m_PrefabInstance: {fileID: 2116640506779987023}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65c0dc468905a3843b3207e20c57e3b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1314886307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16830,19 +16870,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8773539278680614247, guid: 3261643a2727afd4aa0fda87e41a73b7, type: 3}
   m_PrefabInstance: {fileID: 8773539277964052623}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1431170540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431170536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7a13fc611ad8a4db38e42ec537ba27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoxOnHole2: 0
 --- !u!1001 &1448429733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16992,7 +17019,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1162793954, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   m_PrefabInstance: {fileID: 1479374441}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 739330381}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f047f2048cacd44f8e42ce1dbef33fc, type: 3}
@@ -17003,7 +17030,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 168413758, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   m_PrefabInstance: {fileID: 1479374441}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 739330381}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bd8d4f282d017a448b48a3f59f0a1a9, type: 3}
@@ -17070,6 +17097,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2626649553254390264, guid: bb2f28f8f57345b47a72a8839be27fb7, type: 3}
   m_PrefabInstance: {fileID: 1515168864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1552790316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2848496448458699809, guid: d877f0c4a5153ab43959a31b0f1a9137, type: 3}
+  m_PrefabInstance: {fileID: 2848496450379312476}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1553401009
 PrefabInstance:
@@ -17704,19 +17736,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3515378131190552447, guid: 1a2221820c59fef459799b8d5ac720b1, type: 3}
   m_PrefabInstance: {fileID: 3515378129516869217}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1842192674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842192670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c630f7f75b87f5d4f83f65e795843f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoxOnHole3: 0
 --- !u!1 &1868369122
 GameObject:
   m_ObjectHideFlags: 0
@@ -20689,6 +20708,11 @@ MonoBehaviour:
   m_FocusTarget: {fileID: 0}
   m_FocusOffset: 0
   m_Profile: {fileID: 11400000, guid: f448ace8faf4b064d9ade2df937470b3, type: 2}
+--- !u!1 &2058902415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2848496448458699809, guid: d877f0c4a5153ab43959a31b0f1a9137, type: 3}
+  m_PrefabInstance: {fileID: 1818663649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2088320932 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7814657473098948817, guid: b66c7ec0bc5ae5543ae0fb62edae5d9e, type: 3}
@@ -22969,6 +22993,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1134430828}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1479374444}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 739330381}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
 --- !u!4 &1661314552387969711 stripped
@@ -23047,13 +23083,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle Hole 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2116640508039392706, guid: bedb6a98fe819f24d81bc1cdeb04b8b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bedb6a98fe819f24d81bc1cdeb04b8b7, type: 3}
 --- !u!4 &2116640506779987024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2116640508039392704, guid: bedb6a98fe819f24d81bc1cdeb04b8b7, type: 3}
   m_PrefabInstance: {fileID: 2116640506779987023}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2116640506779987025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143115939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2874a81088898584a9abacee469f1271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 1552790316}
+  isBoxInHole: 0
 --- !u!1001 &2444151116205585721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23111,7 +23162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444151117007522991, guid: cc205801025426943902c9e40a1ddb55, type: 3}
       propertyPath: sceneToLoad
-      value: Level5Scene
+      value: Level3Scene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc205801025426943902c9e40a1ddb55, type: 3}
@@ -23255,6 +23306,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3515378131190552384, guid: 1a2221820c59fef459799b8d5ac720b1, type: 3}
   m_PrefabInstance: {fileID: 3515378129516869217}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3515378129516869219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842192670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2874a81088898584a9abacee469f1271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 765159720}
+  isBoxInHole: 0
 --- !u!1001 &6347288819299244041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23265,15 +23330,31 @@ PrefabInstance:
     - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
       propertyPath: boxPuzzle1
       value: 
-      objectReference: {fileID: 1295057293}
+      objectReference: {fileID: 0}
     - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
       propertyPath: boxPuzzle2
       value: 
-      objectReference: {fileID: 1431170540}
+      objectReference: {fileID: 0}
     - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
       propertyPath: boxPuzzle3
       value: 
-      objectReference: {fileID: 1842192674}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
+      propertyPath: boxPuzzles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
+      propertyPath: boxPuzzles.Array.data[0]
+      value: 
+      objectReference: {fileID: 2116640506779987025}
+    - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
+      propertyPath: boxPuzzles.Array.data[1]
+      value: 
+      objectReference: {fileID: 8773539277964052625}
+    - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
+      propertyPath: boxPuzzles.Array.data[2]
+      value: 
+      objectReference: {fileID: 3515378129516869219}
     - target: {fileID: 6347288818437382283, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
       propertyPath: m_Name
       value: PuzzleManager
@@ -23340,6 +23421,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate
       objectReference: {fileID: 0}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: uiToShow
+      value: 
+      objectReference: {fileID: 1134430828}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1479374444}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 739330381}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -23469,3 +23562,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8773539278680614244, guid: 3261643a2727afd4aa0fda87e41a73b7, type: 3}
   m_PrefabInstance: {fileID: 8773539277964052623}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8773539277964052625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431170536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2874a81088898584a9abacee469f1271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 2058902415}
+  isBoxInHole: 0

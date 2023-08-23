@@ -12,6 +12,7 @@ public class Interactable : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject playerObject;
     [SerializeField] private GameObject lockerObject;
+    private AudioPlayer audioPlayer;
 
     private Vector3 lockerPosition;
     private Quaternion lockerRotation;
@@ -28,6 +29,7 @@ public class Interactable : MonoBehaviour
         isInLocker = false;
         hasGottenCoin = false;
         playerData = playerObject.GetComponent<PlayerController>().playerData;
+        audioPlayer = playerObject.GetComponent<AudioPlayer>();
     }
 
     void Update()
@@ -38,14 +40,14 @@ public class Interactable : MonoBehaviour
             {
                 Debug.Log("Player gets coin");
                 playerData.coins++;
-                playerObject.GetComponent<AudioPlayer>().PlayClip(2);
+                audioPlayer.PlayClip(2);
                 hasGottenCoin = true;
                 ShowUI(false);
             }
             else if (gameObject.CompareTag("Destructible"))
             {
                 playerData.coins++;
-                playerObject.GetComponent<AudioPlayer>().PlayClip(2);
+                audioPlayer.PlayClip(2);
                 Destroy(gameObject);
                 ShowUI(false);
             }

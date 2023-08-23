@@ -9,7 +9,7 @@ public class MazeDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (puzzleManager.BoxPuzzleCompleted)
+        if (puzzleManager.boxPuzzleCompleted)
         {
             audioPlayer.PlayClip(3);
             Destroy(gameObject);

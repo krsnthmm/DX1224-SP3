@@ -1,19 +1,18 @@
 using UnityEngine;
 
-public class BoxPuzzle1 : MonoBehaviour
+public class BoxPuzzle : MonoBehaviour
 {
-    public bool BoxOnHole1;
-    
+    [SerializeField] private GameObject box;
+    public bool isBoxInHole;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PuzzleBox1"))
+        if (collision.gameObject == box)
         {
-            BoxOnHole1 = true;
+            isBoxInHole = true;
             collision.transform.position = transform.position;
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
             rb.bodyType = RigidbodyType2D.Static;
         }
     }
 }
-
-
