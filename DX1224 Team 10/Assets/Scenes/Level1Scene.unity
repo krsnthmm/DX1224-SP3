@@ -28353,6 +28353,8 @@ GameObject:
   - component: {fileID: 1404842135}
   - component: {fileID: 1404842134}
   - component: {fileID: 1404842133}
+  - component: {fileID: 1404842137}
+  - component: {fileID: 1404842136}
   m_Layer: 3
   m_Name: Drawer (1)
   m_TagString: Interactable
@@ -28453,6 +28455,47 @@ Transform:
   m_Father: {fileID: 2070541475}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1404842136
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404842132}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.69, y: 0.61}
+    newSize: {x: 0.69, y: 0.61}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.69, y: 0.61}
+  m_EdgeRadius: 0
+--- !u!114 &1404842137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404842132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2111075dede6b51439f00f9a82f7c561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiToShow: {fileID: 1032383712}
+  playerObject: {fileID: 1664326279}
+  lockerObject: {fileID: 0}
 --- !u!1 &1409025105
 GameObject:
   m_ObjectHideFlags: 0
@@ -59419,11 +59462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1487456155741303949, guid: a4304d21085f8774f838af59e1df522b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 1487456155741303949, guid: a4304d21085f8774f838af59e1df522b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: 1487456155741303949, guid: a4304d21085f8774f838af59e1df522b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -59455,12 +59498,20 @@ PrefabInstance:
         in lockers to avoid them!'
       objectReference: {fileID: 0}
     - target: {fileID: 1487456155741303951, guid: a4304d21085f8774f838af59e1df522b, type: 3}
+      propertyPath: m_fontSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487456155741303951, guid: a4304d21085f8774f838af59e1df522b, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: ea3c82cccf79cc04abbdd41a0f4449d0, type: 2}
     - target: {fileID: 1487456155741303951, guid: a4304d21085f8774f838af59e1df522b, type: 3}
       propertyPath: m_fontColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487456155741303951, guid: a4304d21085f8774f838af59e1df522b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1487456155741303951, guid: a4304d21085f8774f838af59e1df522b, type: 3}
       propertyPath: m_sharedMaterial
@@ -61311,7 +61362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4635365891326877487, guid: dd9cd8b0cb82f9f4386576854dccb63f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.87
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: 4635365891326877487, guid: dd9cd8b0cb82f9f4386576854dccb63f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
