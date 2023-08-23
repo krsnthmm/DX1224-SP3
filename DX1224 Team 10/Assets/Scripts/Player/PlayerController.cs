@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public bool knockedBack;
 
     private float timeSinceLastIdleRefill;
+    public ParticleSystem dashParticles;
+    public ParticleSystem bloodParticles;
 
     void Start()
     {
@@ -67,6 +69,7 @@ public class PlayerController : MonoBehaviour
 
                 StartCoroutine(Dash());
                 Debug.Log("dashing");
+                CreateTrails();
 
                 //stamina bar decrease logic
                 playerData.currentStamina -= playerData.staminaConsume;
@@ -146,6 +149,7 @@ public class PlayerController : MonoBehaviour
 
         // Play dash animation
         m_animator.SetBool("dash", true);
+     
 
         // Continue dashing for the specified duration
         yield return new WaitForSeconds(playerData.dashDuration);
@@ -161,6 +165,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         playerData.currentHP -= damage;
+        CreateBlood();
 
         Debug.Log(playerData.currentHP);
     }
@@ -183,5 +188,16 @@ public class PlayerController : MonoBehaviour
         playerData.walkSpeed -= speedBoostItem.speedValue;
         playerData.dashSpeed -= speedBoostItem.speedValue;
         playerData.currentSpeed = playerData.walkSpeed;
+    }
+
+
+    void CreateTrails()
+    {
+        dashParticles.Play();
+    }
+
+    void CreateBlood()
+    {
+        bloodParticles.Play();
     }
 }
