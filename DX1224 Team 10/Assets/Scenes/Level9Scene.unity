@@ -28020,6 +28020,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8518131388112587655, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6bf7f7a9473a3b4f9ad013c248de303, type: 3}
 --- !u!224 &1695904878 stripped

@@ -16514,17 +16514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2937545f40e22ff49889f231d769aff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1622981484 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 49992330825320012, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
-  m_PrefabInstance: {fileID: 1622981482}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd8d4f282d017a448b48a3f59f0a1a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1638432616 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5143409857854788949, guid: b66c7ec0bc5ae5543ae0fb62edae5d9e, type: 3}
@@ -22467,25 +22456,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 432772184}
     m_Modifications:
     - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
-      propertyPath: boxPuzzle1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
-      propertyPath: boxPuzzle2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
-      propertyPath: boxPuzzle3
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
       propertyPath: audioPlayer
       value: 
-      objectReference: {fileID: 1622981484}
-    - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
-      propertyPath: boxPuzzles.Array.size
-      value: 3
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1479374444}
     - target: {fileID: 6347288818437382282, guid: 8982d476fbd610847b0f89931de7a643, type: 3}
       propertyPath: boxPuzzles.Array.data[0]
       value: 
