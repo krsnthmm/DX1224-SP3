@@ -22,15 +22,15 @@ public class Checkpoint : MonoBehaviour
     void Start()
     {
         checkpointUI.SetActive(false);
-        Lvl2.interactable = false;
-        Lvl3.interactable = false;
-        Lvl4.interactable = false;
-        Lvl5.interactable = false;
-        Lvl6.interactable = false;
-        Lvl7.interactable = false;
-        Lvl8.interactable = false;
-        Lvl9.interactable = false;
-        Lvl10.interactable = false;
+        Lvl2.gameObject.SetActive(false);
+        Lvl3.gameObject.SetActive(false);
+        Lvl4.gameObject.SetActive(false);
+        Lvl5.gameObject.SetActive(false);
+        Lvl6.gameObject.SetActive(false);
+        Lvl7.gameObject.SetActive(false);
+        Lvl8.gameObject.SetActive(false);
+        Lvl9.gameObject.SetActive(false);
+        Lvl10.gameObject.SetActive(false);
     }
 
     void Update()
@@ -59,7 +59,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl2.interactable = true;
+                Lvl2.gameObject.SetActive(true);
             }
         }
 
@@ -69,7 +69,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl3.interactable = true;
+                Lvl3.gameObject.SetActive(true);
             }
         }
 
@@ -79,7 +79,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl4.interactable = true;
+                Lvl4.gameObject.SetActive(true);
             }
         }
 
@@ -89,7 +89,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl5.interactable = true;
+                Lvl5.gameObject.SetActive(true);
             }
         }
 
@@ -99,7 +99,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl6.interactable = true;
+                Lvl6.gameObject.SetActive(true);
             }
         }
 
@@ -109,7 +109,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl7.interactable = true;
+                Lvl7.gameObject.SetActive(true);
             }
         }
 
@@ -119,7 +119,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl8.interactable = true;
+                Lvl8.gameObject.SetActive(true);
             }
         }
 
@@ -129,7 +129,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl9.interactable = true;
+                Lvl9.gameObject.SetActive(true);
             }
         }
 
@@ -139,7 +139,7 @@ public class Checkpoint : MonoBehaviour
 
             if (boolContainer.ToLower() == "true")
             {
-                Lvl10.interactable = true;
+                Lvl10.gameObject.SetActive(true);
             }
         }
     }

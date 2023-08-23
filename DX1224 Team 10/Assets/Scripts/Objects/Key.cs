@@ -3,9 +3,10 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     [SerializeField] private GameObject uiToShow;
+    [SerializeField] private AudioPlayer audioPlayer;
     private bool playerInRange;
     public bool gotKey = false;
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -14,7 +15,10 @@ public class Key : MonoBehaviour
             if (gameObject.CompareTag("Key"))
             {
                 gotKey = true;
-                //uiToShow.SetActive(false);
+                uiToShow.SetActive(false);
+
+                audioPlayer.PlayClip(1);
+
                 Destroy(gameObject);
             }
         }
