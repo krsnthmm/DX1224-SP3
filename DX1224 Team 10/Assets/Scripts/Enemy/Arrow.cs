@@ -13,7 +13,6 @@ public class Arrow : MonoBehaviour
     public LayerMask whatIsSolid;
 
     [SerializeField] private Deflector deflector;
-    public bool isDeflected;
 
     private void Start()
     {
@@ -41,7 +40,9 @@ public class Arrow : MonoBehaviour
                     Destroy(gameObject);
                 }
                 else
-                    isDeflected = true;
+                {
+                    transform.Rotate(0f, 0f, 180f);
+                }
             }
         }
         else
@@ -49,15 +50,6 @@ public class Arrow : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (!isDeflected)
-        {
-            rb.velocity = speed * transform.up;
-        }
-        else
-        {
-            rb.velocity = deflector.deflectionDirection * deflector.deflectionForce;
-            Debug.Log(rb.velocity);
-        }
-       
+        rb.velocity = speed * transform.up;
     }
 }

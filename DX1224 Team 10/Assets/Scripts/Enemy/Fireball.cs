@@ -79,7 +79,7 @@ public class Fireball : MonoBehaviour
 
             player.TakeDamage(enemy.GetComponent<Enemy>().attack);
         }
-        else if (1 << col.gameObject.layer == enemy.GetComponent<Enemy>().whatIsObstacle)
+        else if (1 << col.gameObject.layer == enemy.GetComponent<Enemy>().whatIsObstacle || col.gameObject.CompareTag("Shield"))
         {
             hitSolid = true;
         }
