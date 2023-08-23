@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Attack - Single Ranged Projecile", menuName = "Enemy States/Attack/Single Ranged Projectile")]

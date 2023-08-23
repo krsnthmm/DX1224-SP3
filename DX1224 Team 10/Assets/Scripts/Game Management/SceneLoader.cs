@@ -1,11 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using TMPro;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -27,12 +22,10 @@ public class SceneLoader : MonoBehaviour
     }
     IEnumerator LoadSceneRoutine(string sceneName)
     {
-        AsyncOperationHandle op = Addressables.LoadSceneAsync(sceneName);
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
 
-        while (!op.IsDone)
+        while (!op.isDone)
         {
-            float PercentComplete = Mathf.Clamp01(op.PercentComplete / .9f);
-
             yield return null;
         }
     }

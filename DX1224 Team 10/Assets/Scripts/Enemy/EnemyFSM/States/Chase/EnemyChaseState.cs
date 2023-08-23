@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class EnemyChaseState : EnemyState
+﻿public class EnemyChaseState : EnemyState
 {
     public EnemyChaseState(Enemy enemy, EnemyStateMachine sm, string animBoolName) : base(enemy, sm, animBoolName)
     {

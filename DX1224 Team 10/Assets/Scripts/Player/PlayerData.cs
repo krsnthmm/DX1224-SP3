@@ -19,7 +19,6 @@ public class PlayerData : ScriptableObject
     public float currentHP;
 
     public float coins;
-    public float levels;
 
     public float currentSpeed;
     public float walkSpeed;
@@ -35,11 +34,6 @@ public class PlayerData : ScriptableObject
     public float shieldDuration;
 
     public Inventory inventory;
-
-    //player position 
-    //level saved
-    //doors opened 
-    //maps unlocked
 
     public void SetDefaults()
     {

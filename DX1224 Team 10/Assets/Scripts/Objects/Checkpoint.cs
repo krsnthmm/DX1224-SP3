@@ -1,11 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using TMPro;
 
 public class Checkpoint : MonoBehaviour
 {
@@ -43,9 +39,6 @@ public class Checkpoint : MonoBehaviour
         {
             ToggleCheckpointUI(true);
         }
-
-        //GameObject checkpointpos = GameObject.FindGameObjectWithTag("Checkpoint");
-        //checkpointpos.transform.position = gameObject.transform.position;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
@@ -149,7 +142,6 @@ public class Checkpoint : MonoBehaviour
                 Lvl10.interactable = true;
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -228,14 +220,12 @@ public class Checkpoint : MonoBehaviour
 
     IEnumerator LoadSceneRoutine(string sceneName)
     {
-        AsyncOperationHandle op = Addressables.LoadSceneAsync(sceneName);
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
 
-        while (!op.IsDone)
+        while (!op.isDone)
         {
-            float PercentComplete = Mathf.Clamp01(op.PercentComplete / .9f);
             PlayerPrefs.SetString("sceneLoaded", "true");
             yield return null;
         }
-        
     }
 }
