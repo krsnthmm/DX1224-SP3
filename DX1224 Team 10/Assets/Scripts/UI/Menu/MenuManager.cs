@@ -14,6 +14,10 @@ public class MenuManager : MonoBehaviour
         // Open game with new player data
         sceneLoader.LoadScene("LoadingScreen");
         playerData.SetDefaults();
+
+        // set timeScale to 1
+        // this is so that the scene to load isn't paused after returning to the main menu from the pause menu
+        Time.timeScale = 1f;
     }
 
     public void LoadGame()
@@ -21,6 +25,10 @@ public class MenuManager : MonoBehaviour
         // Load previous player data
         // Load game scene
         sceneLoader.LoadScene("LoadingScreen");
+
+        // set timeScale to 1
+        // this is so that the scene to load isn't paused after returning to the main menu from the pause menu
+        Time.timeScale = 1f;
     }
 
     public void Settings()

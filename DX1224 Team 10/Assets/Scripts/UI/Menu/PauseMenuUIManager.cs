@@ -76,7 +76,6 @@ public class PauseMenuUIManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        Time.timeScale = 1f;
         isPaused = false;
 
         // Load Menu Scene
