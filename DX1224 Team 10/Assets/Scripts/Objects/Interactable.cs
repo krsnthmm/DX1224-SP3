@@ -18,6 +18,8 @@ public class Interactable : MonoBehaviour
     private Quaternion lockerRotation;
     private PlayerData playerData;
 
+    public PlayerController playerController;
+
     private void Start()
     {
         if (lockerObject != null)
@@ -30,6 +32,9 @@ public class Interactable : MonoBehaviour
         hasGottenCoin = false;
         playerData = playerObject.GetComponent<PlayerController>().playerData;
         audioPlayer = playerObject.GetComponent<AudioPlayer>();
+
+        playerController.rb = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
@@ -84,7 +89,15 @@ public class Interactable : MonoBehaviour
 
     private void TransformIntoLocker()
     {
-        playerObject.SetActive(false);
+        //playerObject.SetActive(false);
+        playerController.rb.bodyType = RigidbodyType2D.Kinematic;
+        playerController.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+
+        SpriteRenderer playerRenderer = playerObject.GetComponent<SpriteRenderer>();
+        playerRenderer.enabled = false;
+
+
         playerObject.transform.SetPositionAndRotation(lockerPosition, lockerRotation);
         ShowUI(true);
 
@@ -93,7 +106,13 @@ public class Interactable : MonoBehaviour
 
     private void TransformOutOfLocker()
     {
-        playerObject.SetActive(true);
+        playerController.rb.bodyType = RigidbodyType2D.Dynamic;
+        playerController.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
+        SpriteRenderer playerRenderer = playerObject.GetComponent<SpriteRenderer>();
+        playerRenderer.enabled = true;
+
         playerObject.transform.SetPositionAndRotation(lockerPosition + Vector3.down, lockerRotation);
         ShowUI(false);
 
