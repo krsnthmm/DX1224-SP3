@@ -122,6 +122,7 @@ public class Inventory : ScriptableObject
                     {
                         playerData.walkSpeed += speedItem.speedValue;
                         playerData.dashSpeed += speedItem.speedValue;
+                        playerData.currentSpeed = playerData.walkSpeed;
                     }
                     break;
                 case ItemType.Default:
