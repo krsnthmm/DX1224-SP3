@@ -10,6 +10,8 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private PlayerData playerData;
     [Header("Reference to Player's Inventory")]
     [SerializeField] private Inventory playerInventory;
+    [Header("Reference to Audio Player")]
+    [SerializeField] private AudioPlayer audioPlayer;
 
     [Header("Shop Display")]
     // Shop Inventory SO
@@ -57,9 +59,6 @@ public class ShopUI : MonoBehaviour
         // display default text
         itemName.text = "None";
         itemDescription.text = "Click on an item for more details.";
-
-        // buy button shouldn't be displayed immediately since item hasn't been selected
-
     }
 
     private void CreateItemIcon(int i)
@@ -154,7 +153,17 @@ public class ShopUI : MonoBehaviour
                     itemDescription.text = shop.Container[i].item.description;
 
                     buyButton.gameObject.SetActive(true);
-                    buyButtonText.text = "Buy";
+
+                    if (playerData.coins >= shop.Container[i].price)
+                    {
+                        buyButtonText.text = "Buy";
+                        buyButton.interactable = true;
+                    }
+                    else
+                    {
+                        buyButtonText.text = "Not enough money!";
+                        buyButton.interactable = false;
+                    }
                 }
             } else
             {
@@ -171,13 +180,17 @@ public class ShopUI : MonoBehaviour
         // check if the selected item is still in stock and if the player can afford it
         if (shop.Container[i].amount > 0 && playerData.coins >= shop.Container[i].price)
         {
-            //Debug.Log("Can buy item");
             // Add to Player's inventory
             playerInventory.AddItem(shop.Container[i].item, 1);
+
             // Deduct the amount from the shop
             shop.Container[i].amount -= 1;
+
             // deduct from the player's coins
             playerData.coins -= shop.Container[i].price;
+
+            // play buy item SFX
+            audioPlayer.PlayClip(1);
         } 
         else
         {

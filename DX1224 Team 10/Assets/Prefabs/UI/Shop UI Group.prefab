@@ -190,10 +190,10 @@ RectTransform:
   m_Father: {fileID: 6812372452399120718}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.1998749}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: 223.11, y: 27.619999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6812372451098928584
 CanvasRenderer:
@@ -880,7 +880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6812372452399120718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1126,6 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: e76dcabfa5ca0d445ad75240840c21ea, type: 2}
   playerInventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}
+  audioPlayer: {fileID: 0}
   shop: {fileID: 11400000, guid: 5b430c3ebff8115498a24bf0b4656525, type: 2}
   iconPrefab: {fileID: 8592330801694471468, guid: d0feac47e5143dc49a024ed8980fcc23, type: 3}
   itemsList: []

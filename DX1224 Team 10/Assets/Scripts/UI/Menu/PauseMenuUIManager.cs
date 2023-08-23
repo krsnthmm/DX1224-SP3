@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PauseMenuUIManager : MonoBehaviour
 {
-    public static bool IsPaused = false;
+    public static bool isPaused = false;
 
     public GameObject panel;
     public GameObject pauseMenuUI;
@@ -19,7 +19,7 @@ public class PauseMenuUIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GetComponent<AudioPlayer>().PlayClip(0);
-            if (IsPaused)
+            if (isPaused)
             {
                 Resume();
             }
@@ -35,7 +35,7 @@ public class PauseMenuUIManager : MonoBehaviour
         panel.SetActive(true);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        IsPaused = true;
+        isPaused = true;
     }
 
     public void Resume()
@@ -56,13 +56,13 @@ public class PauseMenuUIManager : MonoBehaviour
         }
 
         Time.timeScale = 1f;
-        IsPaused = false;
+        isPaused = false;
     }
 
     public void Settings()
     {
         // Open settings UI while paused
-        if (IsPaused)
+        if (isPaused)
         {
             if (!settingsMenuUI.activeSelf)
             {
@@ -80,7 +80,7 @@ public class PauseMenuUIManager : MonoBehaviour
     public void ReturnToMenu()
     {
         Time.timeScale = 1f;
-        IsPaused = false;
+        isPaused = false;
 
         // Load Menu Scene
         sceneLoader.LoadScene("MenuScene");

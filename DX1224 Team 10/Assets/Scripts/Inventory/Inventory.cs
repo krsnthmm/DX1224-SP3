@@ -143,15 +143,6 @@ public class Inventory : ScriptableObject
         else
             return;
     }
-
-    //public void ClearList()
-    //{
-    //    for (int i = 0; i < Container.Count; i++)
-    //    {
-    //        Debug.Log("a");
-    //        RemoveItem(Container[i].item);
-    //    }
-    //}
 }
 
 

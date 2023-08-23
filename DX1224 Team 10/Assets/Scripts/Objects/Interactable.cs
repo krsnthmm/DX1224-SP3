@@ -32,7 +32,7 @@ public class Interactable : MonoBehaviour
 
     void Update()
     {
-        if (!PauseMenuUIManager.IsPaused && playerInRange && Input.GetKeyDown(KeyCode.F) && !isInLocker)
+        if (!PauseMenuUIManager.isPaused && playerInRange && Input.GetKeyDown(KeyCode.F) && !isInLocker)
         {
             if (gameObject.CompareTag("Interactable") && !hasGottenCoin)
             {

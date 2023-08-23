@@ -20,6 +20,7 @@ public class Passcode : MonoBehaviour
     private void Start()
     {
         codeInput = "";
+        uiText.text = codeInput;
         passcodeUI.SetActive(false);
     }
 

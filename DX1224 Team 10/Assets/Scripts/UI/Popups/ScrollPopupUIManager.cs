@@ -7,7 +7,6 @@ using TMPro;
 public class ScrollPopupUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject scrollPopup;
-    public TMP_Text title;
     public TMP_Text description;
     public static bool isUp;
 
@@ -27,9 +26,8 @@ public class ScrollPopupUIManager : MonoBehaviour
         isUp = !isUp;
     }
 
-    public void UpdatePopup(string title, string description)
+    public void UpdatePopup(string description)
     {
-        this.title.text = title;
         this.description.text = description;
     }
 }

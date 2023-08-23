@@ -12,7 +12,7 @@ public class PasscodeTriggerObject : MonoBehaviour
 
     private void Update()
     {
-        if (!PauseMenuUIManager.IsPaused && playerInRange && !enteredCorrectCode && Input.GetKeyDown(KeyCode.F))
+        if (!PauseMenuUIManager.isPaused && playerInRange && !enteredCorrectCode && Input.GetKeyDown(KeyCode.F))
         {
             passcodePrompt.SetActive(true);
             Time.timeScale = 0f; //pause the game

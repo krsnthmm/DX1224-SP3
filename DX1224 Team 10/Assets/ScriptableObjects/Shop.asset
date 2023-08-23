@@ -22,7 +22,7 @@ MonoBehaviour:
     price: 5
     isSelected: 0
   - item: {fileID: 11400000, guid: 2ffd2d5ad2f3d0a409b229295e2664ab, type: 2}
-    amount: 10
+    amount: 7
     price: 5
     isSelected: 0
   - item: {fileID: 11400000, guid: 24f4c38945a21054e815a4d74cdfd370, type: 2}

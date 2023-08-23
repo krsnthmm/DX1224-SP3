@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Shop", menuName = "Shop System")]
 public class Shop : ScriptableObject
 {
-    public List<ShopSlot> Container = new List<ShopSlot>();
+    public List<ShopSlot> Container = new();
 
     public void RemoveItem(InventoryItem _item)
     {

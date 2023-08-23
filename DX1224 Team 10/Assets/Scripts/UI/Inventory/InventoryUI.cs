@@ -202,16 +202,26 @@ public class InventoryUI : MonoBehaviour
 
     public void OnUseButtonClick()
     {
-        if (inventory.Container[currInventoryIndex].item.type != ItemType.KeyObject)
+        if (inventory.Container[currInventoryIndex].item.type < ItemType.KeyObject)
         {
             inventory.UseItem(currInventoryIndex);
+
+            audioPlayer.PlayClip(1);
         }
-        else
+        else if (inventory.Container[currInventoryIndex].item.type == ItemType.KeyObject)
         {
             var keyItem = inventory.Container[currInventoryIndex].item as KeyObject;
 
             scrollPopupUI.ToggleScrollPopup();
-            scrollPopupUI.UpdatePopup(keyItem.name, keyItem.keyText);
+            scrollPopupUI.UpdatePopup(keyItem.keyText);
+
+            audioPlayer.PlayClip(0);
+        }
+        else
+        {
+            inventory.UseItem(currInventoryIndex);
+
+            audioPlayer.PlayClip(0);
         }
     }
 

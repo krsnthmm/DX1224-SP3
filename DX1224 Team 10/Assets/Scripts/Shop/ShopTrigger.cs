@@ -10,7 +10,7 @@ public class ShopTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (!PauseMenuUIManager.IsPaused && playerInRange && Input.GetKeyDown(KeyCode.F))
+        if (!PauseMenuUIManager.isPaused && playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             ShopUIManager.isShopOpen = true;
         }

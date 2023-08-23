@@ -39,7 +39,7 @@ public class Checkpoint : MonoBehaviour
 
     void Update()
     {
-        if (!PauseMenuUIManager.IsPaused && playerInRange && Input.GetKey(KeyCode.F))
+        if (!PauseMenuUIManager.isPaused && playerInRange && Input.GetKey(KeyCode.F))
         {
             ToggleCheckpointUI(true);
         }
