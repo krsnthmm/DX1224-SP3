@@ -28387,7 +28387,7 @@ MonoBehaviour:
   uiToShow: {fileID: 1032383712}
   playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
-  playerController: {fileID: 0}
+  playerController: {fileID: 1472051801}
 --- !u!1 &1409025105
 GameObject:
   m_ObjectHideFlags: 0
@@ -36617,7 +36617,7 @@ MonoBehaviour:
   uiToShow: {fileID: 1032383712}
   playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
-  playerController: {fileID: 0}
+  playerController: {fileID: 1472051801}
 --- !u!1 &1444594800
 GameObject:
   m_ObjectHideFlags: 0
@@ -60372,7 +60372,7 @@ MonoBehaviour:
   uiToShow: {fileID: 1032383712}
   playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
-  playerController: {fileID: 0}
+  playerController: {fileID: 1472051801}
 --- !u!61 &2013176331
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -31096,6 +31096,7 @@ MonoBehaviour:
   uiToShow: {fileID: 2122527482}
   playerObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   lockerObject: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &402788214 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
@@ -31659,7 +31660,6 @@ GameObject:
   - component: {fileID: 593512367}
   - component: {fileID: 593512371}
   - component: {fileID: 593512370}
-  - component: {fileID: 593512372}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -31827,18 +31827,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &593512372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593512366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1215646706}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &599493130
 GameObject:
   m_ObjectHideFlags: 0
@@ -32197,6 +32185,7 @@ MonoBehaviour:
   uiToShow: {fileID: 952550069}
   playerObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   lockerObject: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &659125632
 GameObject:
   m_ObjectHideFlags: 0
@@ -32787,6 +32776,7 @@ MonoBehaviour:
   uiToShow: {fileID: 1287322427}
   playerObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   lockerObject: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &735487615
 GameObject:
   m_ObjectHideFlags: 0
@@ -33638,20 +33628,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8202399627505299948, guid: b66c7ec0bc5ae5543ae0fb62edae5d9e, type: 3}
   m_PrefabInstance: {fileID: 163534831}
   m_PrefabAsset: {fileID: 0}
---- !u!115 &1215646706
-MonoScript:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 5
-  m_Script: 
-  m_DefaultReferences: {}
-  m_Icon: {fileID: 0}
-  m_ExecutionOrder: 0
-  m_ClassName: UniversalAdditionalCameraData
-  m_Namespace: UnityEngine.Rendering.Universal
 --- !u!1 &1262520326
 GameObject:
   m_ObjectHideFlags: 0
@@ -34766,7 +34742,6 @@ GameObject:
   - component: {fileID: 1604068792}
   - component: {fileID: 1604068791}
   - component: {fileID: 1604068790}
-  - component: {fileID: 1604068794}
   - component: {fileID: 1604068793}
   m_Layer: 5
   m_Name: Enter
@@ -34998,18 +34973,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1604068794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604068788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6bd37725f099433e9a5529db03b7185, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1629577173
 GameObject:
   m_ObjectHideFlags: 0
@@ -36396,6 +36359,7 @@ MonoBehaviour:
   uiToShow: {fileID: 1798061400}
   playerObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   lockerObject: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1990140128
 GameObject:
   m_ObjectHideFlags: 0
@@ -40355,7 +40319,6 @@ GameObject:
   - component: {fileID: 1999574605}
   - component: {fileID: 1999574604}
   - component: {fileID: 1999574603}
-  - component: {fileID: 1999574607}
   - component: {fileID: 1999574606}
   m_Layer: 5
   m_Name: Cancel
@@ -40587,18 +40550,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1999574607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999574601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6bd37725f099433e9a5529db03b7185, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2006980134 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 750534422010339440, guid: b66c7ec0bc5ae5543ae0fb62edae5d9e, type: 3}

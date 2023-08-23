@@ -14008,6 +14008,10 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 739330381}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -14683,6 +14687,10 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 739330381}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -15531,6 +15539,10 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 739330381}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
 --- !u!1 &968246754 stripped
@@ -22241,6 +22253,10 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 739330381}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
 --- !u!4 &1661314552387969711 stripped
@@ -22549,6 +22565,10 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 739330381}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 0
