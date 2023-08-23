@@ -30,5 +30,6 @@ MonoBehaviour:
   staminaRefillInterval: 5
   hasSpeedBoost: 0
   hasCrossEquipped: 0
+  hasKey: 0
   shieldDuration: 3
   inventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}

@@ -46,6 +46,11 @@ public class Inventory : ScriptableObject
         {
             Debug.Log("No more space");
         }
+
+        if (_item.name == "Key")
+        {
+            playerData.hasKey = true;
+        }
     } 
 
     // remove from player inventory

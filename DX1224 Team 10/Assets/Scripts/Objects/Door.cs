@@ -4,10 +4,11 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject uiToShow;
 
-    [Header("Player's Audio Player")]
+    [Header("References")]
     [SerializeField] private AudioPlayer audioPlayer;
+    [SerializeField] private PlayerData playerData;
+
     private bool playerInRange;
-    public Key key;
 
     // Update is called once per frame
     void Update()
@@ -18,10 +19,13 @@ public class Door : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (playerInRange && Input.GetKey(KeyCode.F) && gameObject.CompareTag("LockedDoor") && key.gotKey)
+        if (playerData != null) 
         {
-            audioPlayer.PlayClip(3);
-            Destroy(gameObject);
+            if (playerInRange && Input.GetKey(KeyCode.F) && gameObject.CompareTag("LockedDoor") && playerData.hasKey)
+            {
+                audioPlayer.PlayClip(3);
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -29,8 +33,11 @@ public class Door : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerInRange = true;
-            ShowUI(true);
+            if (gameObject.CompareTag("Door") || (gameObject.CompareTag("LockedDoor") && playerData.hasKey))
+            {
+                playerInRange = true;
+                ShowUI(true);
+            }
         }
     }
 

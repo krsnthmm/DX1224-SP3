@@ -31,6 +31,7 @@ public class PlayerData : ScriptableObject
     public float staminaRefillInterval; // number of seconds before stamina is refilled
     public bool hasSpeedBoost;
     public bool hasCrossEquipped;
+    public bool hasKey;
     public float shieldDuration;
 
     public Inventory inventory;
@@ -46,6 +47,7 @@ public class PlayerData : ScriptableObject
 
         hasSpeedBoost = false;
         hasCrossEquipped = false;
+        hasKey = false;
 
         inventory.Container = new();
     }
