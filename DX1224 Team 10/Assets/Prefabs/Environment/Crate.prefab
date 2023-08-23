@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7804396795027747003}
   - component: {fileID: 7804396795027746996}
   - component: {fileID: 7804396795027747002}
+  - component: {fileID: 6826420593958198375}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Destructible
@@ -100,3 +101,29 @@ MonoBehaviour:
   uiToShow: {fileID: 0}
   playerObject: {fileID: 7676121020413916098, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
   lockerObject: {fileID: 0}
+--- !u!61 &6826420593958198375
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804396795027746997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.4375}
+    newSize: {x: 1, y: 1.4375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.4375}
+  m_EdgeRadius: 0

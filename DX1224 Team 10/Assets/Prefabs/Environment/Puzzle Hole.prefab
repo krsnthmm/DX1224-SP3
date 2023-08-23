@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1834041018234929783
+--- !u!1 &2116640508039392707
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,56 +8,80 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1834041018234929781}
-  - component: {fileID: 3464323662368714177}
-  - component: {fileID: 6888397420216701350}
-  - component: {fileID: 49992330825320012}
+  - component: {fileID: 2116640508039392704}
+  - component: {fileID: 2116640508039392705}
+  - component: {fileID: 2116640506779987025}
+  - component: {fileID: 7020401831209097444}
+  - component: {fileID: 690819191423645739}
   m_Layer: 0
-  m_Name: Audio Manager
+  m_Name: Puzzle Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1834041018234929781
+--- !u!4 &2116640508039392704
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834041018234929783}
+  m_GameObject: {fileID: 2116640508039392707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 708.4606, y: 518.4879, z: -4.709069}
+  m_LocalPosition: {x: -19.51, y: -4.5, z: -0.86164296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3464323662368714177
+--- !u!61 &2116640508039392705
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116640508039392707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.016746521, y: 0.0040080547}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.21546555, y: 0.21671534}
+  m_EdgeRadius: 0
+--- !u!114 &2116640506779987025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834041018234929783}
+  m_GameObject: {fileID: 2116640508039392707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2937545f40e22ff49889f231d769aff1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2874a81088898584a9abacee469f1271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: bae22a64cb22acf4ebff78a50e0fcf79, type: 2}
-  audioPlayer: {fileID: 49992330825320012}
-  masterSlider: {fileID: 0}
-  BGMSlider: {fileID: 0}
-  SFXSlider: {fileID: 0}
---- !u!82 &6888397420216701350
+  box: {fileID: 0}
+  isBoxInHole: 0
+--- !u!82 &7020401831209097444
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834041018234929783}
+  m_GameObject: {fileID: 2116640508039392707}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -201962523925417621, guid: bae22a64cb22acf4ebff78a50e0fcf79, type: 2}
@@ -147,19 +171,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &49992330825320012
+--- !u!114 &690819191423645739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834041018234929783}
+  m_GameObject: {fileID: 2116640508039392707}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bd8d4f282d017a448b48a3f59f0a1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: b712d8d18051c1849a47005c6c9bdcd1, type: 3}
-  - {fileID: 8300000, guid: a8dfcbe335e33334cbc367b0477b732f, type: 3}
   - {fileID: 8300000, guid: 6045a559d1ac0b94eb681e36a2ec6472, type: 3}
