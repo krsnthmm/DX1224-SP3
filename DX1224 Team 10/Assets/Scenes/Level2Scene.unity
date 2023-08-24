@@ -14011,7 +14011,7 @@ PrefabInstance:
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1479374443}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -14690,7 +14690,7 @@ PrefabInstance:
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1479374443}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -15532,76 +15532,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1134430828}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 1479374444}
-    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 739330381}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1479374443}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
---- !u!1 &968246754 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1661314554333053267, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
-  m_PrefabInstance: {fileID: 968246753}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &968246755
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968246754}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 1.125}
-    newSize: {x: 0.875, y: 1.125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.875, y: 1.125}
-  m_EdgeRadius: 0
---- !u!61 &968246756
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968246754}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 1.125}
-    newSize: {x: 0.875, y: 1.125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.875, y: 1.125}
-  m_EdgeRadius: 0
 --- !u!4 &968246757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1661314554333053265, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
@@ -16731,63 +16670,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2848496448458699997, guid: d877f0c4a5153ab43959a31b0f1a9137, type: 3}
   m_PrefabInstance: {fileID: 1818663649}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1821092678 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7804396795027746997, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
-  m_PrefabInstance: {fileID: 7804396796428999667}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1821092682
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821092678}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.4375}
-    newSize: {x: 1, y: 1.4375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.4375}
-  m_EdgeRadius: 0
---- !u!61 &1821092683
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821092678}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.4375}
-    newSize: {x: 1, y: 1.4375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.4375}
-  m_EdgeRadius: 0
 --- !u!1 &1835283236
 GameObject:
   m_ObjectHideFlags: 0
@@ -22256,7 +22138,7 @@ PrefabInstance:
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1479374443}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
 --- !u!4 &1661314552387969711 stripped
@@ -22558,17 +22440,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1134430828}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
-      propertyPath: audioPlayer
-      value: 
-      objectReference: {fileID: 1479374444}
-    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 739330381}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1479374443}
     - target: {fileID: 7804396795027747003, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: m_RootOrder
       value: 0
