@@ -38,25 +38,27 @@ public class Interactable : MonoBehaviour
     {
         if (!PauseMenuUIManager.isPaused && playerInRange && Input.GetKeyDown(KeyCode.F) && !isInLocker)
         {
-            if (gameObject.CompareTag("Interactable") && !hasGottenCoin)
-            {
-                Debug.Log("Player gets coin");
-                playerData.coins++;
-                audioPlayer.PlayClip(2);
-                hasGottenCoin = true;
-                ShowUI(false);
-            }
-            else if (gameObject.CompareTag("Destructible"))
-            {
-                playerData.coins++;
-                audioPlayer.PlayClip(2);
-                Destroy(gameObject);
-                ShowUI(false);
-            }
-            else if (gameObject.CompareTag("Locker"))
+            if (gameObject.CompareTag("Locker"))
             {
                 Debug.Log("Player is interacting with locker");
                 TransformIntoLocker();
+            }
+            else {
+                playerData.coins++;
+                audioPlayer.PlayClip(2);
+
+                if (gameObject.CompareTag("Interactable") && !hasGottenCoin)
+                {
+                    Debug.Log("Player gets coin");
+                    hasGottenCoin = true;
+                    ShowUI(false);
+                }
+                else if (gameObject.CompareTag("Destructible"))
+                {
+                    Debug.Log("Player gets coin");
+                    gameObject.SetActive(false);
+                    ShowUI(false);
+                }
             }
         }
 
