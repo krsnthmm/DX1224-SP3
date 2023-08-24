@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-    private AudioSource audioSrc;
+    public AudioSource audioSrc;
     [SerializeField] private AudioClip[] audioClips;
 
     // Start is called before the first frame update
@@ -15,5 +15,6 @@ public class AudioPlayer : MonoBehaviour
     {
         audioSrc.clip = audioClips[i];
         audioSrc.Play();
+        Debug.Log(".");
     }
 }

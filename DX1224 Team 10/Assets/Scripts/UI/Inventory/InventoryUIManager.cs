@@ -19,6 +19,7 @@ public class InventoryUIManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && !inventoryMenu.activeSelf)
             {
                 ShowMenu();
+                inventoryMenu.GetComponent<AudioSource>().Stop();
             }
             else if (Input.GetKeyDown(KeyCode.E) && inventoryMenu.activeSelf)
             {
