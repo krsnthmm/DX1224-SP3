@@ -276,7 +276,7 @@ MonoBehaviour:
   moveSpeed: 1
   idleTime: 2
   canKnockback: 1
-  thrust: 20
+  thrust: 10
   knockbackTime: 0.1
   isAggroed: 0
   isInAttackRange: 0
