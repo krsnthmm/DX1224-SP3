@@ -18858,6 +18858,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -18922,6 +18926,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
@@ -19269,6 +19277,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -19383,6 +19395,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -19457,6 +19473,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
@@ -20796,6 +20816,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -21144,6 +21168,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -21205,18 +21233,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1834041018234929780, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
-      propertyPath: BGMSlider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1834041018234929780, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
-      propertyPath: SFXSlider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1834041018234929780, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
-      propertyPath: masterSlider
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1834041018234929781, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -21310,6 +21326,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
@@ -21432,6 +21452,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
@@ -21748,6 +21772,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
@@ -22192,6 +22220,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -22272,6 +22304,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
@@ -22386,6 +22422,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
@@ -25311,6 +25351,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -25648,6 +25692,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
@@ -27880,6 +27928,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -28138,6 +28190,10 @@ PrefabInstance:
       propertyPath: uiToShow
       value: 
       objectReference: {fileID: 972344795}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
@@ -28565,6 +28621,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -28899,6 +28959,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 1661314554333054638, guid: e7e775554828bb54eb4f4d9feee4ef31, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -29089,6 +29153,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972344795}
     - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
+    - target: {fileID: 7804396795027747002, guid: 29c917dd3ed7e6548af2d7b65fffd2c9, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1227432404}
@@ -29224,6 +29292,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2791282793535475700, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 872674880}
     - target: {fileID: 2791282793535475700, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
       propertyPath: pickupUIManager
       value: 

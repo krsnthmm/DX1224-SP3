@@ -18846,6 +18846,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2791282793535475700, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1564391108}
+    - target: {fileID: 2791282793535475700, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
       propertyPath: pickupUIManager
       value: 
       objectReference: {fileID: 3763511227401395161}

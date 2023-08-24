@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject playerObject;
     [SerializeField] private GameObject lockerObject;
-    private AudioPlayer audioPlayer;
+    [SerializeField] private AudioPlayer audioPlayer;
 
     private Vector3 lockerPosition;
     private Quaternion lockerRotation;

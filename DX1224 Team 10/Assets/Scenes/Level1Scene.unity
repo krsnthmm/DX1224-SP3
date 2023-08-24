@@ -514,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1834041018234929783, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
       propertyPath: m_Name
-      value: Audio Manager
+      value: Audio Volume Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3464323662368714177, guid: c38832fe1a5a6b441a3269f5df1822b4, type: 3}
       propertyPath: BGMSlider
@@ -28387,6 +28387,7 @@ MonoBehaviour:
   uiToShow: {fileID: 1032383712}
   playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
+  audioPlayer: {fileID: 145417427}
   playerController: {fileID: 1472051801}
 --- !u!1 &1409025105
 GameObject:
@@ -36617,6 +36618,7 @@ MonoBehaviour:
   uiToShow: {fileID: 1032383712}
   playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
+  audioPlayer: {fileID: 145417427}
   playerController: {fileID: 1472051801}
 --- !u!1 &1444594800
 GameObject:
@@ -44509,6 +44511,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2791282793535475700, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 145417427}
     - target: {fileID: 2791282793535475700, guid: dcb7738dc053d83418a9ece1cffe0003, type: 3}
       propertyPath: pickupUIManager
       value: 
@@ -60372,6 +60378,7 @@ MonoBehaviour:
   uiToShow: {fileID: 1032383712}
   playerObject: {fileID: 1664326279}
   lockerObject: {fileID: 0}
+  audioPlayer: {fileID: 145417427}
   playerController: {fileID: 1472051801}
 --- !u!61 &2013176331
 BoxCollider2D:

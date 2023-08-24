@@ -3,8 +3,8 @@ using UnityEngine;
 public class PickupItem : MonoBehaviour
 {
     [SerializeField] private PickupUIManager pickupUIManager;
+    [SerializeField] private AudioPlayer audioPlayer;
     private PlayerController player;
-    private AudioPlayer audioPlayer;
 
     private bool isPromptOpen;
     private Collider2D collisionItem;
@@ -12,7 +12,6 @@ public class PickupItem : MonoBehaviour
     private void Start()
     {
         player = GetComponent<PlayerController>();
-        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Update()
@@ -29,7 +28,7 @@ public class PickupItem : MonoBehaviour
                     player.playerInventory.AddItem(item.item, 1);
 
                     // play pickup item audio clip
-                    audioPlayer.PlayClip(1);
+                    audioPlayer.PlayClip(3);
 
                     // destroy the item after adding it to inventory
                     Destroy(collisionItem.gameObject);
