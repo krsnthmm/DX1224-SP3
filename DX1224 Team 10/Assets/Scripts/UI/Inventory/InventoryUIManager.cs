@@ -19,6 +19,8 @@ public class InventoryUIManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && !inventoryMenu.activeSelf)
             {
                 ShowMenu();
+
+                // prevent audio from playing when it isn't meant to
                 inventoryMenu.GetComponent<AudioSource>().Stop();
             }
             else if (Input.GetKeyDown(KeyCode.E) && inventoryMenu.activeSelf)

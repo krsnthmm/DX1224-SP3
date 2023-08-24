@@ -12,6 +12,9 @@ public class ShopUIManager : MonoBehaviour
         if (isShopOpen)
         {
             OpenShop();
+
+            // prevent audio from playing when it isn't meant to
+            shopUI.GetComponent<AudioSource>().Stop();
         }
         else
         {
