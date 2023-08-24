@@ -20,7 +20,7 @@ MonoBehaviour:
   currentStamina: 75
   maxHP: 150
   currentHP: 150
-  coins: 0
+  coins: 5
   currentSpeed: 2
   walkSpeed: 2
   dashSpeed: 7
@@ -30,6 +30,6 @@ MonoBehaviour:
   staminaRefillInterval: 5
   hasSpeedBoost: 0
   hasCrossEquipped: 0
-  hasKey: 0
+  hasKey: 1
   shieldDuration: 3
   inventory: {fileID: 11400000, guid: 47a436de379b6a54994fdf16282e78ac, type: 2}

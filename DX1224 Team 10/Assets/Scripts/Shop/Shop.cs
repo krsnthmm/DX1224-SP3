@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Shop", menuName = "Shop System")]
 public class Shop : ScriptableObject
 {
-    [SerializeField] private List<ShopSlot> DefaultShop = new();
     public List<ShopSlot> Container = new();
+    [SerializeField] private List<ShopSlot> DefaultShop = new();
 
     public void RemoveItem(InventoryItem _item)
     {
