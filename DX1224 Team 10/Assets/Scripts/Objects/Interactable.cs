@@ -44,18 +44,19 @@ public class Interactable : MonoBehaviour
                 TransformIntoLocker();
             }
             else {
-                playerData.coins++;
-                audioPlayer.PlayClip(2);
-
                 if (gameObject.CompareTag("Interactable") && !hasGottenCoin)
                 {
                     Debug.Log("Player gets coin");
+                    playerData.coins++;
+                    audioPlayer.PlayClip(2);
                     hasGottenCoin = true;
                     ShowUI(false);
                 }
                 else if (gameObject.CompareTag("Destructible"))
                 {
                     Debug.Log("Player gets coin");
+                    playerData.coins++;
+                    audioPlayer.PlayClip(2);
                     gameObject.SetActive(false);
                     ShowUI(false);
                 }
