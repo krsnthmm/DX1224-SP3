@@ -14,7 +14,7 @@ public class PasscodeTriggerObject : MonoBehaviour
             passcodePrompt.SetActive(true);
             Time.timeScale = 0f; //pause the game
         }
-        else if (enteredCorrectCode)
+        else if (playerInRange && enteredCorrectCode)
         {
             uiToShow.SetActive(false);
         }
