@@ -15,6 +15,5 @@ public class AudioPlayer : MonoBehaviour
     {
         audioSrc.clip = audioClips[i];
         audioSrc.Play();
-        Debug.Log(".");
     }
 }

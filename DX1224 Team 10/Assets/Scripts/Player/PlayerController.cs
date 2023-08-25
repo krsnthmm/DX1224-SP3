@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(Time.timeScale);
         if (playerData.currentHP > 0)
         {
             HandleMovementAnimations();

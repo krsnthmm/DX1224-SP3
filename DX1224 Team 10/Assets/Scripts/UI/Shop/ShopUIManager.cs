@@ -9,16 +9,16 @@ public class ShopUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isShopOpen)
+        if (!PauseMenuUIManager.isPaused)
         {
-            OpenShop();
-
-            // prevent audio from playing when it isn't meant to
-            shopUI.GetComponent<AudioSource>().Stop();
-        }
-        else
-        {
-            CloseShop();
+            if (isShopOpen)
+            {
+                OpenShop();
+            }
+            else
+            {
+                CloseShop();
+            }
         }
     }
 
